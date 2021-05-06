@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C++ Primer (3) | MaxKev1n'sBlog</title><meta name="keywords" content="C++ Primer"><meta name="author" content="Kev1n"><meta name="copyright" content="Kev1n"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C++ Primer (3)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Primer (3)">
+<meta property="og:url" content="http://example.com/2021/05/06/3/index.html">
+<meta property="og:site_name" content="MaxKev1n&#39;sBlog">
+<meta property="og:description" content="C++ Primer (3)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/cpp.jpeg">
+<meta property="article:published_time" content="2021-05-06T15:08:15.000Z">
+<meta property="article:modified_time" content="2021-05-06T15:08:15.000Z">
+<meta property="article:author" content="Kev1n">
+<meta property="article:tag" content="C++ Primer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/cpp.jpeg"><link rel="shortcut icon" href="/img/img.jpg"><link rel="canonical" href="http://example.com/2021/05/06/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-05-06 23:08:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/img.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cpp.jpeg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">MaxKev1n'sBlog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++ Primer (3)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-06T15:08:15.000Z" title="发表于 2021-05-06 23:08:15">2021-05-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-06T15:08:15.000Z" title="更新于 2021-05-06 23:08:15">2021-05-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Program/">Program</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>1.1作用域操作符（::）的含义是：编译器应从操作符左侧名字所示的作用域中寻找右侧那个名字。</p>
+<p>1.2使用<strong>using声明（using declaration）</strong>使用命名空间的形式：<em><strong>using namespace ::name;</strong></em></p>
+<p>2.1标准库类型<strong>string</strong>表示可变长的字符序列，使用string类型必须首先包含string头文件。</p>
+<p>2.2如果使用等号（=）初始化一个变量，实际上执行的是<strong>拷贝初始化（copy initialization）</strong>，编译器把等号右侧的初始值拷贝到新创建的对象中去。与之相反，如果不使用等号，则执行的是<strong>直接初始化（direct initialization）</strong>。</p>
+<p>2.3在执行读取操作时，string对象会自动忽略开头的空白（即空格符、换行符、制表符等）并从第一个真正的字符开始读起，直到遇到下一处空白为止。</p>
+<p>2.4如果希望能在最终得到的字符串中保留输入时的空白符，这时应该用<strong>getline函数</strong>代替原来的&gt;&gt;运算符。getline函数的参数时一个输入流和一个string对象，函数从给定的输入流中读入内容，直到遇到换行符为止（注意换行符也被读进来了），然后把所读的内容存入到那个string对象中去（注意不存换行符）。getline只要一遇到换行符就结束读取操作并返回结果，哪怕输入的一开始就是换行符也是如此。</p>
+<p><strong>Note：触发getline函数返回的那个换行符实际上被丢弃掉了，得到的string对象中并不包含该换行符。</strong></p>
+<p>2.5 size函数返回的是一个string::size_type类型的值，它是一个无符号类型的值而且能够足够存放下任何string对象的大小。所有用于存放string类的size函数返回值的变量，都应该是string::size_type类型的。</p>
+<p>2.6由于size函数返回的是一个无符号整型数，因此切记，如果在表达式中混用了带符号数和无符号数将可能产生意想不到的结果。</p>
+<p>Tip：如果一条表达式中已经有了size()函数就不要再使用int了，这样就可以避免混用int和unsigned可能带来的问题。</p>
+<p>2.7当把string对象和字符字面值及字符串字面值混在一条语句中使用时，必须确保每个加法运算符(+)的两侧的运算对象至少有一个是string。</p>
+<p><strong>Warning：因为某些历史原因，也为了与C兼容，所以C++语言中的字符串字面值并不是标准库类型string的对象。切记，字符串字面值与string是不同的类型。</strong></p>
+<p>2.8<strong>范围for（range for）</strong>语句用于遍历给定序列中的每个元素并对序列中的每个值执行某种操作，其语法形式是：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (declaration : expression)</span><br><span class="line"></span><br><span class="line">statement</span><br></pre></td></tr></table></figure>
+
+<p>其中，expression部分是一个对象，用于表示一个序列。declaration部分负责定义一个变量，该变量将被用于访问序列中的基础元素。每次迭代，declaration部分的变量会被初始化为expression部分的下一个元素值。</p>
+<p>2.9如果想要改变string对象中字符的值，必须把循环变量定义成引用类型。</p>
+<p>2.10要想访问string对象中的单个字符有两种方式：一种是使用下标，另外一种是使用迭代器，<strong>下标运算符（[]）</strong>接受的输入参数是string::size_type类型的值，这个参数表示要访问的字符的位置；返回值是该位置上字符的引用。</p>
+<p>2.11使用下标时必须确保其在合理范围之内。一种简便易行的方法是，总是设下标类型为string::size_type。</p>
+<p>3.1标准库类型<strong>vector</strong>表示对象的集合，其中所有对象的类型都相同，因为vector“容纳着”其他对象，所以它也常被称作容器（container）。</p>
+<p>3.2对于类模板来说，我们通过提供一些额外信息来指定模板到底实例化成什么样的类，需要提供哪些信息由模板决定。提供信息的方式总是这样：即在模板名字后面跟一对尖括号，在括号内放上信息。 <em>example：vector<int> ivec;</em></p>
+<p><strong>Note：vector是模板而非类型，由vector生成的类型必须包含vector中元素的类型，例如vector<int>。</strong></p>
+<p>3.3vector能容纳绝大多数类型的对象作为其元素，但是因为引用不是对象，所以不存在引用的vector。</p>
+<p>3.4.1使用拷贝初始化时（即使用=时），只能提供一个初始值。</p>
+<p>3.4.2如果提供的是一个类内初始值，则只能使用拷贝初始化或使用花括号的形式初始化。</p>
+<p>3.4.3如果提供的是初始元素值的列表，则只能把初始值都放在花括号里进行列表初始化，而不能放在圆括号里。</p>
+<p>3.5.1通常情况下，可以只提供vector对象容纳的元素数量而略去初始值。此时库会创建一个<strong>值初始化的（value-initialized）</strong>元素初值，并把它赋给容器中的所有元素。这个初值由vector对象中的元素的类型决定。</p>
+<p>3.5.2有些类要求便须明确地提供初始值，如果vector对象中的元素的类型不支持默认初始化，我们就必须提供初始的值。</p>
+<p>3.5.3如果只提供了元素的数量而没有设定初始值，只能使用直接初始化。</p>
+<p>3.6.1初始化时，如果用的是圆括号，可以说提供的值是用来构造（construct）vector对象的。</p>
+<p>3.6.2如果用的是花括号，可以表述成我们想列表初始化（list initialize）该vector对象。也就是说，初始化过程会尽可能地把花括号内的值当成是元素初始值地列表来处理，只有在无法执行列表初始化时才会考虑其他初始化方式。 <em>example：vector<string> v7{10}; //v7有10个默认初始化的元素</em></p>
+<p>3.7如果循环体内部包含有向vector对象添加元素的语句，则不能使用范围for循环。</p>
+<p><strong>Warning：范围for语句体内不应改变其所遍历序列的大小。</strong></p>
+<p><strong>Note：要使用size_type，需首先指定它是由哪种类型定义的。vector对象的类型总是包含着元素的类型。 *example: vector<int>::size_type //正确     vector::size_type //错误*</strong></p>
+<p>3.8不能用下标形式为vector添加元素。</p>
+<p><strong>Warning：vector对象（以及string对象）的下标运算符可用于访问已存在的元素，而不能用于添加元素。</strong></p>
+<p>1.1.1迭代器<strong>end</strong>成员负责返回指向容器（或string对象）“尾元素的下一位置（one past the end）”的迭代器，也就是说，该迭代器指示的是容器的一个本不存在的“<strong>尾后（off the end）</strong>”元素。</p>
+<p>1.1.2end成员返回的迭代器常被称为<strong>尾后迭代器（off-the-end iterator）</strong>或者简称为尾迭代器（end iterator）。</p>
+<p><strong>Note：如果容器为空，则begin和end返回的是同一个迭代器，都是尾后迭代器。</strong></p>
+<p>1.2执行解引用的迭代器必须合法并确实指示着某个元素。试图解引用一个非法迭代器或者尾后迭代器都是未被定义的行为。</p>
+<p>1.3迭代器的递增是将迭代器“向前移动一个位置”。</p>
+<p><strong>Note：因为end返回的迭代器并不实际指示某个元素，所以并不能对其进行递增或解引用操作。</strong></p>
+<p>1.4拥有迭代器的标准库类型使用iterator和const_iterator来表示迭代器的类型</p>
+<p>1.5 const_iterator和常量指针差不多，能读取但不能修改它所指的元素值。相反，iterator的对象可读可写。如果vector对象或string对象是一个常量，只能使用const_iterator；如果vector对象或string对象不是常量，那么既能使用iterator也能使用const_iterator。</p>
+<p>1.6 begin和end返回的具体类型由对象是否是常量决定，如果对象是常量，begin和end返回const_iterator；如果对象不是常量，返回iterator。</p>
+<p>1.7 C++11新标准引入了两个新函数，分别是cbegin和cend。类似于begin和end，上述两个新函数也分别返回指示容器第一个元素或最后元素下一位置的迭代器。有所不同的是，不论vector对象（或string对象）本身是否是常量，返回值都是const_iterator。</p>
+<p>1.8 C++语言定义了<strong>箭头运算符（-&gt;）</strong>。箭头运算符把解引用和成员访问两个操作结合在一起。 example： it-&gt;mem和(it*).mem意思相同。</p>
+<p><strong>Warning：谨记，但凡是使用了迭代器的循环体，都不要向迭代器所属的容器添加元素。</strong></p>
+<p>1.9可以令迭代器和一个整数值相加（或相减），其返回值是向前（或向后）移动了若干个位置的迭代器，执行这样的操作时，结果迭代器或者指示原vector对象（或string对象）内的一个元素，或者指示原vector（或string对象）尾元素的下一位置。</p>
+<p>1.10只要两个迭代器指向的是同一个容器中的元素或者尾元素的下一位置，就能将其相减，所得结果是两个迭代器的距离。所谓距离指的是右侧的迭代器向前移动多少位置就能追上左侧的迭代器，其类型是<strong>difference_type</strong>的带符号整数。</p>
+<p>2.1数据中元素的个数也属于数组类型的一部分，编译的时候维度应该是已知的。也就是说，维度必须是一个常量表达式。</p>
+<p><strong>Warning：和内置类型的变量一样，如果在函数内部定义了某种内置类型的数组，那么默认初始化会令数组含有未定义的值。</strong></p>
+<p>2.2定义数组的时候必须指定数组的类型，不允许用auto关键字由初始值的列表推定类型。另外和vector一样，数组的元素应为对象，因此不存在引用的数组。</p>
+<p>2.3如果在声明时没有指明维度，编译器会根据初始值的数量计算并推测出来；相反，如果指明了维度，那么初始值的总数量不应该超出指定的大小。如果维度比提供的初始值数量大，则用提供的而初始值初始化靠前的元素，剩下的元素被初始化成默认值。</p>
+<p>2.4字符数组有一种额外的初始化形式，我们可以用字符串字面值对此类数组初始化。当使用这种方式时，一定要注意字符串字面值的结尾处还有一个空字符，这个字符也会像字符串的其他字符一样被拷贝到字符数组中去。</p>
+<p>2.5不能将数组的内容拷贝给其他数组作为其初始值，也不能用数组为其他数组赋值。</p>
+<p>2.6</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *ptrs[<span class="number">10</span>];            <span class="comment">//ptrs是含有10个整型指针的数组</span></span><br><span class="line"><span class="keyword">int</span> &amp;refs[<span class="number">10</span>] = <span class="comment">/*?*/</span>;    <span class="comment">//错误：不存在引用的数组</span></span><br><span class="line"><span class="built_in"><span class="keyword">int</span></span> (*Parray)[<span class="number">10</span>] = &amp;arr; <span class="comment">//Parray指向一个含有10个整数的数组</span></span><br><span class="line"><span class="built_in"><span class="keyword">int</span></span> (&amp;arrRef)[<span class="number">10</span>] = arr;  <span class="comment">//arrRef引用一个含有10个整数的数组</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Tip：要想理解数组声明的含义，最好的办法时从数组的名字开始按照由内向外的顺序阅读。</strong></p>
+<p>2.7在使用数组下标的时候，通常将其定义为<strong>size_t</strong>类型。size_t是一种机器相关的无符号类型，它被设计得足够大以便能表示内存中任意对象的大小。</p>
+<p>2.8.1对数组的元素使用取地址符就能得到指向该元素的指针</p>
+<p>2.8.2在很多用到数组名字的地方，编译器都会自动地将其替换为一个指向数组首元素的指针。</p>
+<p><strong>Note：在大多数表达式中，使用数组类型的对象其实是使用一个指向该数组首元素的指针。</strong></p>
+<p>2.9.1当使用数组作为一个auto变量的初始值时，推断得出的类型是指针而非数组。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ia[] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">auto</span> <span class="title">ia2</span><span class="params">(ia)</span></span>; <span class="comment">//ia2是一个整型指针，指向ia的第一个元素</span></span><br><span class="line">ia2 = <span class="number">42</span>;     <span class="comment">//错误：ia2是一个指针，不能用int值给指针赋值</span></span><br></pre></td></tr></table></figure>
+
+<p>2.9.2当使用decltype关键字时上述转换不会发生，decltype()返回的类型是数组。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">decltype</span>(ia) ia3 = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line">ia3 = p;    <span class="comment">//错误：不能用整型指针给数组赋值</span></span><br><span class="line">ia3[<span class="number">4</span>] = i; <span class="comment">//正确:把i的值赋给ia3的一个元素</span></span><br></pre></td></tr></table></figure>
+
+<p>2.10为了让指针的使用更简单、更安全，C++11新标准引入了两个名为begin和end的函数。正确是使用形式是将数组作为他们的参数。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ia[] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> *beg = <span class="built_in">begin</span>(ia);</span><br><span class="line"><span class="keyword">int</span> *last = <span class="built_in">end</span>(ia);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Note：一个指针如果指向了某种内置类型数组的尾元素的“下一位置”，则其具备与vector的end函数返回的与迭代器类似的功能。特别要注意，尾后指针不能执行解引用和递增操作。</strong></p>
+<p>2.11给（从）一个指针加上（减去）某整型值，结果仍是指针。新指针指向的元素与原来的指针相比前进了（后退了）该整型值个位置。</p>
+<p>2.12两个指针相减的结果的类型是一种名为ptrdiff_t的标准库类型。因为插值可能为负值，所以ptrdiff_t是一种带符号类型。</p>
+<p><strong>Warning：内置的下标运算符所用的索引值不是无符号类型，这一点与vector和string不一样。</strong></p>
+<p>1.1C语言标准库提供的一组函数，可用于操作C风格字符串，它们定义在cstring头文件中，传入此类函数的指针必须指向以空字符作为结束的数组。 <em>example：</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> ca[] = &#123;<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;+&#x27;</span>,<span class="string">&#x27;+&#x27;</span>&#125;;    <span class="comment">//不以空字符结束</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">strlen</span>(ca) &lt;&lt; endl;   <span class="comment">//严重错误：ca没有以空字符结束</span></span><br></pre></td></tr></table></figure>
+
+<p>1.2连接或拷贝C风格字符串正确的方法是使用strcat函数和strcpy函数。不过要想使用这两个函数，还必须提供一个用于存放结果字符串的数组，该数组必须足够大以便容纳下结果字符串及末尾的空字符。</p>
+<p>1.3.1允许使用以空字符结束的字符数组来初始化string对象或为string对象赋值。</p>
+<p>1.3.2在string对象的加法运算中允许使用以空字符结束的字符数组作为其中一个运算对象（不能两个运算对象都是）；在string对象的复合赋值运算中允许使用以空字符结束的字符数组作为右侧的运算对象。</p>
+<p>1.4 c_str函数的返回值是一个C风格的字符串。函数的返回结果是一个指针，该指针指向一个以空字符结束的字符数组。</p>
+<p><strong>Warning：如果执行完c_str()函数后程序想一直都能使用其返回的数组，最好将该数组重新拷贝一份。</strong></p>
+<p>1.5允许使用数组来初始化vector对象。要实现这一目的，只需指明要拷贝区域的首元素地址和尾后地址就可以了。 <em>example：</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> int_arr[] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">ivec</span><span class="params">(begin(int_arr),end(int_arr))</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>2.1允许使用花括号括起来的一组值初始化多维数组，其中内层嵌套的花括号并非必需的。类似于一维数组，在初始化多维数组时也并非所有元素的值都必须包含在初始化列表之内，其他未列出的元素执行默认值初始化。</p>
+<p><strong>Note：要使用范围for语句处理多维数组，除了最内层的循环外，其他所有循环的控制变量都应该是引用类型。</strong></p>
+<p>2.2当程序使用多维数组的名字时，也会自动将其转换成指向数组首元素的指针。</p>
+<p>2.3随着C++11新标准的提出，通过使用auto或decltype就能尽可能地避免在数组前面加上一个指针类型了。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Kev1n</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/05/06/3/">http://example.com/2021/05/06/3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">MaxKev1n'sBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C-Primer/">C++ Primer</a></div><div class="post_share"><div class="social-share" data-image="/img/cpp.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/05/06/4/"><img class="prev-cover" src="/img/cpp.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C++ Primer (4)</div></div></a></div><div class="next-post pull-right"><a href="/2021/05/06/2/"><img class="next-cover" src="/img/cpp.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++ Primer (2)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/05/06/1/" title="C++ Primer (1)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (1)</div></div></a></div><div><a href="/2021/05/06/10/" title="C++ Primer (10)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (10)</div></div></a></div><div><a href="/2021/05/06/13/" title="C++ Primer (13)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (13)</div></div></a></div><div><a href="/2021/05/06/14/" title="C++ Primer (14)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (14)</div></div></a></div><div><a href="/2021/05/06/15/" title="C++ Primer (15)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (15)</div></div></a></div><div><a href="/2021/05/06/17/" title="C++ Primer (17)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (17)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/img.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Kev1n</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/maxkev1n"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/maxkev1n" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chenzihang@njust.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/19/" title="C++ Primer (19)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (19)"/></a><div class="content"><a class="title" href="/2021/05/06/19/" title="C++ Primer (19)">C++ Primer (19)</a><time datetime="2021-05-06T15:25:15.000Z" title="发表于 2021-05-06 23:25:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/18/" title="C++ Primer (18)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (18)"/></a><div class="content"><a class="title" href="/2021/05/06/18/" title="C++ Primer (18)">C++ Primer (18)</a><time datetime="2021-05-06T15:24:15.000Z" title="发表于 2021-05-06 23:24:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/17/" title="C++ Primer (17)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (17)"/></a><div class="content"><a class="title" href="/2021/05/06/17/" title="C++ Primer (17)">C++ Primer (17)</a><time datetime="2021-05-06T15:23:15.000Z" title="发表于 2021-05-06 23:23:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/16/" title="C++ Primer (16)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (16)"/></a><div class="content"><a class="title" href="/2021/05/06/16/" title="C++ Primer (16)">C++ Primer (16)</a><time datetime="2021-05-06T15:22:15.000Z" title="发表于 2021-05-06 23:22:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/15/" title="C++ Primer (15)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (15)"/></a><div class="content"><a class="title" href="/2021/05/06/15/" title="C++ Primer (15)">C++ Primer (15)</a><time datetime="2021-05-06T15:20:15.000Z" title="发表于 2021-05-06 23:20:15">2021-05-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Kev1n</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>

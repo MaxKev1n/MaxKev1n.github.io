@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C++ Primer (14) | MaxKev1n'sBlog</title><meta name="keywords" content="C++ Primer"><meta name="author" content="Kev1n"><meta name="copyright" content="Kev1n"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C++ Primer (14)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Primer (14)">
+<meta property="og:url" content="http://example.com/2021/05/06/14/index.html">
+<meta property="og:site_name" content="MaxKev1n&#39;sBlog">
+<meta property="og:description" content="C++ Primer (14)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/cpp.jpeg">
+<meta property="article:published_time" content="2021-05-06T15:18:15.000Z">
+<meta property="article:modified_time" content="2021-05-06T15:18:15.000Z">
+<meta property="article:author" content="Kev1n">
+<meta property="article:tag" content="C++ Primer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/cpp.jpeg"><link rel="shortcut icon" href="/img/img.jpg"><link rel="canonical" href="http://example.com/2021/05/06/14/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-05-06 23:18:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/img.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cpp.jpeg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">MaxKev1n'sBlog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++ Primer (14)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-06T15:18:15.000Z" title="发表于 2021-05-06 23:18:15">2021-05-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-06T15:18:15.000Z" title="更新于 2021-05-06 23:18:15">2021-05-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Program/">Program</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="重载运算与类型转换"><a href="#重载运算与类型转换" class="headerlink" title="重载运算与类型转换"></a>重载运算与类型转换</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>重载的运算符是具有特殊名字的函数：它们的名字由关键字<code>operator</code>和其后要定义的运算符号共同组成。和其他函数一样，重载的运算符也包含返回类型，参数列表以及函数体。</p>
+<p>重载运算符函数的参数数量与该运算符作用的运算对象数量一样多，一元运算符有一个参数，二元运算符有两个。对于二元运算符来说，左侧运算对象传递给第一个参数，而右侧运算对象传递给第二个参数。除了重载的函数调用运算符<code>operator()</code>之外，其他重载运算符不能含有默认实参。</p>
+<p>如果一个运算符函数是成员函数，则它的第一个（左侧）运算对象绑定到隐式的<code>this</code>指针上，因此，成员运算符函数（显式）参数数量比运算符运算对象总数少一个。</p>
+<p>对于一个运算符函数来说，它或者是类的成员，或者是类的成员，或者至少含有一个类类型的参数。</p>
+<p>对于一个重载的运算符来说，其优先级和结合律与对应的内置运算符保持一致。不考虑运算对象的话。</p>
+<h3 id="直接调用一个重载的运算符函数"><a href="#直接调用一个重载的运算符函数" class="headerlink" title="直接调用一个重载的运算符函数"></a>直接调用一个重载的运算符函数</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data1 + data2;           <span class="comment">//普通的表达式</span></span><br><span class="line"><span class="keyword">operator</span>+(data1, data2); <span class="comment">//等价的函数调用</span></span><br><span class="line">data1 += data2;          <span class="comment">//基于“调用”的表达式</span></span><br><span class="line">data1.<span class="keyword">operator</span>+=(data2); <span class="comment">//对成员运算符函数的等价调用</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="某些运算符不应该被重载"><a href="#某些运算符不应该被重载" class="headerlink" title="某些运算符不应该被重载"></a>某些运算符不应该被重载</h3><p>因为使用重载的运算符本质上是一次函数调用，所以这些关于运算对象求值顺序的规则无法应用到重载的运算符。特别是，逻辑与运算符、逻辑或运算符和逗号运算符的运算对象求值顺序规则都无法保留下来。除此之外，<code>&amp;&amp;</code>和<code>||</code>运算符的重载版本也无法保留内置运算符的短路求值属性，两个运算对象总是会被求值。</p>
+<hr>
+<p><strong>下面的准则有助于我们在将运算符定义为成员函数还是普通的非成员函数做出抉择：</strong></p>
+<ul>
+<li>赋值（<code>=</code>）、下标（<code>[]</code>）、调用（<code>()</code>）和成员访问箭头(<code>-&gt;</code>)运算符必须是成员</li>
+<li>复合赋值运算符一般来说应该是成员，但并非是必须，这一点和赋值运算符略有不同</li>
+<li>改变对象状态的运算符或者与给定类型密切相关的运算符，如递增、递减和解引用运算符，通常应该是成员</li>
+<li>具有对称性的运算符可能转换成任意一端的运算对象，例如算术、相等性、关系和位运算符等等，因此它们通常应该是普通的非成员函数</li>
+</ul>
+<p>如果我们想提供含有类对象的混合类型表达式，则运算符必须定义成非成员函数。当我们把运算符定义成成员函数时，它的左侧运算对象必须是运算符所属的一个对象。</p>
+<hr>
+<h2 id="输入输出运算符"><a href="#输入输出运算符" class="headerlink" title="输入输出运算符"></a>输入输出运算符</h2><h3 id="重载输出运算符-lt-lt"><a href="#重载输出运算符-lt-lt" class="headerlink" title="重载输出运算符&lt;&lt;"></a>重载输出运算符&lt;&lt;</h3><p>通常情况下，输出运算符的第一个形参是要给非常量<code>ostream</code>对象的引用。第二个形参一般来说时一个常量的引用，这常量是我们想要打印的类类型。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ostream &amp;<span class="keyword">operator</span>&lt;&lt;(ostream &amp;os, <span class="keyword">const</span> Sales_data &amp;item)&#123;</span><br><span class="line">	os&lt;&lt;item.<span class="built_in">isbn</span>()&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;item.unites_sold&lt;&lt;<span class="string">&quot; &quot;</span></span><br><span class="line">	  &lt;&lt;item.revenue&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;item.<span class="built_in">avg_price</span>();</span><br><span class="line">	<span class="keyword">return</span> os;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>与<code>iostream</code>标准库兼容的输入输出运算符必须是普通的非成员函数，而不能是类的成员函数。否则，它们的左侧运算对象将是我们的类的一个对象。</p>
+<p>如果我们希望为类自定义IO运算符，则必须将其定义为非成员函数。当然，IO运算符通常需要读写类的非公有数据成员，所以IO运算符一般被声明为友元。</p>
+<h3 id="重载输入运算符-gt-gt"><a href="#重载输入运算符-gt-gt" class="headerlink" title="重载输入运算符&gt;&gt;"></a>重载输入运算符&gt;&gt;</h3><p>通常情况下，输入运算符的第一个形参时运算符将要读取的流的引用，第二个形参时将要读入到的（非常量）对象的引用。</p>
+<h2 id="算术和关系运算符"><a href="#算术和关系运算符" class="headerlink" title="算术和关系运算符"></a>算术和关系运算符</h2><p>通常情况下，我们把算术和关系运算符定义成非成员函数以允许对左侧或右侧的运算对象进行转换。因为这些运算符一般不需要该改变运算对象的状态，所以形参都是常量的引用。</p>
+<h3 id="下标运算符"><a href="#下标运算符" class="headerlink" title="下标运算符"></a>下标运算符</h3><p><strong>下标运算符必须是成员函数</strong></p>
+<p>为了与下标的原始定义兼容，下标运算符通常以所访问元素的引用作为返回值，这样做的好处是下标可以出现在赋值运算符的任意一端。进一步，我们最好用是定义下标运算符的常量版本和非常量版本，当作用于一个常量对象时，下标运算符返回常量引用以确保我们不会给返回的对象赋值。</p>
+<h2 id="递增和递减运算符"><a href="#递增和递减运算符" class="headerlink" title="递增和递减运算符"></a>递增和递减运算符</h2><p>区分前置和后置，后置版本接受一个额外的（不被使用）<code>int</code>类型的形参。当我们使用后置运算符时，编译器为这个形参提供一个值为0的实参。尽管从语法上来说后置函数可以使用这个额外的形参，但是在实际过程中通常不会这么做。这个形参的唯一作用就是区分前置版本和后置版本的函数，而不是真的要在实现后置版本时参与运算。</p>
+<p>可以显式地调用一个重载的运算符，其效果与在表达式中以运算符号的形式使用它完全一样。如果我们想通过函数调用的方式调用后置版本，则必须为它的整型参数传递一个值：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">StrBlobPtr <span class="title">p</span><span class="params">(a1)</span></span>;</span><br><span class="line">p.<span class="keyword">operator</span>++(<span class="number">0</span>);</span><br><span class="line">p.<span class="keyword">operator</span>++();</span><br></pre></td></tr></table></figure>
+
+<h2 id="成员访问运算符"><a href="#成员访问运算符" class="headerlink" title="成员访问运算符"></a>成员访问运算符</h2><p><strong>箭头运算符必须是类的成员。解引用运算符通常也是类的成员，尽管并非必须如此</strong></p>
+<p>和大多数其他运算符一样，我们能令<code>operator*</code>完成我们指定的操作，但它永远不能丢掉成员访问这个最基本的含义。当我们宠爱箭头时，可以改变的是箭头从哪个对象当中获取成员，而箭头获取成员这一事实则永远不变。</p>
+<p><strong>Note：重载的箭头运算符必须返回类的指针或者自定义了箭头运算符的某个类的对象</strong></p>
+<hr>
+<h2 id="函数调用运算符"><a href="#函数调用运算符" class="headerlink" title="函数调用运算符"></a>函数调用运算符</h2><p>如果类重载了函数调用运算符，则我们可以想使用函数一样使用该类的对象</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">absInt</span>&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">int</span> val)</span> <span class="keyword">const</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> val &lt; <span class="number">0</span> ? -val : val;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">-42</span>;</span><br><span class="line">absInt absObj;</span><br><span class="line"><span class="keyword">int</span> ui = <span class="built_in">absObj</span>(i);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Note：函数调用运算符必须是成员函数。一个类可以定义多个不同版本的调用运算符，相互之间应该在参数数量或类型上有所区别</strong></p>
+<p>如果类定义了调用运算符，则该类的对象称作<strong>函数对象（function object）</strong>。</p>
+<h3 id="标准库定义的函数对象"><a href="#标准库定义的函数对象" class="headerlink" title="标准库定义的函数对象"></a>标准库定义的函数对象</h3><p>标准库定义了一组表示算术运算符、关系运算符和逻辑运算符的类，每个类分别定义了一个执行命名操作的调用运算符。这些类都被定义成模板的形式，我们可以为其指定具体的应用类型，这里的类型即调用运算符的形参类型。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">plus&lt;<span class="keyword">int</span>&gt; intAdd;             <span class="comment">//可执行int加法的函数对</span></span><br><span class="line">negate&lt;<span class="keyword">int</span>&gt; intNegate;        <span class="comment">//可对int值取反的函数对象</span></span><br><span class="line"><span class="comment">//使用intAdd::operator(int, int)求10和20的和</span></span><br><span class="line"><span class="keyword">int</span> sum = <span class="built_in">intAdd</span>(<span class="number">10</span>, <span class="number">20</span>);     <span class="comment">//等价于sum = 30</span></span><br><span class="line">sum = <span class="built_in">intNegate</span>(<span class="built_in">intAdd</span>(<span class="number">10</span>, <span class="number">20</span>));  <span class="comment">//等价于sun = 30</span></span><br><span class="line"><span class="comment">//使用intNegate::operator(int)生成-10</span></span><br><span class="line"><span class="comment">//然后将-10作为intAdd::operator(int, int)的第二个参数</span></span><br><span class="line">sum = <span class="built_in">intAdd</span>(<span class="number">10</span>, <span class="built_in">intNegate</span>(<span class="number">10</span>));</span><br></pre></td></tr></table></figure>
+
+<h4 id="在算法中使用标准库函数对象"><a href="#在算法中使用标准库函数对象" class="headerlink" title="在算法中使用标准库函数对象"></a>在算法中使用标准库函数对象</h4><p>表示运算符的函数对象类常用来替换算法中的默认运算符。如我们所知，在默认情况下排序算法使用<code>operator&lt;</code>将序列按照升序排列。如果要执行降序排列的话，我们可以传入一个<code>greater</code>类型的对象。该类将产生一个调用运算符并负责执行待排序类型的大小运算。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(svec.<span class="built_in">begin</span>(), svec.<span class="built_in">end</span>(). greater&lt;string&gt;());</span><br></pre></td></tr></table></figure>
+
+<p>需要特别注意的是，标准库规定其函数对象对于指针同样使用。</p>
+<h3 id="可调用对象与function"><a href="#可调用对象与function" class="headerlink" title="可调用对象与function"></a>可调用对象与function</h3><p>对于几个可调用对象共享同一种调用形式的情况，有时我们会希望把它们看成具有相同的类型。我们希望使用这些可调用对象构建一个简单的桌面计算机。为了实现这一目的，需要定义一个<strong>函数表（function table）</strong>用于存储指向这些可调用对象的“指针”。当程序需要执行某个特定的操作时，从表中查找该调用的函数。</p>
+<p>我们可以使用一个名为**<code>function</code>**的新标准库类型解决上述问题，<code>function</code>定义在<code>functional</code>头文件中。<code>function</code>是一个模板，和我们使用过的其他模板一样，当创建一个具体的<code>function</code>类型时我们必须提供额外的信息。</p>
+<h4 id="重载的函数与function"><a href="#重载的函数与function" class="headerlink" title="重载的函数与function"></a>重载的函数与function</h4><p>我们不能（直接）将重载函数的名字存入<code>function</code>类型的对象中，会出现二义性问题。解决上述二义性问题的一条途径是存储函数指针而非函数的名字</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in"><span class="keyword">int</span></span> (*fp)(<span class="keyword">int</span>, <span class="keyword">int</span>) = add;</span><br><span class="line">binops.<span class="built_in">insert</span>(&#123;<span class="string">&quot;+&quot;</span>, fp&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>同样，我们也可以使用<code>lambda</code>来消除二义性。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">binops.<span class="built_in">insert</span>(&#123;<span class="string">&quot;+&quot;</span>, [](<span class="keyword">int</span> a, <span class="keyword">int</span> b)&#123;<span class="keyword">return</span> <span class="built_in">add</span>(a, b);&#125;&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="重载、类型转换与运算符"><a href="#重载、类型转换与运算符" class="headerlink" title="重载、类型转换与运算符"></a>重载、类型转换与运算符</h2><h3 id="类型转换运算符"><a href="#类型转换运算符" class="headerlink" title="类型转换运算符"></a>类型转换运算符</h3><p><strong>类型转换运算符（conversion operator）</strong>是类的一种特殊成员函数，它负责将要给类类型的值转换成其他类型。类型转换函数的一般形式如下形式：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">operator</span> <span class="title">type</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>其中<em>type</em>表示某种类型。类型转换运算符可以面向任意类型（除了<code>void</code>之外）进行定义。只要该类型能作为函数的返回类型。因此，我们不允许转换成数组或者函数类型，但允许转换成指针或者引用类型。类型转换运算符既没有显式的返回类型，也没有形参，而且必须定义成类的成员函数。</p>
+<h4 id="显式的类型转换运算符"><a href="#显式的类型转换运算符" class="headerlink" title="显式的类型转换运算符"></a>显式的类型转换运算符</h4><p>C++11新标准引入了<strong>显式的类型转换运算符（explicit conversion operator）</strong>。和显式的构造函数一样，编译器（通常）也不会讲要给显式的类型转换运算符用于隐式类型转换。当类型转换运算符是显式的时，我们也能执行类型转换，不过必须通过显式的强制类型转换才可以。</p>
+<p>该规定存在一个例外，即如果表达式被用作条件，则编译器会将显式的类型转换自动应用于它。换句话说，当表达式出现在下列位置时，显式的类型转换将被隐式地执行：</p>
+<ul>
+<li><code>if</code>、<code>while</code>及<code>do</code>语句的条件部分</li>
+<li><code>for</code>语句头的条件表达式</li>
+<li>逻辑非运算符(<code>!</code>)、逻辑或运算符(<code>||</code>)、逻辑与运算符(<code>&amp;&amp;</code>)的运算对象</li>
+<li>条件运算符(<code>? :</code>)的条件表达式</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Kev1n</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/05/06/14/">http://example.com/2021/05/06/14/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">MaxKev1n'sBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C-Primer/">C++ Primer</a></div><div class="post_share"><div class="social-share" data-image="/img/cpp.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/05/06/15/"><img class="prev-cover" src="/img/cpp.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C++ Primer (15)</div></div></a></div><div class="next-post pull-right"><a href="/2021/05/06/13/"><img class="next-cover" src="/img/cpp.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++ Primer (13)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/05/06/1/" title="C++ Primer (1)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (1)</div></div></a></div><div><a href="/2021/05/06/10/" title="C++ Primer (10)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (10)</div></div></a></div><div><a href="/2021/05/06/13/" title="C++ Primer (13)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (13)</div></div></a></div><div><a href="/2021/05/06/15/" title="C++ Primer (15)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (15)</div></div></a></div><div><a href="/2021/05/06/17/" title="C++ Primer (17)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (17)</div></div></a></div><div><a href="/2021/05/06/19/" title="C++ Primer (19)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (19)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/img.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Kev1n</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/maxkev1n"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/maxkev1n" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chenzihang@njust.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%E8%BF%90%E7%AE%97%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">重载运算与类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8%E4%B8%80%E4%B8%AA%E9%87%8D%E8%BD%BD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">直接调用一个重载的运算符函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%90%E4%BA%9B%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8D%E5%BA%94%E8%AF%A5%E8%A2%AB%E9%87%8D%E8%BD%BD"><span class="toc-number">1.1.2.</span> <span class="toc-text">某些运算符不应该被重载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.2.</span> <span class="toc-text">输入输出运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%E8%BE%93%E5%87%BA%E8%BF%90%E7%AE%97%E7%AC%A6-lt-lt"><span class="toc-number">1.2.1.</span> <span class="toc-text">重载输出运算符&lt;&lt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%E8%BE%93%E5%85%A5%E8%BF%90%E7%AE%97%E7%AC%A6-gt-gt"><span class="toc-number">1.2.2.</span> <span class="toc-text">重载输入运算符&gt;&gt;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E5%92%8C%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.</span> <span class="toc-text">算术和关系运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E6%A0%87%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.1.</span> <span class="toc-text">下标运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%A2%9E%E5%92%8C%E9%80%92%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.4.</span> <span class="toc-text">递增和递减运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E5%91%98%E8%AE%BF%E9%97%AE%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.</span> <span class="toc-text">成员访问运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.6.</span> <span class="toc-text">函数调用运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.6.1.</span> <span class="toc-text">标准库定义的函数对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E7%AE%97%E6%B3%95%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%A0%87%E5%87%86%E5%BA%93%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">在算法中使用标准库函数对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B8%8Efunction"><span class="toc-number">1.6.2.</span> <span class="toc-text">可调用对象与function</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%E7%9A%84%E5%87%BD%E6%95%B0%E4%B8%8Efunction"><span class="toc-number">1.6.2.1.</span> <span class="toc-text">重载的函数与function</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%E3%80%81%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.</span> <span class="toc-text">重载、类型转换与运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.1.</span> <span class="toc-text">类型转换运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">显式的类型转换运算符</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/19/" title="C++ Primer (19)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (19)"/></a><div class="content"><a class="title" href="/2021/05/06/19/" title="C++ Primer (19)">C++ Primer (19)</a><time datetime="2021-05-06T15:25:15.000Z" title="发表于 2021-05-06 23:25:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/18/" title="C++ Primer (18)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (18)"/></a><div class="content"><a class="title" href="/2021/05/06/18/" title="C++ Primer (18)">C++ Primer (18)</a><time datetime="2021-05-06T15:24:15.000Z" title="发表于 2021-05-06 23:24:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/17/" title="C++ Primer (17)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (17)"/></a><div class="content"><a class="title" href="/2021/05/06/17/" title="C++ Primer (17)">C++ Primer (17)</a><time datetime="2021-05-06T15:23:15.000Z" title="发表于 2021-05-06 23:23:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/16/" title="C++ Primer (16)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (16)"/></a><div class="content"><a class="title" href="/2021/05/06/16/" title="C++ Primer (16)">C++ Primer (16)</a><time datetime="2021-05-06T15:22:15.000Z" title="发表于 2021-05-06 23:22:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/15/" title="C++ Primer (15)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (15)"/></a><div class="content"><a class="title" href="/2021/05/06/15/" title="C++ Primer (15)">C++ Primer (15)</a><time datetime="2021-05-06T15:20:15.000Z" title="发表于 2021-05-06 23:20:15">2021-05-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Kev1n</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>

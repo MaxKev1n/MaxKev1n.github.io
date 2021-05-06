@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C++ Primer (6) | MaxKev1n'sBlog</title><meta name="keywords" content="C++ Primer"><meta name="author" content="Kev1n"><meta name="copyright" content="Kev1n"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C++ Primer (6)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Primer (6)">
+<meta property="og:url" content="http://example.com/2021/05/06/6/index.html">
+<meta property="og:site_name" content="MaxKev1n&#39;sBlog">
+<meta property="og:description" content="C++ Primer (6)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/cpp.jpeg">
+<meta property="article:published_time" content="2021-05-06T15:11:15.000Z">
+<meta property="article:modified_time" content="2021-05-06T15:11:15.000Z">
+<meta property="article:author" content="Kev1n">
+<meta property="article:tag" content="C++ Primer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/cpp.jpeg"><link rel="shortcut icon" href="/img/img.jpg"><link rel="canonical" href="http://example.com/2021/05/06/6/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-05-06 23:11:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/img.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cpp.jpeg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">MaxKev1n'sBlog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++ Primer (6)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-06T15:11:15.000Z" title="发表于 2021-05-06 23:11:15">2021-05-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-06T15:11:15.000Z" title="更新于 2021-05-06 23:11:15">2021-05-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Program/">Program</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>1.1实参的类型必须与对应的形参类型匹配。函数有几个形参，我们就必须提供相同数量的实参。因为函数的调用规定实参数量应与形参数量一致。所以形参一定会被初始化。</p>
+<p>1.2函数的形参列表可以为空，但是不能省略。</p>
+<p>1.3函数的返回类型不能是数组类型或函数类型，但可以是指向数组或函数的指针。</p>
+<p>1.4在C++语言中，名字有作用域，对象有生命周期。名字的作用域是程序文本的一部分，名字在其中可见。对象的生命周期是程序执行过程中该对象存在的一段时间。</p>
+<p>1.5形参和函数体内部定义的变量统称为<strong>局部变量（local variable）</strong>。他们对函数而言是“局部”的，仅在函数的作用域内可见，同时局部变量还会隐藏在外层作用域中同名的其他所有声明中。</p>
+<p>1.6形参是一种自动对象。函数开始时为形参申请存储空间，因为形参定义在函数体作用域之内，所以一旦函数终止，形参也就被销毁。</p>
+<p>1.7某些时候，有必要令局部变量的生命周期贯穿函数调用及之后的时间。可以将局部变量定义成static类型从而获得这样的对象。<strong>局部静态对象（local static object）</strong>在程序的执行路径第一次经过对象定义语句时初始化，并且知道程序终止才被销毁，在此期间即使对象所在的函数结束执行也不会对它有影响。</p>
+<p>1.8如果局部静态变量没有显式的初始值，它将执行值初始化，内置类型的局部静态变量初始化为0。</p>
+<p>1.9C++语言支持所谓的分离式编译（separate compilation），分离式编译允许我们把程序分割到几个文件中去，每个文件独立编译。</p>
+<p>2.1当形参是引用类型时，我们说它对应的实参被<strong>引用传递（passed by reference）</strong>或者函数被<strong>传引用调用（called by reference）</strong>。和其他引用一样，引用形参也是它绑定的对象的别名。也就是说，引用形参是它对应的实参的别名。</p>
+<p>2.2当实参的值被拷贝给形参时，形参和实参是两个相互独立的对象，我们说这样的实参被<strong>值传递（passed by value）</strong>或者函数被<strong>传值调用（called by value）</strong>。</p>
+<p>2.3指针的行为和其他非引用类型一样，当执行指针拷贝操作时，拷贝的是指针的值。拷贝之后，两个指针是不同的指针。因为指针使我们可以间接地访问它所指的对象，所以通过指针可以修改它所指对象的值。</p>
+<p>2.4因为不能拷贝数组，所以我们无法以值传递的方式使用数组参数。因为数组会被转化成指针，所以当我们为函数传递一个数组时，实际传递的是指向数组的首元素的指针。</p>
+<p>2.5管理数组实参的第一种方式要求数组本身包含一个结束标记，使用这种方式的典型示例是C风格字符串。 example：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *cp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> <span class="keyword">if</span> (cp)</span><br><span class="line">   <span class="keyword">while</span> (*cp)</span><br><span class="line">       cout &lt;&lt; *cp++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.6管理数组实参的第二种技术是传递指向数组首元素和尾后元素的指针，这种方式受到了标准库技术的启发。 example：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *beg, <span class="keyword">const</span> <span class="keyword">int</span> *end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">while</span> (beg!=end)</span><br><span class="line">        cout &lt;&lt; *beg++ &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.7第三种管理数组实参的方法是专门定义一个表示数组大小的形参。 example：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> ia[], <span class="keyword">size_t</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">size_t</span> i=<span class="number">0</span>;i!=size;++i) &#123;</span><br><span class="line">        cout &lt;&lt; ia[i] &lt;&lt;endl;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.8C++语言允许将变量定义成数组的引用，基于同样的道理，形参也可以是数组的引用。此时，引用形参绑定到对应的实参上，也就是绑定到数组上。</p>
+<p><strong>Note：&amp;arr两端的括号必不可少</strong></p>
+<p><strong><code>&lt;/strong&gt; &lt;strong&gt;f(int &amp;arr[10]) //错误：将arr声明称了引用的数组 f(int (&amp;are)[10]) //正确：arr是具有10个整数的整型数组的引用&lt;/strong&gt; &lt;strong&gt;</code></strong></p>
+<p>2.9因为我们处理的是数组的数组，所以首元素本身就是一个数组，指针就是一个指向数组的指针。数组第二维（以及后面所有维度）的大小都是数组类型的一部分，不能省略。</p>
+<p>2.10 例如：假定main函数位于可执行文件prog之内，我们可以向程序传递下面的选项：prog -d -o ofile data0 这些命令行选项通过两个（可选的）形参传递给main函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argh,<span class="keyword">char</span> *argv[])</span></span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第二个形参argv是一个数组，它的元素是指向C风格字符串的指针；第一个形参argc表示数组中字符串的数量。因为第二个形参是数组，所以main函数也可以定义成：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argh,<span class="keyword">char</span> **argv)</span></span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中argv指向char*。</p>
+<p>当实参传给main函数之后，argv的第一个元素指向程序的名字或者一个空字符串，接下来的元素依次传递命令行提供的实参。最后一个指针之后的元素值保证为0.</p>
+<p>Warning:当使用argv中的实参时，一定要记得可选的实参从argv[1]开始；argv[0]保存程序的名字，而非用户输入。</p>
+<p>2.11如果函数的实参数量位置但是全部实参的类型都相同，我们可以使用<strong>initializer_list</strong>类型的形参。initializer_list是一种标准库类型，用于表示某种特定类型的值的数组。</p>
+<p>2.12和vector一样，initializer_list也是一种模板类型。定义initializer_list对象时，必须说明列表中所含元素的类型。</p>
+<p>2.13和vector不一样的是，initializer_list对象中的元素永远是常量值，我们无法改变initializer_list对象中元素的值。</p>
+<p>2.14如果想向initializer_list形参中传递一个值的序列。则必须把序列放在一对花括号内：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (expected !=actual)</span><br><span class="line">   <span class="built_in">error_msg</span>(&#123;“functionX”,expected,actual&#125;);</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">   <span class="built_in">error_msg</span>(&#123;“functionX”,”okay”&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Warning:省略符形参应该仅仅用于C和C++通用的类型。特别应该注意的是，大多数类类型的对象在传递给省略符形参时都无法正确拷贝。</strong></p>
+<p>2.15省略符形参只能出现在形参列表的最后一个位置，它的形式无外乎以下两种：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(parm_list,...)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(...)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>第一种形式指定了foo函数的部分形参的类型，对应于这些形参的实参将会执行正常的类型检查。省略符形参所对应的实参无须类型检查。在第一种形式中，形参声明后面的逗号是可选的。</p>
+<p>1.1只要函数的返回类型不是void，则该函数内的每条return语句必须返回一个值。return语句返回值的类型必须与函数的返回类型相同，或者能隐式地转换成函数的返回类型。</p>
+<p><strong>Warning：在含有return语句的循环后面应该也有一条return语句，如果没有的话该程序就是错误的。很多编译器都无法发现此类错误。</strong></p>
+<p>1.2函数完成后，它所占用的存储空间也随之被释放掉。因此，函数终止意味着局部变量地引用将指向不再有效的内存区域。同样，返回局部对象的指针也是错误的。一旦函数完成，局部对象被释放，指针将指向一个不存在的对象。</p>
+<p>1.3函数的返回类型决定函数调用是否是左值。调用一个返回引用的函数得到左值，其他返回类型得到右值。可以像使用其他左值那样来使用返回引用的函数的调用。特别是，我们能为返回类型是非常量引用的函数的结果赋值。</p>
+<p>1.4C++11新标准规定，函数可以返回花括号包围的值的列表。类似于其他返回结果，此处的列表也用来对函数返回的临时量进行初始化。如果列表为空，临时量执行值初始化；否则，返回的值有函数的返回类型决定。</p>
+<p>1.5虽然从语法上来说，要想定义一个返回数组的指针或引用的函数比较烦琐，但是有一些办法可以简化这一任务，其中最直接的办法是使用类型别名。 <em>example：</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> arrT[<span class="number">10</span>];</span><br><span class="line"><span class="keyword">using</span> arrT = <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line"><span class="function">arrT* <span class="title">func</span><span class="params">(<span class="keyword">int</span> i)</span></span>; <span class="comment">//func返回一个指向含有10个整数的数组的指针</span></span><br></pre></td></tr></table></figure>
+
+<p>1.6如果我们想定义一个返回数组指针的函数，则数组的维度必须跟在函数名字之后。然而，函数的形参列表也跟在函数名字后面且形参列表应该先于数组的维度。因此，返回数组指针的函数形式如下所示：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Type</span> (*<span class="built_in">function</span>(parameter_list))[dimension]</span><br></pre></td></tr></table></figure>
+
+<p>1.7<strong>尾置返回类型（trailing return type）</strong>跟在形参列表后面并以一个-&gt;符号开头。为了表示函数真正的返回类型跟在形参列表之后，我们在本应该出现返回类型的地方放置一个auto：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">auto</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> i)</span> -&gt; <span class="title">int</span><span class="params">(*)</span>[10]</span>;   <span class="comment">//func接受一个int类型的实参，返沪一个指针，该指针指向含有10个整数的数组</span></span><br></pre></td></tr></table></figure>
+
+<p>1.8如果我们知道函数返回的指针将指向哪个数组，就可以使用decltype关键字声明返回类型。 <em>example：</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> odd[] = &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> even[] = &#123;<span class="number">0</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>&#125;;</span><br><span class="line"><span class="keyword">decltype</span>(odd) *<span class="built_in">arrPtr</span>(<span class="keyword">int</span> i)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">return</span> (i%<span class="number">2</span>)?&amp;odd:&amp;even; <span class="comment">//返回一个指向数组的指针</span></span><br></pre></td></tr></table></figure>
+
+<p>decltype并不负责把数组类型转换成对应的指针，所以decltype的结果是个数组，要想表示arrPtr返回指针还必须在函数声明时加一个*符号。</p>
+<p>2.1如果同一作用域内的几个函数名字相同但形参列表不同，我们称之为<strong>重载（overload）函数。</strong></p>
+<p>2.2不允许两个函数除了返回类型外其他所有的要素都相同。</p>
+<p>2.3一个拥有顶层const的形参无法和另一个没有顶层const的形参区分开来。</p>
+<p>2.4如果形参是某种类型的指针或引用，则通过区分其指向的是常量对象还是非常量对象可以实现函数重载，此时的const是底层的。</p>
+<p>2.5.1当调用重载函数时有三种可能的结果</p>
+<p>2.5.2编译器找到一个与实参<strong>最佳匹配（best match）</strong>的函数，并生成调用该函数的代码。</p>
+<p>2.5.3找不到任何一个函数与调用的实参匹配，此时编译器发出<strong>无匹配（no match）</strong>的错误信息。</p>
+<p>2.5.4有多于一个函数可以匹配，但是每一个都不是明显的最佳选择。此时也将发生错误，称为<strong>二义性调用（ambiguous call）</strong>。</p>
+<p>2.6如果我们在内层作用域中声明名字，它将隐藏外层作用域中声明的同名实体。在不同的作用域中无法重载函数名。</p>
+<p><strong>Note：在C++语言中，名字查找发生在类型检查之前。</strong></p>
+<p>1.1某些函数有这样一种形参，在函数的很多次调用中它们都被赋予了一个相同的值，此时，我们把这个反复出现的值称为函数的<strong>默认实参（default argument）。</strong>调用含有默认实参的函数时，可以包含该实参，也可以省略该实参。</p>
+<p>1.2一旦某个形参被赋予了默认值，它后面的所有形参都必须有默认值。</p>
+<p>1.3如果我们想使用默认实参，只要在调用函数的时候省略该实参就可以了。</p>
+<p>1.4函数调用时实参按其位置解析，默认实参负责填补函数调用缺少的尾部实参（靠右侧位置）。</p>
+<p>1.5在给定的作用域中一个形参只能被赋予一次默认形参。换句话说，函数的后续声明只能为之前那些没有默认值的形参添加默认实参，而且该形参右侧的所有形参必须都有默认值。</p>
+<p>1.6局部变量不能作为默认实参。除此之外，只要表达式的类型能转换成形参所需的类型，该表达式就能作为默认实参。用作默认实参的名字在函数声明所在的作用域内解析，而这些名字的求值过程发生在函数调用时。 <em>example:</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">string <span class="title">screen</span><span class="params">(sz= ht(), sz = wd, <span class="keyword">char</span> = def)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f2</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  def = <span class="string">&#x27;*&#x27;</span>;     <span class="comment">//改变默认实参的值</span></span><br><span class="line">  sz wd =<span class="number">100</span>;    <span class="comment">//隐藏了外层定义的wd，但是没有改变默认值</span></span><br><span class="line">  window = <span class="built_in">screen</span>();   <span class="comment">//调用了screen(ht(),80,&#x27;*&#x27;)</span></span><br></pre></td></tr></table></figure>
+
+<p>2.1将函数指定为<strong>内联函数（inline）</strong>，通常就是将它在每个调用点上“内联地”展开。在安徽念书地返回类型前面加上关键字inline，这样就可以将它声明成内联函数了。</p>
+<p>2.2<strong>constexpr函数（constexpr function）</strong>是指能用于常量表达式地函数。定义constexpr函数的方法与其他函数类似，不过要遵循几项约定：函数的返回类型及所有形参的类型都得是字面值类型，而且函数体中必须有且只有一条return语句。</p>
+<p>2.3constexpr函数体内也可以包含其他语句，只要这些语句在运行时不执行任何操作就行。</p>
+<p>2.4我们允许constexpr函数的返回值并非一个常量。</p>
+<p>2.5内联函数和constexpr函数通常定义在头文件中。</p>
+<p>3.1<strong>assert</strong>是一种<strong>预处理宏（preprocessor marco）</strong>。assert宏使用一个表达式作为它的条件：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">assert</span>(&lt;em&gt;expr&lt;/em&gt;);</span><br></pre></td></tr></table></figure>
+
+<p>首先对expr求值，如果表达式为假（即0），assert输出信息并终止程序的执行。如果表达式为真（即非0），assert什么也不做。</p>
+<p>3.2assert的行为依赖于一个名为NDEBUG的预处理变量的状态。如果定义了NDEBUG，则assert什么也不做。默认状态下没有定义NDEBUG，此时assert将执行运行时检查.我们可以使用一个#define语句定义NDEBUG，从而关闭调试状态。</p>
+<p>3.3编译器为每个函数都定义了_ <em>func</em> _,它是const char的一个静态数组，用于存放函数的名字。</p>
+<p>_ <em>FILE</em> _存放文件名的字符串字面值</p>
+<p>_ <em>LINE</em> _存放当前行号的整型字面值</p>
+<p>_ <em>TIME</em> _存放文件编译时间的字符串字面值</p>
+<p>_ <em>DATE</em> _存放文件编译日期的字符串字面值</p>
+<p>4.1函数匹配的第一步时选定本次调用对应的重载函数集，集合中的函数称为<strong>候选函数（candidate function）</strong>。候选函数具备两个特征：一是与被调用的函数同名，二是其声明在调用点可用。</p>
+<p>第二步考察本次提供的实参，然后从候选函数中选出能被这组实参调用的函数，这些新选出的函数称为<strong>可行函数（viable function）</strong>。可行函数也有两个特征：一是其形参数量与本次调用提供的实参数量相等，二是每个实参的类型与对应的形参类型相同，或者能转换成形参的类型。</p>
+<p>在使用实参数量初步判别了候选函数后，接下来考察实参的类型是否与形参相匹配。</p>
+<p>4.2如果有且只有一个函数满足下列条件，则匹配成功：</p>
+<p>该函数每个实参的匹配都不劣于其他可行函数需要的匹配。</p>
+<p>至少有一个实参的匹配优于其他可行函数提供的匹配。</p>
+<p>4.2为了确定最佳匹配，编译器将实参类型到形参类型的转换划分成几个等级：</p>
+<p>4.2.1精确匹配，包括以下情况：</p>
+<p>实参类型和形参类型相同</p>
+<p>实参从数组类型或函数类型转换成对应的指针类型</p>
+<p>向实参添加顶层const或者从实参中删除顶层const</p>
+<p>4.2.2通过const转换时显得匹配</p>
+<p>4.2.3通过类型提升实现的匹配</p>
+<p>4.2.4通过算术类型转换或指针转换实现的匹配</p>
+<p>4.2.5通过类类型转换实现的匹配</p>
+<p>4.3如果重载函数的区别在于它们的引用类型的形参是否引用了const，或者指针类型的形参是否指向const，则当调用发生时编译器通过实参是否是常量来决定选择哪个函数。</p>
+<p>5.1要想声明一个可以指向该函数的指针，只需要用指针替换函数名即可。函数名两端的括号必不可少。</p>
+<p>5.2当我们把函数名作为一个值使用时，该函数自动地转换成指针。 <em>example：</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pf = lengthCompare;</span><br><span class="line">pf = &amp;lengthCompare;  <span class="comment">//等价的赋值语句，pf指向名为lengthCompare的函数</span></span><br></pre></td></tr></table></figure>
+
+<p>此外，我们还能直接使用指向函数的指针调用该函数，无须提前解引用指针。 <em>example：</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> b1 = <span class="built_in">pf</span>(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;goodbye&quot;</span>);</span><br><span class="line"><span class="keyword">bool</span> b2 = (*pf)(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;goodbye&quot;</span>);</span><br><span class="line"><span class="keyword">bool</span> b3 = <span class="built_in">lengthCompare</span>(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;goodbye&quot;</span>);  <span class="comment">//均等价</span></span><br></pre></td></tr></table></figure>
+
+<p>5.3和数组类似，虽然不能定义函数类型的形参，但是形参可以是指向函数的指针。此时，形参看起来是函数类型，实际上却是当成指针使用。我们可以直接把函数作为实参使用，此时它会自动转换成指针。</p>
+<p>5.4decltype返回函数类型，此时不会将函数类型自动转换成指针类型。因为decltype的结果是函数类型，所以只有在结果前面加上*才能得到指针。</p>
+<p>5.5必须时刻注意的是，和函数类型的形参不一样，返回类型不会自动地转换成指针。我们必须显式地将返回类型指定为指针。</p>
+<p>5.6如果我们明确知道返回的函数是哪一个，就能使用decltype简化书写函数指针返回类型的过程。我们显式地加上*以表明我们需要返回指针，而非函数本身。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Kev1n</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/05/06/6/">http://example.com/2021/05/06/6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">MaxKev1n'sBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C-Primer/">C++ Primer</a></div><div class="post_share"><div class="social-share" data-image="/img/cpp.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/05/06/7/"><img class="prev-cover" src="/img/cpp.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C++ Primer (7)</div></div></a></div><div class="next-post pull-right"><a href="/2021/05/06/5/"><img class="next-cover" src="/img/cpp.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++ Primer (5)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/05/06/1/" title="C++ Primer (1)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (1)</div></div></a></div><div><a href="/2021/05/06/10/" title="C++ Primer (10)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (10)</div></div></a></div><div><a href="/2021/05/06/13/" title="C++ Primer (13)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (13)</div></div></a></div><div><a href="/2021/05/06/14/" title="C++ Primer (14)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (14)</div></div></a></div><div><a href="/2021/05/06/15/" title="C++ Primer (15)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (15)</div></div></a></div><div><a href="/2021/05/06/17/" title="C++ Primer (17)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (17)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/img.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Kev1n</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/maxkev1n"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/maxkev1n" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chenzihang@njust.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/19/" title="C++ Primer (19)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (19)"/></a><div class="content"><a class="title" href="/2021/05/06/19/" title="C++ Primer (19)">C++ Primer (19)</a><time datetime="2021-05-06T15:25:15.000Z" title="发表于 2021-05-06 23:25:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/18/" title="C++ Primer (18)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (18)"/></a><div class="content"><a class="title" href="/2021/05/06/18/" title="C++ Primer (18)">C++ Primer (18)</a><time datetime="2021-05-06T15:24:15.000Z" title="发表于 2021-05-06 23:24:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/17/" title="C++ Primer (17)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (17)"/></a><div class="content"><a class="title" href="/2021/05/06/17/" title="C++ Primer (17)">C++ Primer (17)</a><time datetime="2021-05-06T15:23:15.000Z" title="发表于 2021-05-06 23:23:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/16/" title="C++ Primer (16)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (16)"/></a><div class="content"><a class="title" href="/2021/05/06/16/" title="C++ Primer (16)">C++ Primer (16)</a><time datetime="2021-05-06T15:22:15.000Z" title="发表于 2021-05-06 23:22:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/15/" title="C++ Primer (15)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (15)"/></a><div class="content"><a class="title" href="/2021/05/06/15/" title="C++ Primer (15)">C++ Primer (15)</a><time datetime="2021-05-06T15:20:15.000Z" title="发表于 2021-05-06 23:20:15">2021-05-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Kev1n</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C++ Primer (7) | MaxKev1n'sBlog</title><meta name="keywords" content="C++ Primer"><meta name="author" content="Kev1n"><meta name="copyright" content="Kev1n"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C++ Primer (7)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Primer (7)">
+<meta property="og:url" content="http://example.com/2021/05/06/7/index.html">
+<meta property="og:site_name" content="MaxKev1n&#39;sBlog">
+<meta property="og:description" content="C++ Primer (7)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/cpp.jpeg">
+<meta property="article:published_time" content="2021-05-06T15:12:15.000Z">
+<meta property="article:modified_time" content="2021-05-06T15:12:15.000Z">
+<meta property="article:author" content="Kev1n">
+<meta property="article:tag" content="C++ Primer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/cpp.jpeg"><link rel="shortcut icon" href="/img/img.jpg"><link rel="canonical" href="http://example.com/2021/05/06/7/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-05-06 23:12:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/img.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cpp.jpeg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">MaxKev1n'sBlog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++ Primer (7)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-06T15:12:15.000Z" title="发表于 2021-05-06 23:12:15">2021-05-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-06T15:12:15.000Z" title="更新于 2021-05-06 23:12:15">2021-05-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Program/">Program</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>1.1类的基本思想是<strong>数据抽象（data abstraction）</strong>和<strong>封装（encapsulation）</strong>。数据抽象是一种依赖于<strong>接口（interface）</strong>和<strong>实现（implementation）</strong>分离的编程（以及设计）技术。类的接口包括用户所能执行的操作；类的实现则包括类的数据成员、负责接口实现的函数体以及定义类所需的各种私有函数。</p>
+<p>封装实现了类的接口和实现的分离。封装后的类隐藏了它的实现细节，也就是说，类的用户只能使用接口而无法访问实现部分。</p>
+<p>类要想实现数据抽象和封装，需要首先定义一个<strong>抽象数据类型（abstract data type）</strong>。</p>
+<p>1.2成员函数的声明必须在类的内部，它的定义则既可以在类的内部也可以在类的外部。作为接口组成部分的非成员函数，它们的定义和声明都在类的外部。</p>
+<p>1.3成员函数通过一个名为<strong>this</strong>的额外的隐式参数来访问调用它额那个对象。当我们调用一个成员函数时，用请求该函数的对象地址初始化this。例如，如果调用</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">total.<span class="built_in">isbn</span>()</span><br></pre></td></tr></table></figure>
+
+<p>则编译器负责把total的地址传递给isbn的隐式形参this，可以等价地认为编译器将该调用重写成了如下的形式：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//伪代码，用于说明实际执行过程</span></span><br><span class="line">Sales_data::<span class="built_in">isbn</span>(&amp;total)</span><br></pre></td></tr></table></figure>
+
+<p>1.4对于我们来说，this形参是隐式定义的。实际上，任何自定义名为this的参数或变量的行为都是非法的。this是一个常量指针。</p>
+<p>1.5紧随参数列表之后的const关键字的作用是修改隐式this指针的类型。默认情况下，this的类型是指向类类型非常量版本的常量指针。尽管this是隐式的，但它仍然需要遵循初始化规则，意味着（在默认情况下）我们不能把this绑定到一个常量对象上。这一情况也就使得我们不能在一个常量对象上调用普通的成员函数。</p>
+<p>1.6C++语言的做法是允许把const关键字放在成员函数的参数列表之后，此时，紧跟在参数列表后面的const表示this是一个指向常量的指针。像这样使用const的成员函数被称作<strong>常量成员函数（const member function）</strong>。</p>
+<p>1.7如果成员被声明成常量成员函数，那么它的定义也必须在参数列表后明确指定const属性，同时，类外部定义的成员的名字必须包含它所属的类名。 <em>example：</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Sales_data::avg_price</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line"> <span class="keyword">if</span> (units_sold)</span><br><span class="line">  <span class="keyword">return</span> revenue/units_sold;</span><br><span class="line"> <span class="keyword">else</span> </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<p>1.8我们无须使用隐式的this指针访问函数调用者的某个具体成员，而是需要把调用函数的对象当成一个整体来访问：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> *<span class="keyword">this</span>;  <span class="comment">//返回调用该函数的对象</span></span><br></pre></td></tr></table></figure>
+
+<p>其中，return语句解引用this指针以获得执行该函数的对象。</p>
+<p><strong>Note：一般来说，如果非成员函数是类接口的组成部分，则这些函数的声明应该于类在同一个头文件内。</strong></p>
+<p>1.9因为IO类属于不能被拷贝的类型，因此我们只能通过引用来传递它们。而且，因为读取和写入的操作会改变流的内容，所以两个函数接受的都是普通引用，而非对常量的引用。</p>
+<p>1.10默认情况下，拷贝类的对象其实拷贝的是对象的数据成员。</p>
+<p>2.1每个类都分别定义了它的对象被初始化的方式，类通过一个或几个特殊的成员函数来控制其对象的初始化过程，这些函数叫做<strong>构造函数（constructor）</strong>。</p>
+<p>2.2构造函数的名字和类名相同。和其他函数不一样的是，构造函数没有返回类型；除此之外类似于其他的函数，构造函数也有一个（可能为空）参数列表和一个（可能为空）函数体。类可以包含多个构造函数，和其他重载函数差不多，不同的构造函数之间必须在参数数量或参数类型上有所区别。</p>
+<p>2.3不同于其他成员函数，构造函数不能被声明成const的。构造函数在const对象的构造过程中可以向其写值。</p>
+<p>2.4如果我们的类没有显式地定义构造函数，那么编译器就会为我们隐式地定义一个默认构造函数。编译器创建的构造函数又被称为<strong>合成的默认构造函数（synthesized default constructor）</strong>。</p>
+<p><strong>Note：只有当类没有声明任何构造函数时。编译器才会自动地生成默认构造函数。</strong></p>
+<p><strong>Warning：如果类包含有内置类型或者复合类型的成员，则只有当这些成员全都被赋予类内的初始值，这个类才适用于使用合成的默认构造函数。</strong></p>
+<p>2.5</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Sales_data</span>() = <span class="keyword">default</span>;</span><br></pre></td></tr></table></figure>
+
+<p>因为该构造函数不接受任何实参，所以它是一个默认构造函数。在C++11新标准中，如果我们需要默认的行为，那么可以通过在参数列表后面写上 <strong>= default</strong> 来要求编译器生成构造函数。</p>
+<p>2.6</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Sale_data</span>(<span class="keyword">const</span> std::string &amp;s): <span class="built_in">bookNo</span>(s) &#123;&#125;</span><br><span class="line"><span class="built_in">Sale_data</span>(<span class="keyword">const</span> std::string &amp;s, <span class="keyword">unsigned</span> n, <span class="keyword">double</span> p):<span class="built_in">bookNo</span>(s), <span class="built_in">units_sold</span>(n), <span class="built_in">revenue</span>(p*n) &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这两个定义中出现了新的部分，即冒号以及冒号和花括号之间的代码，其中花括号定义了（空的）函数体。我们把新出现的部分称为<strong>构造函数初始值列表（constructor initialize list）</strong>，它负责为新创建的对象的一个或几个数据成员赋初值。构造函数初始值是成员名字的一个列表，每个名字后面紧跟括号括起来的（或者在花括号内的）成员初始值。不同成员的初始化通过逗号分隔开来。</p>
+<p>2.7</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Sales_data::<span class="built_in">Sales_data</span>(std::istream &amp;is)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="built_in">read</span>(is, *<span class="keyword">this</span>); <span class="comment">//read函数的作用是从is中读取一条交易信息然后存入this对象中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当我们在类的外部定义构造函数时，必须指明该构造函数时哪个类的成员。因此，Sales_data::Sales_data的含义是我们定义Sales_data类的成员，它的名字是Sales_data。有因为该成员的名字和类名相同，所以它是一个构造函数。</p>
+<p>2.8没有出现在构造函数初始值列表中的成员将通过相应的类内初始值（如果存在的话）初始化，或者执行默认初始化。</p>
+<p>3.1在C++语言中，我们使用<strong>访问说明符（access specifiers）</strong>加强类的封装性。</p>
+<p>定义在<strong>public</strong>说明符之后的成员在整个程序内可被访问，public成员定义类的接口。</p>
+<p>定义在<strong>private</strong>说明符之后的成员可以被类的成员函数访问，但是不能被使用该类的代码访问，private部分封装了类的实现细节。</p>
+<p>每个访问说明符指定了接下来的成员的访问级别，其有效范围直到出现下一个访问说明符或者到达类的结尾处为止。</p>
+<p>3.2类可以在它的第一个访问说明符之前定义成员，对这种成员的访问权限依赖于类定义的方式。如果我们使用struct关键字，则定义在第一个访问说明符之前的成员时public的；相反，如果我们使用class关键字，则这些成员是private的。</p>
+<p><strong>Warning：使用class和struct定义类唯一的区别就是默认的访问权限。</strong></p>
+<p>4.1类可以允许其它类或者函数访问它的非公有成员，方法是令其他类或者函数成为它的<strong>友元（friend）</strong>。如果类想把一个函数作为它的友元，只需要增加一条以friend关键字开始的函数声明语句即可。 <em>example：</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">friend</span> Sales_data <span class="title">add</span><span class="params">(<span class="keyword">const</span> Sales_data&amp;, <span class="keyword">const</span> Sales_data&amp;)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>友元只能出现在类定义的内部。</p>
+<p>4.2友元的声明仅仅指定了访问的权限，而非一个通常意义上的函数声明。如果我们希望类的用户能够调用某个友元函数，那么我们就必须在友元声明之外再专门对函数进行一次声明。</p>
+<p>1.1和非成员函数一样，成员函数也可以被重载，只要函数之间在参数的数量和/或类型上有所区别就行了。</p>
+<p>1.2我们希望能修改类的某个数据成员，即使是在一个const成员函数内。可以通过在变量的声明中加入mutable关键字做到这一点。一个<strong>可变数据成员（mutable data member）</strong>永远不会是一个const，即使它是const对象的成员。</p>
+<p>1.3类内初始值必须使用=的初始化形式或者花括号括起来的直接初始化形式。</p>
+<p><strong>Note：一个const成员函数如果以引用的形式返回*this，那么它的返回类型将是常量引用。</strong></p>
+<p>1.4我们可以把类名作为类型的名字使用，从而直接指向类类型。或者，我们也可以把类名跟在关键字class或struct后面。 <em>example：</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Sales_data item1;           <span class="comment">//默认初始化Sales_data类型的对象</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sales_data</span> <span class="title">iteam1</span>;</span>    <span class="comment">//一条等价的声明</span></span><br></pre></td></tr></table></figure>
+
+<p>1.5我们能仅仅声明类而暂时不定义它。</p>
+<p>1.6对于一个类来说，在我们创建它的对象之前该类必须被定义过，而不能仅仅被声明。类也必须首先被定义，然后才能用引用或者指针访问其成员。</p>
+<p>1.7如果一个类指定了友元类，则友元类的成员函数可以访问此类包括非公有成员在内的所有成员。</p>
+<p><strong>Note：每个类负责控制自己的友元类或友元函数。</strong></p>
+<p>1.8当把一个成员函数声明成友元时，我们必须明确指出该成员函数属于哪个类。</p>
+<p>1.9尽管重载函数的名字相同，但它们仍然是不同的函数。因此，如果一个类想把一组重载函数声明成它的友元，它需要对这组函数中的每一个分别声明。</p>
+<p>1.10类和非成员函数的声明不是必须在它们的友元声明之前。当一个名字第一次出现在一个友元声明中时，我们隐式地假定该名字在当前作用域中是可见的。然而，友元本身不一定真的声明在当前作用域中。甚至就算在类的内部定义该函数，我们也必须在类的外部提供相应的声明从而使得函数可见。换句话说，即使我们仅仅是用声明友元的类的成员调用该友元函数，它也必须是被声明过的。</p>
+<p>2.1每个类都会定义它自己的作用域。在类的作用域之外，普通的数据和函数成员只能由对象、引用或者指针使用成员访问运算符来访问。对于类类型成员则使用作用域运算符访问。</p>
+<p>2.2另一方面，函数的返回类型通常出现在函数名之前。因此当成员函数定义在类的外部时，返回类型中使用的名字都位于类的作用域之外。这时，返回类型必须指明它是哪个类的成员。</p>
+<p>2.3一般来说，内层作用域可以重新定义外层作用域的名字，即使该名字已经在内层作用域中使用过。然而在类中，如果成员使用了外层作用域中的某个名字，而该名字代表一种类型，则类不能在之后重新定义该名字。</p>
+<p><strong>Tip：类型名的定义通常出现在类的开始处，这样就能确保所有使用该类型的成员都出现在类名的定义之后。</strong></p>
+<p>1.1有时我们可以忽略数据成员初始化和赋值之间的差异，但并非总能这样。如果成员是const或者是引用的话，必须将其初始化。类似的，当成员属于某种类类型且该类没有定义默认构造函数时，也必须将这个成员初始化。</p>
+<p><strong>Note：如果一个构造函数为所有参数都提供了默认实参，则它实际上也定义了默认构造函数。</strong></p>
+<p>1.2C++11新标准扩展了构造函数初始值的功能，使得我们可以定义所谓的<strong>委托构造函数（delegating constructor）</strong>。一个委托构造函数使用它所属类的其他构造函数执行它自己的初始化过程，或者说它把它自己的一些（或者全部）职责委托给了其他构造函数。和其他构造函数一样，一个委托构造函数也有一个成员初始值的列表和一个函数体。在委托构造函数内，成员初始值列表只有一个唯一的入口，就是类名本身。和其他成员初始值一样，类名后面紧跟 圆括号括起来的参数列表，参数列表必须与类中另外一个构造函数匹配。</p>
+<p>1.3当对象被默认初始化或值初始化时自动执行默认构造函数。默认初始化在以下情况下发生：</p>
+<p>1.3.1当我们在块作用域内不使用任何初始值定义一个非静态变量或者数组时。</p>
+<p>1.3.2当一个类本身含有类类型的成员且使用合成的默认构造函数时。</p>
+<p>1.3.3当类类型的成员没有在构造函数初始值列表中显式地初始化时。</p>
+<p>1.4值初始化在以下情况下发生：<br>1.4.1在数组初始化地过程中如果我们提供的初始值数量少于数组的大小时。</p>
+<p>1.4.2当我们不使用初始值 定义一个局部静态变量时。</p>
+<p>1.4.3当我们通过书写形如T( )地表达式显式地请求值初始化时，其中T是类型名，它就是使用一个这种形式地实参来对它地元素初始化器进行值初始化。</p>
+<p>1.5如果想定义一个使用默认构造函数进行初始化的对象，正确的方法是去掉对象名之后的空的括号对。</p>
+<p>1.6如果构造函数只接受一个实参，则它实际上定义了转换为此类类型的隐式转换机制，有时我们把这种构造函数称作<strong>转换构造函数（converting constructor）</strong>。</p>
+<p>1.7在要求隐式转换的程序上下文中，我们可以通过将构造函数声明为<strong>explicit</strong>加以阻止。关键字explicit只对一个实参的构造函数有效。需要多个实参的构造函数不能用于执行隐式转换，所以无须将这些构造函数指定为explicit的。只能在类内声明构造函数时使用explicit关键字，在类外部定义时不应重复。</p>
+<p>1.8尽管编译器不会将explicit的构造函数用于隐式转换过程，但是我们可以使用这样的构造函数显式地强制进行转换。</p>
+<p>2.1聚合类（aggregate class）使得用户可以直接访问其成员，并且具有特殊的初始化语法形式。当一个类满足如下条件时，我们说它是聚合的：所有成员都是public的；没有定义任何构造函数；没有类内初始值；没有基类，也没有virtual函数。</p>
+<p>2.2与初始化数组元素的规则一样，如果初始值列表的元素个数少于类的成员数量，则靠后的成员被值初始化。初始值列表的元素绝对不能超过类的成员数量。</p>
+<p>2.3数据成员都是字面值类型的聚合类是字面值常量类。如果一个类不是聚合类，但它符合下述要求，则它也是一个字面值常量类：</p>
+<p>2.3.1数据成员都必须是字面值类型。</p>
+<p>2.3.2类必须至少含有一个constexpr构造函数。</p>
+<p>2.3.3如果一个数据成员含有类内初始值，则内置类型成员的初始值必须是一条常量表达式；或者如果成员属于某种类类型，则初始值必须使用成员自己的constexpr构造函数。</p>
+<p>2.3.4类必须使用析构函数的默认定义，该成员负责销毁类的对象。</p>
+<p>2.4尽管构造函数不能是const的，但是字面值常量类的构造函数可以是constexpr函数。事实上，一个字面值常量类必须至少提供一个constexpr构造函数。</p>
+<p>2.5constexpr构造函数可以声明成=default的形式（或者是删除函数的形式）。否则，constexpr构造函数就必须符合构造函数的要求（意味着不能包含返回语句），又符合constexpr函数的要求（意味着它能拥有的唯一可执行语句就是返回语句。</p>
+<p>2.6constexpr构造函数必须初始化所有数据成员，初始值或者使用constexpr构造函数，或者是一条常量表达式。</p>
+<p>3.1类的静态成员存在于任何对象之外，对象中不包含任何与静态数据成员有关的数据。静态成员函数也不与任何对象绑定在一起，它们不包含this指针。作为结果，静态成员函数不能声明成const的，而且我们也不能在static函数体内使用this指针。</p>
+<p>3.2和其他的成员函数一样，我们既可以在类的内部也可以在类的外部定义静态成员函数。当在类的外部定义静态成员时，不能重复static关键字，该关键字只出现在类内部的声明语句。</p>
+<p>3.3一般来说，我们不能在类的内部初始化静态成员。相反的，必须在类的外部定义和初始化每个静态成员。和其他对象一样，一个静态数据成员只能定义一次。类似于全局变量，静态数据成员定义在任何函数之外。因为一旦它被定义，就将一直存在于程序的整个生命周期中。</p>
+<p>3.4通常情况下，类的静态成员不应该在类的内部初始化。然而，我们可以为静态成员提供const整数类型的类内初始值，不过要求静态成员必须是字面值常量类型的constxepr。</p>
+<p>3.5如果在类的内部提供了一个初始值，则成员的定义不能再指定一个初始值了。</p>
+<p>3.6静态成员和普通成员的另外一个区别是我们可以使用静态成员作为默认实参。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Kev1n</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/05/06/7/">http://example.com/2021/05/06/7/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">MaxKev1n'sBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C-Primer/">C++ Primer</a></div><div class="post_share"><div class="social-share" data-image="/img/cpp.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/05/06/9/"><img class="prev-cover" src="/img/cpp.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C++ Primer (9)</div></div></a></div><div class="next-post pull-right"><a href="/2021/05/06/6/"><img class="next-cover" src="/img/cpp.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++ Primer (6)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/05/06/1/" title="C++ Primer (1)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (1)</div></div></a></div><div><a href="/2021/05/06/10/" title="C++ Primer (10)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (10)</div></div></a></div><div><a href="/2021/05/06/13/" title="C++ Primer (13)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (13)</div></div></a></div><div><a href="/2021/05/06/14/" title="C++ Primer (14)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (14)</div></div></a></div><div><a href="/2021/05/06/15/" title="C++ Primer (15)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (15)</div></div></a></div><div><a href="/2021/05/06/17/" title="C++ Primer (17)"><img class="cover" src="/img/cpp.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-06</div><div class="title">C++ Primer (17)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/img.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Kev1n</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/maxkev1n"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/maxkev1n" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chenzihang@njust.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/19/" title="C++ Primer (19)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (19)"/></a><div class="content"><a class="title" href="/2021/05/06/19/" title="C++ Primer (19)">C++ Primer (19)</a><time datetime="2021-05-06T15:25:15.000Z" title="发表于 2021-05-06 23:25:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/18/" title="C++ Primer (18)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (18)"/></a><div class="content"><a class="title" href="/2021/05/06/18/" title="C++ Primer (18)">C++ Primer (18)</a><time datetime="2021-05-06T15:24:15.000Z" title="发表于 2021-05-06 23:24:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/17/" title="C++ Primer (17)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (17)"/></a><div class="content"><a class="title" href="/2021/05/06/17/" title="C++ Primer (17)">C++ Primer (17)</a><time datetime="2021-05-06T15:23:15.000Z" title="发表于 2021-05-06 23:23:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/16/" title="C++ Primer (16)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (16)"/></a><div class="content"><a class="title" href="/2021/05/06/16/" title="C++ Primer (16)">C++ Primer (16)</a><time datetime="2021-05-06T15:22:15.000Z" title="发表于 2021-05-06 23:22:15">2021-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/06/15/" title="C++ Primer (15)"><img src="/img/cpp.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer (15)"/></a><div class="content"><a class="title" href="/2021/05/06/15/" title="C++ Primer (15)">C++ Primer (15)</a><time datetime="2021-05-06T15:20:15.000Z" title="发表于 2021-05-06 23:20:15">2021-05-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Kev1n</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>
