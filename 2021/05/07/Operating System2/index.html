@@ -1,0 +1,507 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Operating System (2) | MaxKev1n'sBlog</title><meta name="keywords" content="OS"><meta name="author" content="Kev1n"><meta name="copyright" content="Kev1n"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Operating System 2)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Operating System (2)">
+<meta property="og:url" content="http://example.com/2021/05/07/Operating%20System2/index.html">
+<meta property="og:site_name" content="MaxKev1n&#39;sBlog">
+<meta property="og:description" content="Operating System 2)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/os.png">
+<meta property="article:published_time" content="2021-05-06T23:13:15.000Z">
+<meta property="article:modified_time" content="2021-05-06T23:13:15.000Z">
+<meta property="article:author" content="Kev1n">
+<meta property="article:tag" content="OS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/os.png"><link rel="shortcut icon" href="/img/img.jpg"><link rel="canonical" href="http://example.com/2021/05/07/Operating%20System2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-05-07 07:13:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/img.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/os.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">MaxKev1n'sBlog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Operating System (2)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-06T23:13:15.000Z" title="发表于 2021-05-07 07:13:15">2021-05-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-06T23:13:15.000Z" title="更新于 2021-05-07 07:13:15">2021-05-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Operating-System/">Operating System</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Virtualization"><a href="#Virtualization" class="headerlink" title="Virtualization"></a>Virtualization</h1><p>进程：运行中的程序</p>
+<blockquote>
+<p>The definition of a <strong>process</strong>, informally, is quite simple: it is a running program.</p>
+</blockquote>
+<p>通过运行一个程序，然后停止该程序，再运行另一个程序，以此类推，操作系统提供了仅有一个物理CPU时存在多个虚拟CPU的假象，这就是<strong>时分共享</strong>CPU技术，能够允许用户如愿运行多个并行程序。</p>
+<p>**时分共享 (time sharing) **是操作系统共享资源所使用的最基本的技术之一。 通过允许资源由一个实 体使用一小段时间，然后由另一个实体使用一小段时间，如此下去，所谓的资源（例如，CPU或网络链接）可以被许多人共享。时分共享的自然对应技术是空分共享，资源在空间上被划分给希望使用它的人。例如，磁盘空间自然是一个空分共享资源，因为一旦将块分配给文件，在用户删除文件之前，不可能将它分配给其他文件。</p>
+<blockquote>
+<p><strong>Time sharing</strong> is a basic technique used by an OS to share a resource. By allowing the resource to be used for a little while by one entity, and then a little while by another, and so forth, the resource in question (e.g., the CPU, or a network link) can be shared by many. The counterpart of time sharing is space sharing, where a resource is divided (in space) among those who wish to use it. For example, disk space is naturally a space-shared resource; once a block is assigned to a file, it is normally not assigned to another file until the user deletes the original file.</p>
+</blockquote>
+<hr>
+<h3 id="The-Abstraction-A-Process"><a href="#The-Abstraction-A-Process" class="headerlink" title="The Abstraction: A Process"></a>The Abstraction: A Process</h3><p><strong>机器状态（<em>machine state</em>）：</strong>程序在运行时可以读取或者更新的内容</p>
+<p><strong>内存（<em>memory</em>）</strong>是进程的机器状态的一个明显的组成部分，指令存放在内存中，运行中的程序读写的数据也存放在内存中。因此，进程可以访问的内存（称为<strong>地址空间</strong>， <em>address space</em>）是进程的一部分。</p>
+<p><strong>寄存器（<em>register</em>）</strong>是进程的机器状态的另一部分。很多指令显式地读取或者更新寄存器，因此，寄存器明显对进程的执行有重要的作用。</p>
+<p>注意：一个特殊的寄存器组成机器状态的一部分。例如：<strong>程序计数器</strong>（<em><strong>program counter</strong></em>，有时也被称作<strong>指令指针，Instruction Pointer， IP</strong>）告诉我们程序将会执行的下一条指令；<strong>栈指针</strong> (<em><strong>stack pointer</strong></em>) 和相关的<strong>帧指针</strong> (<em><strong>frame pointer</strong></em> ) 用于管理函数参数栈、局部变量和返回地址。</p>
+<hr>
+<h4 id="Process-API"><a href="#Process-API" class="headerlink" title="Process API"></a>Process API</h4><p>现代操作系统必须以某种形式提供这些API：</p>
+<ul>
+<li>创建（create）：一个操作系统必须包括一些创建新进程的方法</li>
+<li>销毁（destroy）：由于存在进程创建的接口，系统应当提供强制销毁进程的接口</li>
+<li>等待（wait）：有时候等待进程结束运行是有用的，因此某种等待接口会被提供</li>
+<li>其他控制（miscellaneous control）：除了杀死或者等待进程，有时存在一些其他控制。例如，大部分的操作系统提供一些方法来暂停进程，然后重启</li>
+<li>状态（status）：通常存在一些接口能够获得一些进程的状态信息</li>
+</ul>
+<hr>
+<h4 id="Process-Creation-A-Little-More-Detail"><a href="#Process-Creation-A-Little-More-Detail" class="headerlink" title="Process Creation: A Little More Detail"></a>Process Creation: A Little More Detail</h4><p>​        操作系统运行程序首先做的一件事是：<strong>加载（<em>load</em>）</strong>程序的代码和所有静态数据（例如初始化变量）到内存中，加载到进程的地址空间中。程序最初以某种可执行格式驻留在磁盘上，因此，将程序和静态数据加载到内存中的过程，需要操作系统从磁盘中读取这些字节，并放到内存中的某处。</p>
+<img src="https://cdn.jsdelivr.net/gh/MaxKev1n/Pictures//Operating%20Systems/Loading%20From%20Program%20To%20Process.jpg" alt="Loading: From Program To Process" style="zoom:67%;" />
+
+<p>​        程序运行之前操作系统仍有一些事要做：必须为程序的<strong>运行时栈</strong>（<em><strong>run-time stack</strong></em>，或者<strong>栈</strong>，<em><strong>stack</strong></em>）分配内存。操作系统也会为程序的<strong>堆</strong>（<em><strong>heap</strong></em>）分配一些内存，堆会被诸如链表，散列表，树之类的数据结构所需要。操作系统还执行一些其他的初始化任务，尤其是与I/O相关的任务。例如，在Unix操作系统中，每一个进程都默认有三个打开的<strong>文件描述符</strong>（<em><strong>file description</strong></em>），用于标准输入、输出、错误，这些文件描述符让程序轻松地读取终端中的输入并输出至屏幕。</p>
+<p>​        通过将代码和静态数据加载到内存中，通过创建和初始化栈以及执行与 I/O 设置相关的其他工作，操作系统仅剩下随后一项任务：在入口处运行，启动程序，即<code>main()</code>。通过跳转到<code>main()</code>例程，操作系统将CPU的控制权交到新创建的进程中，从而程序开始执行。</p>
+<hr>
+<h4 id="Process-States"><a href="#Process-States" class="headerlink" title="Process States"></a>Process States</h4><p>一个程序可以是下列三个状态的其中一个：</p>
+<ul>
+<li>运行（running）：在运行状态，进程正运行在处理器上，这意味着正在执行指令</li>
+<li>就绪（ready）：在就绪状态下，进程已准备好运行，但是由于一些原因，操作系统选择不在此时运行</li>
+<li>阻塞（blocked）：在阻塞状态下，进程执行了某些操作，直到发生了其他事件时才会运行</li>
+</ul>
+<hr>
+<h4 id="Data-Structure"><a href="#Data-Structure" class="headerlink" title="Data Structure"></a>Data Structure</h4><p>为了追踪每个进程的状态，操作系统可能会为所有就绪的进程准备某种<strong>进程列表</strong>（<em><strong>process list</strong></em>），以及跟踪当前正在运行的进程的一些附加信息</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the registers xv6 will save and restore</span></span><br><span class="line"><span class="comment">// to stop and subsequently restart a process</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">context</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> eip; </span><br><span class="line">    <span class="keyword">int</span> esp; </span><br><span class="line">    <span class="keyword">int</span> ebx;</span><br><span class="line">    <span class="keyword">int</span> ecx; </span><br><span class="line">    <span class="keyword">int</span> edx; </span><br><span class="line">    <span class="keyword">int</span> esi;</span><br><span class="line">    <span class="keyword">int</span> edi;</span><br><span class="line">    <span class="keyword">int</span> ebp;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/ the different states a process can be in <span class="class"><span class="keyword">enum</span> <span class="title">proc_state</span> &#123;</span> UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, ZOMBIE &#125;;</span><br><span class="line"><span class="comment">// the information xv6 tracks about each process </span></span><br><span class="line"><span class="comment">// including its register context and state</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">proc</span> &#123;</span> </span><br><span class="line">    <span class="keyword">char</span> *mem;	<span class="comment">// Start of process memory </span></span><br><span class="line">    uint sz;	<span class="comment">// Size of process memory</span></span><br><span class="line">	<span class="keyword">char</span> *kstack;	<span class="comment">// Bottom of kernel stack </span></span><br><span class="line">    				<span class="comment">// for this process</span></span><br><span class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">proc_state</span> <span class="title">state</span>;</span>	<span class="comment">// Process state</span></span><br><span class="line">    <span class="keyword">int</span> pid;	<span class="comment">// Process ID</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">proc</span> *<span class="title">parent</span>;</span>	<span class="comment">// Parent process</span></span><br><span class="line">    <span class="keyword">void</span> *chan;		<span class="comment">// If !zero, sleeping on chan</span></span><br><span class="line">    <span class="keyword">int</span> killed;		<span class="comment">// If !zero, has been killed</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">file</span> *<span class="title">ofile</span>[<span class="title">NOFILE</span>];</span> <span class="comment">// Open files</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">inode</span> *<span class="title">cwd</span>;</span>		<span class="comment">//Curent directory</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">context</span> <span class="title">context</span>;</span>		<span class="comment">//Switch here to run process</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">trapframe</span> *<span class="title">tf</span>;</span>		<span class="comment">//Trap frame for the</span></span><br><span class="line">    							<span class="comment">//current interrupt</span></span><br></pre></td></tr></table></figure>
+
+<p>​        <strong>上下文切换（<em>context switch</em>）：</strong>对于停止的进程，<strong>寄存器上下文</strong>（<em><strong>register context</strong></em>）将保存其寄存器的内容。当一个进程停止时，它的寄存器会被保存到它的内存位置。通过恢复这些寄存器（将它们的值放回到实际的物理寄存器中），操作系统能够恢复运行进程。</p>
+<p>​        有时候，系统会有一个<strong>初始</strong>（<em><strong>initial</strong></em>）状态，表示进程处于被创建的状态。除此以外，进程也会处于已退出但未被清理的<strong>最终</strong>（<em><strong>final</strong></em>）状态，<em>在UNIX-based 系统中，这被称作僵尸（zombie）状态</em>。最终状态非常有用，因为它允许其他进程（通常时创建进程的父进程）检验进程的返回代码，并且查看刚刚结束的进程是否成功执行。完成后，父进程将执行一个最后一个调用，以等待子进程的完成，并告诉操作系统可以清理这个正在结束的进程的所有相关数据结构。</p>
+<hr>
+<ul>
+<li>进程是运行中的程序的一个主要操作系统抽象。在任何时间，进程都可以它的状态来描述：位于其地址空间的内存的内容，CPU寄存器中的内容（包括程序计数器，栈帧，等等）和I/O相关的信息</li>
+<li>进程接口包括与进程相关的调用程序</li>
+<li>进程存在多种不同的进程状态，包括运行、就绪和阻塞。不同的事件将进程从一个状态转换为其他的状态</li>
+<li>一个进程列表包含了系统中所有进程的信息。每一个入口能在process control block（PCB）中被发现</li>
+</ul>
+<blockquote>
+<ul>
+<li>The process is the major OS abstraction of a running program. At any point in time, the process can be described by its state: the contents of memory in its address space, the contents of CPU registers (including the program counter and stack pointer, among others), and information about I/O (such as open files which can be read or written).</li>
+<li>The process API consists of calls programs can make related to processes. Typically, this includes creation, destruction, and other useful calls.</li>
+<li>Processes exist in one of many different process states, including running, ready to run, and blocked. Different events (e.g., getting scheduled or descheduled, or waiting for an I/O to complete) transition a process from one of these states to the other.</li>
+<li>A process list contains information about all processes in the system. Each entry is found in what is sometimes called a process control block (PCB), which is really just a structure that contains information about a specific process.</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="Interlude-Process-API"><a href="#Interlude-Process-API" class="headerlink" title="Interlude: Process API"></a>Interlude: Process API</h3><h4 id="The-fork-System-Call"><a href="#The-fork-System-Call" class="headerlink" title="The fork() System Call"></a>The fork() System Call</h4><p><strong>进程描述符</strong>（<em><strong>process identifier</strong></em>）：在UNIX系统中，如果要操作一个进程，就要通过PID指明</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//call.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello world (pid:%d)\n&quot;</span>, (<span class="keyword">int</span>) getpid()); </span><br><span class="line">    <span class="keyword">int</span> rc = fork(); </span><br><span class="line">    <span class="keyword">if</span> (rc &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// fork failed</span></span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;fork failed\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (rc == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// child (new process)</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;hello, I am child (pid:%d)\n&quot;</span>, (<span class="keyword">int</span>) getpid());</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// parent goes down this path (main)</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;hello, I am parent of %d (pid:%d)\n&quot;</span>, rc, (<span class="keyword">int</span>) getpid());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./call</span></span><br><span class="line">hello world (pid:178)</span><br><span class="line">hello, I am parent of 179 (pid:178)</span><br><span class="line">hello, I am child (pid:179)</span><br></pre></td></tr></table></figure>
+
+<p><code>fork()</code>被调用时存在三种可能的返回值：</p>
+<ul>
+<li>在父进程中，<code>fork()</code>返回新创建子进程的进程ID</li>
+<li>在子进程中，<code>fork()</code>返回0</li>
+<li>如果出现错误，<code>fork()</code>返回一个负值</li>
+</ul>
+<p>​        当程序刚开始运行时，进程打印了一个“hello world”的信息，其中包括了它的进程描述符（PID）。然后，进程调用了<code>fork()</code>系统调用。新创建的进程几乎与调用进程完全一样。新创建的进程称为子进程（child），原来的进程称为父进程（parent）。子进程并不会从<code>main()</code>函数开始执行（由于hello world只输出了一次），而是直接从<code>fork()</code>系统调用返回。</p>
+<p>​        子进程并不是一份完全的拷贝，虽然它拥有自己的地址空间，寄存器，程序计数器，等等，但是它从<code>fork()</code>中的返回值是不同的。父进程接收到的是它新创建的子进程的PID，而子进程获得的返回值是<code>0</code>。</p>
+<hr>
+<h4 id="The-wait-System-Call"><a href="#The-wait-System-Call" class="headerlink" title="The wait() System Call"></a>The wait() System Call</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//call2.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/wait.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello world (pid:%d)\n&quot;</span>, (<span class="keyword">int</span>) getpid()); </span><br><span class="line">    <span class="keyword">int</span> rc = fork(); </span><br><span class="line">    <span class="keyword">if</span> (rc &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// fork failed; exit</span></span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;fork failed\n&quot;</span>); </span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (rc == <span class="number">0</span>) &#123; </span><br><span class="line">        <span class="comment">// child (new process)</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;hello, I am child (pid:%d)\n&quot;</span>, (<span class="keyword">int</span>) getpid());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;        <span class="comment">// parent goes down this path (main)</span></span><br><span class="line">            <span class="keyword">int</span> rc_wait = wait(<span class="literal">NULL</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;hello, I am parent of %d (rc_wait:%d) (pid:%d)\n&quot;</span>, rc, rc_wait, (<span class="keyword">int</span>) getpid());</span><br><span class="line">        &#125; </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">  ./call2</span></span><br><span class="line">hello world (pid:195)</span><br><span class="line">hello, I am child (pid:196)</span><br><span class="line">hello, I am parent of 196 (rc_wait:196) (pid:195)</span><br></pre></td></tr></table></figure>
+
+<p>在该例子中，父进程调用了<code>wait()</code>来延迟执行直到子进程结束执行。当子进程结束后，<code>wait()</code>返回到父进程。</p>
+<p>对<code>wait()</code>的调用会阻塞调用进程，直到它的一个子进程退出或接收到信号。子进程终止后，父进程继续执行<code>wait()</code>系统调用后面的指令。</p>
+<ul>
+<li>如果进程有多个子进程，则在调用<code>wait()</code>后，如果没有子进程终止，则父进程必须处于等待状态</li>
+<li>如果只有一个子进程终止，则返回<code>wait()</code>返回终止的子进程的进程ID</li>
+<li>如果终止了多个子进程，则<code>wait()</code>将获取任意的子进程并返回该子进程的进程ID</li>
+</ul>
+<hr>
+<h4 id="The-exec-System-Call"><a href="#The-exec-System-Call" class="headerlink" title="The exec() System Call"></a>The exec() System Call</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//call3.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/wait.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello world (pid:%d)\n&quot;</span>, (<span class="keyword">int</span>) getpid()); </span><br><span class="line">    <span class="keyword">int</span> rc = fork(); </span><br><span class="line">    <span class="keyword">if</span> (rc &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// fork failed; exit</span></span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;fork failed\n&quot;</span>); </span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (rc == <span class="number">0</span>) &#123; </span><br><span class="line">        <span class="comment">// child (new process)</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;hello, I am child (pid:%d)\n&quot;</span>, (<span class="keyword">int</span>) getpid()); </span><br><span class="line">        <span class="keyword">char</span> *myargs[<span class="number">3</span>];</span><br><span class="line">        myargs[<span class="number">0</span>] = strdup(<span class="string">&quot;wc&quot;</span>); <span class="comment">// program: &quot;wc&quot; (word count) </span></span><br><span class="line">        myargs[<span class="number">1</span>] = strdup(<span class="string">&quot;call3.c&quot;</span>); <span class="comment">// argument: file to count </span></span><br><span class="line">        myargs[<span class="number">2</span>] = <span class="literal">NULL</span>; <span class="comment">// marks end of array</span></span><br><span class="line">        execvp(myargs[<span class="number">0</span>], myargs); <span class="comment">// runs word count </span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;this shouldn’t print out&quot;</span>);</span><br><span class="line">    &#125;   <span class="keyword">else</span> &#123;                  <span class="comment">// parent goes down this path (main)</span></span><br><span class="line">        <span class="keyword">int</span> rc_wait = wait(<span class="literal">NULL</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;hello, I am parent of %d (rc_wait:%d) (pid:%d)\n&quot;</span>, rc, rc_wait, (<span class="keyword">int</span>) getpid());</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./call3</span></span><br><span class="line">hello world (pid:240)</span><br><span class="line">hello, I am child (pid:241)</span><br><span class="line"> 26 122 974 call3.c</span><br><span class="line">hello, I am parent of 241 (rc_wait:241) (pid:240)</span><br></pre></td></tr></table></figure>
+
+<p>​        给定可执行程序的名称和参数后，<code>exec()</code>从可执行程序中加载代码（以及静态数据），并且覆写代码段（及现有的静态数据）；堆和栈，以及程序内存空间的其他部分被重新初始化。然后，操作系统简单地运行程序，将参数通过<code>argv</code>传递给进程。这并不会创建一个新的进程，它将正在运行的程序（<code>call3</code>)转换为一个不同的程序（<code>wc</code>）子进程调用<code>exec()</code>后，就像从来没有运行过<code>call3</code>一样。成功的<code>exec()</code>调用永远不会返回。</p>
+<blockquote>
+<p>实际上， exec() 有几种变体： <code>execl</code>， <code>execlp()</code> ，<code>execle()</code> ，<code>execv()</code>， <code>execvp()</code>和<code>execvp()</code> 。</p>
+</blockquote>
+<hr>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/wait.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> rc = fork(); </span><br><span class="line">    <span class="keyword">if</span> (rc &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// fork failed; exit</span></span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;fork failed\n&quot;</span>); </span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (rc == <span class="number">0</span>) &#123; </span><br><span class="line">        <span class="comment">// child: redirect standard output to a file </span></span><br><span class="line">        close(STDOUT_FILENO);</span><br><span class="line">        open(<span class="string">&quot;./call4.output&quot;</span>, O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// now exec &quot;wc&quot;...</span></span><br><span class="line">        <span class="keyword">char</span> *myargs[<span class="number">3</span>];</span><br><span class="line">        myargs[<span class="number">0</span>] = strdup(<span class="string">&quot;wc&quot;</span>); <span class="comment">// program: &quot;wc&quot; (word count) </span></span><br><span class="line">        myargs[<span class="number">1</span>] = strdup(<span class="string">&quot;call4.c&quot;</span>); <span class="comment">// argument: file to count </span></span><br><span class="line">        myargs[<span class="number">2</span>] = <span class="literal">NULL</span>; <span class="comment">// marks end of array</span></span><br><span class="line">        execvp(myargs[<span class="number">0</span>], myargs); <span class="comment">// runs word count </span></span><br><span class="line">    &#125;   <span class="keyword">else</span> &#123;                  <span class="comment">// parent goes down this path (main)</span></span><br><span class="line">        <span class="keyword">int</span> rc_wait = wait(<span class="literal">NULL</span>);</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./call4</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat call4.output</span></span><br><span class="line"> 27 108 887 call4.c</span><br></pre></td></tr></table></figure>
+
+<p>​        <strong>重定向</strong>（<em><strong>redirected</strong></em>）的工作原理，是基于对操作系统管理文件描述符的假定。UNIX系统从0开始寻找可以使用的文件描述符。在这个例子中，STDOUT _FILENO 将成为第一个可用的文件描述符，因此在<code>open()</code>被调用时，得到赋值。然后子进程向标准输出文件描述符的写入（例如通过<code>printf()</code>这样的函数），都被透明地转向新打开的文件，而不是屏幕。<code>call4</code>确实调用了<code>fork()</code>来创建新的子进程，然后通过对<code>execvp()</code>的调用运行<code>wc</code>程序。没有在屏幕上看见任何输出的原因在于输出被重定向到了文件<code>call.output</code>。</p>
+<hr>
+<h3 id="Mechanism-Limited-Direct-Execution"><a href="#Mechanism-Limited-Direct-Execution" class="headerlink" title="Mechanism : Limited Direct Execution"></a>Mechanism : Limited Direct Execution</h3><h4 id="Basic-technique-Limited-Direct-Execution"><a href="#Basic-technique-Limited-Direct-Execution" class="headerlink" title="Basic technique: Limited Direct Execution"></a>Basic technique: Limited Direct Execution</h4><p>​        当操作系统想要启动程序运行时，会在进程列表中创建一个进程入口，为进程分配一些内存，将程序代码从磁盘中加载到内存中，找到入口点，跳转到那里，并开始运行用户的代码。</p>
+<p>​                                                                                        <em>直接运行协议（无限制</em>）</p>
+<table>
+<thead>
+<tr>
+<th align="center">操作系统</th>
+<th align="center">程序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">在进程列表创建条目<br>为程序分配内存<br> 将程序加载到内存<br> 根据<code>argc</code>/<code>argv</code>设置栈</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">清楚寄存器<br> 执行<code>call main()</code>方法</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">执行<code>main()</code><br> 从<code>main()</code>种执行<code>return</code></td>
+</tr>
+<tr>
+<td align="center">释放进程的内存<br> 从进程列表清除</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="Problem-1：-Restricted-Operations"><a href="#Problem-1：-Restricted-Operations" class="headerlink" title="Problem #1： Restricted Operations"></a>Problem #1： Restricted Operations</h4><p><strong>用户模式</strong>（<em><strong>user mode</strong></em>）：在用户模式下运行的代码会受到限制</p>
+<p><strong>内核模式</strong>（<em><strong>kernel mode</strong></em>）：与用户模式不同，操作系统（或者内核）就在这个模式下运行。在这个模式下，运行的代码可以执行它想做的事情，包括特权操作，比如发出I/O请求和执行所有类型的受限指令</p>
+<p>​        几乎所有的现代硬件都为用户程序提供了进行系统调用的能力。系统调用允许内核小心翼翼地向用户程序暴露一定的关键功能，例如访问文件系统，创建和销毁进程，与其他进程进行交流，和分配更多的内存。</p>
+<p>​        为了执行系统调用，程序必须执行一个特殊的<strong>陷阱</strong>（<em><strong>trap</strong></em>）指令。该指令同时跳入内核并且将特权级别提升到内核模式。一旦进入内核，系统就能够进行任何需要的特权操作（如果被允许的话），从而为调用进程提供需要的工作。当结束时，操作系统调用一个特殊的<strong>从陷阱返回</strong>（<em><strong>return-from-trap</strong></em>）指令，就像你所期望的，该指令返回到发起调用的用户程序时，同时减少特权等级至用户模式。</p>
+<p>​        执行陷阱时，硬件必须小心，它必须确保存储足够的调用者寄存器来保证当操作系统发起从陷阱返回指令时能够正确返回。在<em><strong>X86</strong></em>上，比如，处理器将程序计数器，标志和一些其他的寄存器推送到每个进程的<strong>内核栈</strong>（<em><strong>kernel stack</strong></em>）。从陷阱返回将会将这些值从栈种推出并恢复执行用户模式程序。</p>
+<p>​        内核通过在启动时设置<strong>陷阱表</strong>（<em><strong>trap table</strong></em>）来实现。</p>
+<p>​                                                                                                <em>受限直接运行协议</em></p>
+<table>
+<thead>
+<tr>
+<th align="center">操作系统启动@启动（内核模式）</th>
+<th align="center">硬件</th>
+<th align="center">程序（用户模式）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">初始化陷阱表</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">记住系统调用处理程序的地址</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">操作系统＠运行（内核模式）</td>
+<td align="center">硬件</td>
+<td align="center">程序（应用模式）</td>
+</tr>
+<tr>
+<td align="center">在进程列表上创建条目<br> 为程序分配内存<br> 将程序加载到内存<br> 根据<code>argv</code>设置程序栈<br> 用寄存器/程序计数器填充内核栈从陷阱返回</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">从内核栈恢复程序<br> 转向用户模式<br> 跳到<code>main</code></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">运行<code>main</code><br> ······<br> 调用系统调用<br> 陷入操作系统</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">将寄存器保存到内核栈<br> 转向内核模式<br/> 跳到陷阱处理程序</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">处理陷阱<br> 做系统调用的工作<br> 从陷阱中返回</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">从内核栈恢复寄存器<br/> 转向用户模式<br/> 跳到陷阱之后的程序计数器</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">······从<code>main</code>返回<br> 陷入（通过<code>exit()</code>）</td>
+</tr>
+<tr>
+<td align="center">释放进程的内存将进程从进程列表清除</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>​        为了指定精确的系统调用，经常会为每个系统调用分配<strong>系统调用数字</strong>（<em><strong>system-call number</strong></em>）。用户代码有责任将所需要的系统调用数字放置在寄存器中或者在栈中的指定位置。操作系统，当处理陷阱处理器中的系统调用时，检验这个数字，确保它是有效的，并且，如果它是有效的，执行相关的代码。</p>
+<p>​        在<strong>受限直接运行协议</strong>（<em><strong>limited direct execution， LDE</strong></em>）中有两个阶段。在第一个阶段中，内核初始化陷阱表，并且CPU记住它的位置以供随后使用。内核完成该项操作通过一个特权指令。在第二个阶段中（当运行一个进程时），内核在使用从陷阱返回指令来启动执行进程之前设置一些事情（例如，在进程列表中分配一个节点，分配内存）。这将CPU切换到用户模式并且开始运行进程。当进程想要发起系统调用时，它会重新陷入操作系统，然后再次将控制权通过<code>return-from-trap</code>交还给进程。进程然后完成它的工作，并且返回到<code>main()</code>。这通常会返回到一些存根代码，它将正确退出程序。此时操作系统清除干净，然后任务完成了。</p>
+<hr>
+<h4 id="Problem-2：Switching-Between-Processes"><a href="#Problem-2：Switching-Between-Processes" class="headerlink" title="Problem #2：Switching Between Processes"></a>Problem #2：Switching Between Processes</h4><p>​        运行过久的进程会被假定会定期放弃CPU，因此操作系统可以决定运行其他任务。大多数的进程，最终都会通过发起系统调用频繁地将CPU的控制权交给操作系统。像这样的系统通常包括一个<strong>yield</strong>系统，它什么都不做，仅仅将控制权交给操作系统，以便系统可以运行其他进程。当应用程序进行非法操作时，应用程序也会将控制权交给操作系统。因此，在<strong>协作调用系统</strong>（<em><strong>cooperative scheduling system</strong></em>）中，操作系统通过等待系统调用或者一些非法的操作来重新获得CPU的控制权。</p>
+<hr>
+<h4 id="A-Non-Cooperative-Approach：-The-OS-Takes-Control"><a href="#A-Non-Cooperative-Approach：-The-OS-Takes-Control" class="headerlink" title="A Non-Cooperative Approach： The OS Takes Control"></a>A Non-Cooperative Approach： The OS Takes Control</h4><p><strong>时钟中断</strong>（<em><strong>timer interrupt</strong></em>）：一个可以编程来每隔几毫秒产生一次中断。当中断发生了，现在正在运行的进程会被停止，操作系统中预先配置好的<strong>中断处理器</strong>（<em><strong>interrupt handler</strong></em>）会运行。同时，操作系统会重新获得CPU的控制权，并且因此它可以做想做的事：停止现有的进程，并且开始一个不同的进程。</p>
+<p>​        硬件在发生中断时有一些责任，尤其是在中断发生时，要为正在运行的程序保存足够的状态，来确保接下来的<code>return-from-trap</code>指令能够正确地重启程序。</p>
+<hr>
+<h4 id="Saving-and-Restoring-Context"><a href="#Saving-and-Restoring-Context" class="headerlink" title="Saving and Restoring Context"></a>Saving and Restoring Context</h4><p>​        如果决定切换，操作系统就会执行一些底层的代码，我们称之为<strong>上下文切换</strong>（<em><strong>context switch</strong></em>）。上下文切换在概念上非常简单L所有的操作系统必须去做的是为正在执行的进程保存一些寄存器的值（比如，在它的内核栈上）并且为将要执行的进程（从它的内核栈）恢复一些寄存器的值。通过这样做，操作系统能够确保当<code>return-from-trap</code>指令完成执行时，系统重启其他的进程而不是返回到正在执行的进程。</p>
+<p>​        通过切换栈，内核在进入切换调用代码时，是一个进程（被中断的进程）的上下文，在返回时是另一个进程（即将被执行的进程）的上下文。当操作系统最终完成<code>return-from-trap</code>指令时，即将执行的进程成为正在执行的进程。至此上下文完成切换。</p>
+<table>
+<thead>
+<tr>
+<th>操作系统@启动（内核模式）</th>
+<th>硬件</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>初始化陷阱表</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>记住以下地址<br> 系统调用处理程序<br> 时钟处理程序</td>
+<td></td>
+</tr>
+<tr>
+<td>启动中断时钟</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>启动时钟<br> 每隔<em>x</em>ms中断CPU</td>
+<td></td>
+</tr>
+<tr>
+<td>操作系统@运行（内核模式）</td>
+<td>硬件</td>
+<td>程序（应用模式）</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>进程A······</td>
+</tr>
+<tr>
+<td></td>
+<td>时钟中断<br> 将寄存器(A)保存到内核栈(A)<br> 转向内核模式<br> 跳到陷阱处理程序</td>
+<td></td>
+</tr>
+<tr>
+<td>处理陷阱<br> 调用<code>switch()</code>例程<br> 将寄存器(A)保存到进程结构(A)<br> 将进程结构(B)恢复到寄存器(B)<br> 从陷阱返回（进入B）</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>从内核栈(B)恢复寄存器(B)<br> 转向用户模式<br> 跳到B的程序计数器</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>进程B······</td>
+</tr>
+</tbody></table>
+<p>​        在例子中，进程A正在运行，然后被时钟中断中断。硬件保存了它的寄存器（在它的内核栈上）并且进入内核（切换到内核模式），在时钟中断程序中，操作系统决定从运行进程A切换到进程B。在这时，它调用了<code>switch()</code>例程，仔细保存当前寄存器的值（保存到A的进程结构中），重新恢复了进程B的寄存器（从它的进程结构），然后切换上下文，具体来说是通过改变栈帧来使用B的内核栈。最终，操作系统从陷阱返回，恢复B的寄存器并且开始运行B。</p>
+<p>​        注意到，在此协议中有两种类型的寄存器保存/恢复。第一种是发生时钟中断时，在这种情况下，正在运行的进程的用户寄存器被硬件隐式保存，使用该进程的内核栈。第二种是当操作系统决定从A切换到B，在这种情况下，内核寄存器有软件（例如操作系统）显式保存，但是这次被存储在该进程的进程结构的内存中。后一个操作让操作系统从好像刚刚由A陷入内核变成好像刚刚由B陷入内核。</p>
+<p><em>下面给出了xv6的上下文切换代码。<code>context</code>结构<code>old</code>和<code>new</code>分别在老的和新的进程的进程结构中</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"># void swtch(struct context **old, struct context *new); </span><br><span class="line">#</span><br><span class="line"># Save current register context in old </span><br><span class="line"># and then load register context from new. </span><br><span class="line">.globl swtch</span><br><span class="line">swtch:</span><br><span class="line">	# Save old registers </span><br><span class="line">	movl 4(%esp), %eax # put old ptr into eax </span><br><span class="line">	popl 0(%eax)	   # save the old IP</span><br><span class="line">	movl %esp, 4(%eax) # and stack</span><br><span class="line">	movl %ebx, 8(%eax) # and other registers</span><br><span class="line">    movl %ecx, 12(%eax) </span><br><span class="line">    movl %edx, 16(%eax) </span><br><span class="line">    movl %esi, 20(%eax) </span><br><span class="line">    movl %edi, 24(%eax) </span><br><span class="line">    movl %ebp, 28(%eax)</span><br><span class="line">	</span><br><span class="line">	# Load new registers</span><br><span class="line">	movl 4(%esp), %eax  # put new ptr into eax </span><br><span class="line">	movl 28(%eax), %ebp # restore other registers </span><br><span class="line">	movl 24(%eax), %edi </span><br><span class="line">	movl 20(%eax), %esi </span><br><span class="line">	movl 16(%eax), %edx </span><br><span class="line">	movl 12(%eax), %ecx </span><br><span class="line">	movl 8(%eax), %ebx</span><br><span class="line">	movl 4(%eax), %esp # stack is switched here </span><br><span class="line">	pushl 0(%eax) ret  # return addr put in place </span><br><span class="line">	ret                # finally return into new ctxt</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>主要的CPU虚拟化术语（机制）</p>
+<ul>
+<li>CPU应该支持至少两种执行模式：一种受限的<strong>用户模式</strong>和一种特权（没有限制的）<strong>内核模式</strong></li>
+<li>典型的用户应用程序运行在用户模式，并且使用系统调用进入内核来要求操作系统服务</li>
+<li>陷阱指令仔细地保存寄存器状态，将硬件状态更改为内核模式，并且跳转到操作系统预先设置的目标：陷阱表</li>
+<li>当操作系统结束服务一个系统调用，它通过另一个特殊的从陷阱返回指令返回到用户程序，减少特权并且在跳转到操作系统的陷阱之后，将控制权返回给指令</li>
+<li>陷阱表必须在启动时段由操作系统设好，确保它们不能被用户程序修改，这些都是<strong>limited direct execution</strong>协议的一部分，使程序有效运行当却不会丢失操作系统控制权</li>
+<li>当程序正在运行时，操作系统必须使用硬件机制来确保用户程序不会永远运行，这就是时间中断。这种方法是CPU调度的非协作方法。</li>
+<li>有时候，操作系统在时钟中断或系统调用中也许会希望从正在运行进程切换到一个不同的进程，这种低级别的技术被称作上下文切换</li>
+</ul>
+<hr>
+<h3 id="Scheduling-Introduction"><a href="#Scheduling-Introduction" class="headerlink" title="Scheduling : Introduction"></a>Scheduling : Introduction</h3><p>​        我们做出的<strong>工作负载</strong>（<em><strong>workload</strong></em>）假说是不切实际的，但是这没有问题（目前），因为我们将会放宽这些假定，并最终开发出我们所谓的一个完全可操作的调度准则：</p>
+<ol>
+<li>每一个工作运行相同的时间</li>
+<li>所有的任务在同一时间到达</li>
+<li>一旦开始，任务会运行至结束</li>
+<li>所有的工作只会使用CPU</li>
+<li>每一个工作的运行时间是知道的</li>
+</ol>
+<hr>
+<h4 id="Scheduling-Metrics"><a href="#Scheduling-Metrics" class="headerlink" title="Scheduling Metrics"></a>Scheduling Metrics</h4><p>任务的周转时间定义为任务完成时间减去任务到达系统的时间：<br>$$<br>T_{turnaround} = T_{completion} - T_{arrival}<br>$$</p>
+<h4 id="First-In，First-Out（FIFO）"><a href="#First-In，First-Out（FIFO）" class="headerlink" title="First In，First Out（FIFO）"></a>First In，First Out（FIFO）</h4><p>我们可以实现的最基本的算法是<strong>先进先出</strong>，有时我们也称之为<strong>先到先服务</strong>（<em><strong>First Come， First Served（FCFS）</strong></em>）。该算法会存在被称为<strong>护航效应</strong>（<em><strong>convoy effect</strong></em>）的问题，一些耗时较少的潜在资源消费者会被排到重量级的资源消费者后，导致耗时增加。</p>
+<img src = "https://cdn.jsdelivr.net/gh/MaxKev1n/Pictures//Operating%20Systems/FIFO%20Simple%20Example.jpg" style="zoom:67%;" >
+
+<img src="https://cdn.jsdelivr.net/gh/MaxKev1n/Pictures//Operating%20Systems/Why%20FIFO%20Is%20Not%20That%20Great.jpg" style="zoom:67%;" >
+
+
+
+<h4 id="Shortest-Job-First-（SJF）"><a href="#Shortest-Job-First-（SJF）" class="headerlink" title="Shortest Job First （SJF）"></a>Shortest Job First （SJF）</h4><p><strong>最短任务优先</strong>：先运行最短的任务，然后是次短的任务，如此下去。但是该算法仍然会遇到同样的护航问题。</p>
+<img src="https://cdn.jsdelivr.net/gh/MaxKev1n/Pictures//Operating%20Systems/SJF%20Simple%20Example.jpg" style="zoom:67%;" >
+
+<img src="https://cdn.jsdelivr.net/gh/MaxKev1n/Pictures//Operating%20Systems/SJF%20With%20Late%20Arrivals%20From%20B%20and%20C.jpg" style="zoom:67%;" >
+
+<h4 id="Shortest-Time-to-Completion-First-STCF"><a href="#Shortest-Time-to-Completion-First-STCF" class="headerlink" title="Shortest Time-to-Completion First (STCF)"></a>Shortest Time-to-Completion First (STCF)</h4><p><strong>最短完成时间优先</strong>：或者抢占式最短作业优先。每当新工作进入系统时，它会确定剩余的工作（包括新工作）谁的剩余时间最少，然后调度该工作。</p>
+<img src="https://cdn.jsdelivr.net/gh/MaxKev1n/Pictures//Operating%20Systems/STCF%20Simple%20Example.jpg" style="zoom:67%;" >
+
+<hr>
+<h4 id="A-New-Metric-Response-Time"><a href="#A-New-Metric-Response-Time" class="headerlink" title="A New Metric: Response Time"></a>A New Metric: Response Time</h4><p><strong>响应时间</strong>（<em><strong>response time</strong></em>）：从任务到达系统到首次运行的时间<br>$$<br>T_{response}=T_{firstrun}-T_{arrival}<br>$$</p>
+<h4 id="Round-Robin"><a href="#Round-Robin" class="headerlink" title="Round Robin"></a>Round Robin</h4><p><strong>轮转</strong>（<em><strong>round robin</strong></em>）调度：轮转调度在一个<strong>时间片</strong>（<em><strong>time slice</strong></em>）内运行工作并且切换到运行队列中的下一个任务，而不是运行工作直到结束。它反复执行，直到所有任务完成。因此，轮状有时也被称作<strong>时间切片</strong>（<em><strong>time-slicing</strong></em>）。<strong>时间片的长度必须是时间中断周期的倍数</strong>。时间片长度对于轮转是至关重要的，越短，轮转在响应时间上的表现越好。然而，时间片过短会有一个问题：切换上下文带来的消耗会影响整体的性能。</p>
+<img src="https://cdn.jsdelivr.net/gh/MaxKev1n/Pictures//Operating%20Systems/SJF%20Again%20and%20Round%20Robin.jpg" style="zoom:67%;" >
+
+
+<p>$$<br>T_{response} = T_{firstrun}-T_{arrival}<br>$$</p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Kev1n</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/05/07/Operating%20System2/">http://example.com/2021/05/07/Operating%20System2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">MaxKev1n'sBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/OS/">OS</a></div><div class="post_share"><div class="social-share" data-image="/img/os.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/05/07/Algorithm%20Design%20Techniques%20and%20Analysis/"><img class="prev-cover" src="/img/back1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Algorithm Design</div></div></a></div><div class="next-post pull-right"><a href="/2021/05/07/Operating%20System/"><img class="next-cover" src="/img/os.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Operating System (1)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/05/07/Operating System/" title="Operating System (1)"><img class="cover" src="/img/os.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-07</div><div class="title">Operating System (1)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/img.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Kev1n</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/maxkev1n"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/maxkev1n" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chenzihang@njust.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Virtualization"><span class="toc-number">1.</span> <span class="toc-text">Virtualization</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Abstraction-A-Process"><span class="toc-number">1.0.1.</span> <span class="toc-text">The Abstraction: A Process</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Process-API"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">Process API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Process-Creation-A-Little-More-Detail"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">Process Creation: A Little More Detail</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Process-States"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">Process States</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Data-Structure"><span class="toc-number">1.0.1.4.</span> <span class="toc-text">Data Structure</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Interlude-Process-API"><span class="toc-number">1.0.2.</span> <span class="toc-text">Interlude: Process API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#The-fork-System-Call"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">The fork() System Call</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#The-wait-System-Call"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">The wait() System Call</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#The-exec-System-Call"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">The exec() System Call</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mechanism-Limited-Direct-Execution"><span class="toc-number">1.0.3.</span> <span class="toc-text">Mechanism : Limited Direct Execution</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Basic-technique-Limited-Direct-Execution"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">Basic technique: Limited Direct Execution</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Problem-1%EF%BC%9A-Restricted-Operations"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">Problem #1： Restricted Operations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Problem-2%EF%BC%9ASwitching-Between-Processes"><span class="toc-number">1.0.3.3.</span> <span class="toc-text">Problem #2：Switching Between Processes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A-Non-Cooperative-Approach%EF%BC%9A-The-OS-Takes-Control"><span class="toc-number">1.0.3.4.</span> <span class="toc-text">A Non-Cooperative Approach： The OS Takes Control</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Saving-and-Restoring-Context"><span class="toc-number">1.0.3.5.</span> <span class="toc-text">Saving and Restoring Context</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scheduling-Introduction"><span class="toc-number">1.0.4.</span> <span class="toc-text">Scheduling : Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Scheduling-Metrics"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">Scheduling Metrics</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#First-In%EF%BC%8CFirst-Out%EF%BC%88FIFO%EF%BC%89"><span class="toc-number">1.0.4.2.</span> <span class="toc-text">First In，First Out（FIFO）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Shortest-Job-First-%EF%BC%88SJF%EF%BC%89"><span class="toc-number">1.0.4.3.</span> <span class="toc-text">Shortest Job First （SJF）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Shortest-Time-to-Completion-First-STCF"><span class="toc-number">1.0.4.4.</span> <span class="toc-text">Shortest Time-to-Completion First (STCF)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A-New-Metric-Response-Time"><span class="toc-number">1.0.4.5.</span> <span class="toc-text">A New Metric: Response Time</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Round-Robin"><span class="toc-number">1.0.4.6.</span> <span class="toc-text">Round Robin</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/05/07/database/" title="数据库基础"><img src="/img/img2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库基础"/></a><div class="content"><a class="title" href="/2021/05/07/database/" title="数据库基础">数据库基础</a><time datetime="2021-05-06T23:30:15.000Z" title="发表于 2021-05-07 07:30:15">2021-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/07/Probability%20Theory%20and%20Mathematical%20Statistics%20/" title="概率论与统计"><img src="/img/img2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论与统计"/></a><div class="content"><a class="title" href="/2021/05/07/Probability%20Theory%20and%20Mathematical%20Statistics%20/" title="概率论与统计">概率论与统计</a><time datetime="2021-05-06T23:20:15.000Z" title="发表于 2021-05-07 07:20:15">2021-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/07/Data%20Structure%20%20(4)/" title="Data Structure (4)"><img src="/img/back1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Data Structure (4)"/></a><div class="content"><a class="title" href="/2021/05/07/Data%20Structure%20%20(4)/" title="Data Structure (4)">Data Structure (4)</a><time datetime="2021-05-06T23:18:15.000Z" title="发表于 2021-05-07 07:18:15">2021-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/07/Data%20Structure%20%20(3)/" title="Data Structure (3)"><img src="/img/back1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Data Structure (3)"/></a><div class="content"><a class="title" href="/2021/05/07/Data%20Structure%20%20(3)/" title="Data Structure (3)">Data Structure (3)</a><time datetime="2021-05-06T23:17:15.000Z" title="发表于 2021-05-07 07:17:15">2021-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/07/Data%20Structure%20(2)/" title="Data Structure (2)"><img src="/img/back1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Data Structure (2)"/></a><div class="content"><a class="title" href="/2021/05/07/Data%20Structure%20(2)/" title="Data Structure (2)">Data Structure (2)</a><time datetime="2021-05-06T23:16:15.000Z" title="发表于 2021-05-07 07:16:15">2021-05-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Kev1n</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', '', 'katex-wrap')
+  })
+})()</script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数据库基础 | MaxKev1n'sBlog</title><meta name="keywords" content="学习"><meta name="author" content="Kev1n"><meta name="copyright" content="Kev1n"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数据库基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库基础">
+<meta property="og:url" content="http://example.com/2021/05/07/database/index.html">
+<meta property="og:site_name" content="MaxKev1n&#39;sBlog">
+<meta property="og:description" content="数据库基础">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/img2.jpg">
+<meta property="article:published_time" content="2021-05-06T23:30:15.000Z">
+<meta property="article:modified_time" content="2021-05-06T23:30:15.000Z">
+<meta property="article:author" content="Kev1n">
+<meta property="article:tag" content="学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/img2.jpg"><link rel="shortcut icon" href="/img/img.jpg"><link rel="canonical" href="http://example.com/2021/05/07/database/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-05-07 07:30:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/img.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/img2.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">MaxKev1n'sBlog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据库基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-06T23:30:15.000Z" title="发表于 2021-05-07 07:30:15">2021-05-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-06T23:30:15.000Z" title="更新于 2021-05-07 07:30:15">2021-05-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="关系模型基础"><a href="#关系模型基础" class="headerlink" title="关系模型基础"></a>关系模型基础</h3><hr>
+<p><strong>属性：</strong>关系的列命名</p>
+<p><strong>模式：</strong>关系名和其属性集合的组合</p>
+<p><strong>元组：</strong>关系中除含有属性名所在行之外的其他行</p>
+<p><strong>关系实例：</strong>一个给定关系中元组的集合</p>
+<h4 id="修改关系模式"><a href="#修改关系模式" class="headerlink" title="修改关系模式"></a>修改关系模式</h4><p><em>删除某个关系</em></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> R;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>修改操作的语句以关键字<em><strong>ALTER TABLE</strong></em>开头其后加上关系的名字，后面可以跟集中选项：</p>
+<ol>
+<li><em><strong>ADD</strong></em>后面加上属性名字和数据类型</li>
+<li><em><strong>DROP</strong></em>后面加上属性名字</li>
+</ol>
+<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><p>通常，在任何声明属性和其数据类型的地方，都可以加上保留字<em><strong>DEFAULT</strong></em>和一个合适的值。</p>
+<p><em>当新增属性phone时，可以将它的默认值声明为’unlisted’</em></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> MovieStar <span class="keyword">ADD</span> phone <span class="type">CHAR</span>(<span class="number">16</span>) <span class="keyword">DeFAULT</span> <span class="string">&#x27;unlisted&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="键的声明"><a href="#键的声明" class="headerlink" title="键的声明"></a>键的声明</h4><ol>
+<li><em>PRIMARY KEY</em></li>
+<li><em>UNIQUE</em></li>
+</ol>
+<p><strong>投影：</strong>这个关系只包含原来关系R中的部分列</p>
+<p><strong>选择：</strong>当选择操作符应用到关系R上时，产生一个关系R的元组的子集合</p>
+<p><strong>笛卡尔积</strong>：关系R和S的笛卡尔积是一个有序对的集合，有序对的第一个元素是关系R中的任何一个元组，第二个元素是关系S中的任何一个元组，表示为$R\times S$</p>
+<p><strong>自然连接：</strong>把在R和S模式中有某共同属性，且此属性有相同的值的元组配对，表示为$R\Join S$</p>
+<p><strong>悬浮元组：</strong>如果一个元组不能和另外关系中的任何一个元组配对的话</p>
+<p><strong>$\theta$连接：</strong>先得到R和S的积，再在得到的关系中寻找满足条件C的元组，$R\Join_C S$</p>
+<hr>
+<h4 id="关系数据库设计理论"><a href="#关系数据库设计理论" class="headerlink" title="关系数据库设计理论"></a>关系数据库设计理论</h4><h4 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h4><p>定义：如果R的两个元组在属性$A_1,A_2,…,A_n$上一致，那么必定在其他属性$B_1,B_2,…,B_m$上也一致，记为$A_1A_2…A_n \to B_1B_2…B_m$</p>
+<p>如果下列条件满足，就认为一个或多个属性集${ A_1,A_2,…,A_n}$是关系的键</p>
+<ol>
+<li>这些属性函数决定关系的所有其他属性</li>
+<li>在${ A_1,A_2,…,A_n}$的真子集中，没有一个能函数决定R的所有其他属性</li>
+</ol>
+<p><strong>超键：</strong>一个包含键的属性集</p>
+<p><strong>平凡FD：</strong>平凡FD的右边是左边的子集</p>
+<p>如果给定要给FD集合S，则任何和S等价的FD集合都被称为S的基本集</p>
+<p>满足下面条件的基本集B被称为关系的<strong>最小化基本集</strong>：</p>
+<ol>
+<li>B中所有FD的右边均为单一属性</li>
+<li>从B中删除任何一个FD后，该集合不再是基本集</li>
+<li>对于B中任何一个FD，如果从其左边删除一个或多个属性，B将不再是基本集</li>
+</ol>
+<p><strong>BC范式：</strong>每个非平凡FD的左边都必须是超键，即每个非平凡FD的左边必须包含键</p>
+<p>分解步骤：</p>
+<ol>
+<li>找出一个BCNF违背式，$A_1A_2..A_n\to B_1B_2…B_m$</li>
+<li>将R分解为两个关系，$R1( A_1,A_2,…,A_n,B_1,B_2,…,B_m)$和$R2(A_1,A_2,…,A_n, all\quad the\quad other\quad  attributes\quad of\quad R)$</li>
+<li> 重复分解步骤，直至所有关系都满足BCNF</li>
+</ol>
+<p><strong>第二范式：</strong>对于任意非平凡函数依赖$A_1A_2…A_n\to B$，若<em>B</em>不是键属性，则$A_1A_2…A_n$也不是某个键的真子集</p>
+<p><strong>第三范式：</strong>对于每个非平凡FD，或者其左边是超键，或者其右边仅由主属性构成</p>
+<p><strong>第四范式：</strong>如果对于R中的每个非平凡 $MVD\quad A_1A_2…A_n \to B_1B_2…B_m$，${ A_1A_2…A_n}$都是超键</p>
+<p><strong>多值依赖：</strong>在关系R中，当给定某个属性集合的值时，存在另外一组属性集合，该组属性的值与关系中所有其他属性的值独立，对于R中每个在所有A属性上一致的元组对<em>t</em>和<em>u</em>，满足</p>
+<ol>
+<li>在A属性上的取值与<em>t</em>和<em>u</em>相同</li>
+<li>在B属性上的取值与<em>t</em>相同</li>
+<li>在R中不属于A和B的所有属性上的取值与<em>u</em>相同</li>
+</ol>
+<hr>
+<h3 id="高级数据库模型"><a href="#高级数据库模型" class="headerlink" title="高级数据库模型"></a>高级数据库模型</h3><h4 id="E-R模型"><a href="#E-R模型" class="headerlink" title="E/R模型"></a>E/R模型</h4><p><strong>实体：</strong>某种抽象对象，相似实体的集合形成实体集</p>
+<p><strong>属性：</strong>实体集有相关的属性，属性是这个实体集中实体所具有的性质</p>
+<p><strong>联系：</strong>两个或多个实体集的连接</p>
+<ul>
+<li><p>实体集：矩形</p>
+</li>
+<li><p>属性：椭圆</p>
+</li>
+<li><p>联系：菱形</p>
+</li>
+<li><p>用边来连接实体集与它的属性，同样也用边来连接联系与它的实体集</p>
+</li>
+</ul>
+<p><strong>如果从实体集E到F是多对一联系，就把箭头指向F。箭头表示实体集E中每个实体与实体集F中的最多一个实体联系。除非还有一个箭头指向E，否则F中的每个实体可以与E中的多个实体联系</strong></p>
+<p><strong>在多路联系中，指向实体集E的箭头表示：如果从该联系的其他每个实体集中选择一个实体，它们至多与E中的一个实体联系。</strong></p>
+<p>一个实体集中含有一些实体，这些实体拥有集合中其他实体成员没有的特殊性质，可以定义一些特殊实体集或子类。我们用一个被称为$isa$的联系连接实体集和他的子类，使用一种特殊符号即三角形表示，三角形的一边与子类相连，与此边相对的一角与父类相连。</p>
+<ul>
+<li> 每个实体集必须有一个键，尽管在$isa$层次和弱实体集情况下，键实际上是属于另一个实体集</li>
+<li>一个实体集也可以有多个键</li>
+</ul>
+<p><strong>假设R是从实体集E到实体集F的联系，用圆箭头指向F表示此联系从E到F不仅是多对一或一对一，而且要求与给定的E实体相联系的F实体必须存在。</strong></p>
+<p><strong>度约束：</strong>在E/R模型中，可以在连接一个联系到一个实体的边上加一个数字，表示相关实体集中任一实体可被联系道德实体数目的约束</p>
+<p><strong>弱实体集：</strong>一个实体集键是由另一个实体集的部分或全部属性构成</p>
+<ul>
+<li>弱实体集：双矩形</li>
+<li>多对一的联系：双菱形</li>
+</ul>
+<hr>
+<h3 id="代数和逻辑查询语言"><a href="#代数和逻辑查询语言" class="headerlink" title="代数和逻辑查询语言"></a>代数和逻辑查询语言</h3><p><strong>在基于包的关系当中允许重复元组出现</strong></p>
+<p>关系代数的扩展操作符：</p>
+<ol>
+<li>消重复操作符</li>
+<li>聚集操作符</li>
+<li>分组操作符</li>
+<li>扩展投影</li>
+<li>排序算子</li>
+<li>外连接算符</li>
+</ol>
+<p><strong>外连接：</strong>外连接开始进行的操作是自然连接，然后再把来自R或者S的悬浮元组加入其中，加入的元组用<em>null</em>符号补齐那些出现在结果中但不具有值的属性。</p>
+<p><strong>左外连接：</strong>只有左变量R的悬浮元组被补齐</p>
+<p><strong>右外连接：</strong>只有右变量S的悬浮元组被补齐</p>
+<hr>
+<h3 id="约束与触发器"><a href="#约束与触发器" class="headerlink" title="约束与触发器"></a>约束与触发器</h3><p><strong>外键约束：</strong>一个关系中出现的值也必须在另一个关系的主键中出现</p>
+<p><strong>外键声明：</strong></p>
+<ol>
+<li>被引用的另一个关系的属性在它所在的关系中，必须被声明为<em>UNIQUE</em>或<em>PRIMARY KEY</em></li>
+<li>在第一个关系中出现的外键值，也必须在被引用关系的某个元组的属性中出现</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REFERENCES</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span> (<span class="operator">&lt;</span>属性名<span class="operator">&gt;</span>)        <span class="operator">/</span><span class="operator">/</span>外键是单个属性</span><br><span class="line"><span class="keyword">FOREIGN</span> KEY (<span class="operator">&lt;</span>属性名列表<span class="operator">&gt;</span>) <span class="keyword">REFERENCES</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span> (<span class="operator">&lt;</span>属性名列表<span class="operator">&gt;</span>)       <span class="operator">/</span><span class="operator">/</span>一组属性是一个外键</span><br></pre></td></tr></table></figure>
+
+
+
+<ol>
+<li>缺省原则：拒绝违法更新，即拒绝任何违法引用完整性约束的更新</li>
+<li>级联原则：在该原则下，被引用属性（组）的改变仿造到外键上</li>
+<li>置空性原则：当在被引用的关系上的更新影响外键值时，后者被改为空值</li>
+</ol>
+<p><strong>这些选项可独立地选择删除和修改，并且它们同外键一起声明。生命的方法是在<em>ON DELETE</em>或<em>ON UPDATE</em>后面加上<em>SET NULL</em>或<em>CASCADE</em>选项</strong></p>
+<h4 id="属性和元组上的约束"><a href="#属性和元组上的约束" class="headerlink" title="属性和元组上的约束"></a>属性和元组上的约束</h4><p>在<em>CREATE  TABLE</em>语句上可以声明两种约束：</p>
+<ol>
+<li>在单一属性上的约束</li>
+<li>在整个元组上的约束</li>
+</ol>
+<p><strong>非空值约束：</strong> <em>NOT NULL</em>，其作用是不允许元组的该属性取空值</p>
+<p><strong>基于属性的CHECK约束：</strong>将保留字<em>CHECK</em>和用圆括号括起来的条件附加在属性声明上，该条件是该属性的每个值都应满足的条件</p>
+<p><strong>基于元组的CHECK约束：</strong> 在用<em>CREATE TBALE</em>语句定义表时，可以在属性列表、键或外键声明上附加<em>CHECK</em>保留字，其约束条件用括号括起</p>
+<p>为了命名，在约束前加保留字<em>CONSTRAINT</em>和该约束的名字</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name <span class="type">CHAR</span>(<span class="number">30</span>) <span class="keyword">CONSTRAINT</span> NameIsKey <span class="keyword">PRIMARY</span> KEY</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h4><p><strong>触发器</strong>有时也称作<strong>事件—条件—动作规则</strong>，或者<strong>ECA规则</strong></p>
+<ol>
+<li>仅当数据库程序员声明的事件发生时，触发器被激活</li>
+<li>当触发器被事件激活时，触发器测试触发的条件</li>
+<li>如果触发器声明的条件满足，则与该触发器相连的动作由DBMS执行</li>
+</ol>
+<hr>
+<h3 id="视图与索引"><a href="#视图与索引" class="headerlink" title="视图与索引"></a>视图与索引</h3><h4 id="虚拟视图"><a href="#虚拟视图" class="headerlink" title="虚拟视图"></a>虚拟视图</h4><p>视图定义：<em>CREATE VIEW &lt;视图名&gt; AS &lt;视图定义&gt;;</em></p>
+<hr>
+<ul>
+<li>事务的原子性：要么都执行，要么都不执行</li>
+<li>模式匹配：模式<em>p</em>中普通字符仅能匹配<em>s</em>中与其相同的字符，而*%<em>能匹配</em>s<em>中任何任意长度（包括零长度）的字符串，</em>p<em>中的</em>_<em>能匹配</em>s*中任何一个字符</li>
+<li>SQL提供了<em><strong>GRANT</strong></em>语句以允许一个用户将权限授权给另一个用户，第一个用户仍然保留了所授予的权限，因此被认为是复制权限。格式如下：<em>GRANT &lt;权限列表&gt; ON &lt;数据库元素&gt; TO &lt;用户列表&gt;</em></li>
+<li>收权语句的简单形式始于：<em>REVOKE &lt;权限列表&gt; ON &lt;数据库元素&gt; FROM &lt;用户列表&gt;</em>   并以<em>CASCADE</em>或<em>RESTRICT</em>结束</li>
+<li>关系模式设计不当导致的异常基本类型：<strong>冗余</strong>，<strong>更新异常</strong>，<strong>删除异常</strong></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Kev1n</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/05/07/database/">http://example.com/2021/05/07/database/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">MaxKev1n'sBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a></div><div class="post_share"><div class="social-share" data-image="/img/img2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/05/07/Probability%20Theory%20and%20Mathematical%20Statistics%20/"><img class="next-cover" src="/img/img2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">概率论与统计</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/05/07/Probability Theory and Mathematical Statistics /" title="概率论与统计"><img class="cover" src="/img/img2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-07</div><div class="title">概率论与统计</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/img.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Kev1n</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/maxkev1n"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/maxkev1n" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chenzihang@njust.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">关系模型基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">修改关系模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">1.2.</span> <span class="toc-text">默认值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%AE%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="toc-number">1.3.</span> <span class="toc-text">键的声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%90%86%E8%AE%BA"><span class="toc-number">1.4.</span> <span class="toc-text">关系数据库设计理论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="toc-number">1.5.</span> <span class="toc-text">函数依赖</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">高级数据库模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#E-R%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">E&#x2F;R模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E6%95%B0%E5%92%8C%E9%80%BB%E8%BE%91%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80"><span class="toc-number">3.</span> <span class="toc-text">代数和逻辑查询语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F%E4%B8%8E%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">约束与触发器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%92%8C%E5%85%83%E7%BB%84%E4%B8%8A%E7%9A%84%E7%BA%A6%E6%9D%9F"><span class="toc-number">4.1.</span> <span class="toc-text">属性和元组上的约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">4.2.</span> <span class="toc-text">触发器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%E4%B8%8E%E7%B4%A2%E5%BC%95"><span class="toc-number">5.</span> <span class="toc-text">视图与索引</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E8%A7%86%E5%9B%BE"><span class="toc-number">5.1.</span> <span class="toc-text">虚拟视图</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/05/07/database/" title="数据库基础"><img src="/img/img2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据库基础"/></a><div class="content"><a class="title" href="/2021/05/07/database/" title="数据库基础">数据库基础</a><time datetime="2021-05-06T23:30:15.000Z" title="发表于 2021-05-07 07:30:15">2021-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/07/Probability%20Theory%20and%20Mathematical%20Statistics%20/" title="概率论与统计"><img src="/img/img2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论与统计"/></a><div class="content"><a class="title" href="/2021/05/07/Probability%20Theory%20and%20Mathematical%20Statistics%20/" title="概率论与统计">概率论与统计</a><time datetime="2021-05-06T23:20:15.000Z" title="发表于 2021-05-07 07:20:15">2021-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/07/Data%20Structure%20%20(4)/" title="Data Structure (4)"><img src="/img/back1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Data Structure (4)"/></a><div class="content"><a class="title" href="/2021/05/07/Data%20Structure%20%20(4)/" title="Data Structure (4)">Data Structure (4)</a><time datetime="2021-05-06T23:18:15.000Z" title="发表于 2021-05-07 07:18:15">2021-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/07/Data%20Structure%20%20(3)/" title="Data Structure (3)"><img src="/img/back1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Data Structure (3)"/></a><div class="content"><a class="title" href="/2021/05/07/Data%20Structure%20%20(3)/" title="Data Structure (3)">Data Structure (3)</a><time datetime="2021-05-06T23:17:15.000Z" title="发表于 2021-05-07 07:17:15">2021-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/07/Data%20Structure%20(2)/" title="Data Structure (2)"><img src="/img/back1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Data Structure (2)"/></a><div class="content"><a class="title" href="/2021/05/07/Data%20Structure%20(2)/" title="Data Structure (2)">Data Structure (2)</a><time datetime="2021-05-06T23:16:15.000Z" title="发表于 2021-05-07 07:16:15">2021-05-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Kev1n</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', '', 'katex-wrap')
+  })
+})()</script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>
