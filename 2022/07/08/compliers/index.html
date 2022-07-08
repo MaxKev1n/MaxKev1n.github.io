@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>compliers - ChenZihang&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="ChenZihang&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="ChenZihang&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="第一章SpeedCoding(1953，John Backus)：占用大量的内存 Fortran(1954-1957)：1958年时约50%的程序使用Fortran编写  Lexical Analysis: Lexical analysis divides program text into “words” or “tokens” Parsing: diagraming sentences(The"><meta property="og:type" content="blog"><meta property="og:title" content="compliers"><meta property="og:url" content="http://example.com/2022/07/08/compliers/"><meta property="og:site_name" content="ChenZihang&#039;s Blog"><meta property="og:description" content="第一章SpeedCoding(1953，John Backus)：占用大量的内存 Fortran(1954-1957)：1958年时约50%的程序使用Fortran编写  Lexical Analysis: Lexical analysis divides program text into “words” or “tokens” Parsing: diagraming sentences(The"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/1.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/2.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/3.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/5.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/4.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/6.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/7.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/8.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/9.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/10.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/11.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/12.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/13.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/14.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/15.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/16.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/17.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/18.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/19.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/20.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/21.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/22.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/23.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/24.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/27.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/28.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/29.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/30.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/31.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/32.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/33.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/34.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/35.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/36.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/37.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/38.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/39.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/40.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/41.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/42.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/43.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/44.png"><meta property="og:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/45.png"><meta property="article:published_time" content="2022-07-08T07:16:53.000Z"><meta property="article:modified_time" content="2022-07-08T07:34:12.081Z"><meta property="article:author" content="ChenZihang"><meta property="article:tag" content="computer science"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/1.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/08/compliers/"},"headline":"compliers","image":["https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/1.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/2.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/3.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/5.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/4.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/6.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/7.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/8.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/9.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/10.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/11.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/12.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/13.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/14.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/15.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/16.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/17.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/18.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/19.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/20.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/21.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/22.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/23.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/24.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/27.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/28.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/29.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/30.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/31.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/32.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/33.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/34.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/35.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/36.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/37.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/38.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/39.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/40.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/41.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/42.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/43.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/44.png","https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/45.png"],"datePublished":"2022-07-08T07:16:53.000Z","dateModified":"2022-07-08T07:34:12.081Z","author":{"@type":"Person","name":"ChenZihang"},"publisher":{"@type":"Organization","name":"ChenZihang's Blog","logo":{"@type":"ImageObject","url":{"text":"ChenZihang's Blog"}}},"description":"第一章SpeedCoding(1953，John Backus)：占用大量的内存 Fortran(1954-1957)：1958年时约50%的程序使用Fortran编写  Lexical Analysis: Lexical analysis divides program text into “words” or “tokens” Parsing: diagraming sentences(The"}</script><link rel="canonical" href="http://example.com/2022/07/08/compliers/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><script data-ad-client="chenzihang" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">ChenZihang&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/maxkev1n"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-07-08T07:16:53.000Z" title="7/8/2022, 3:16:53 PM">2022-07-08</time>发表</span><span class="level-item"><time dateTime="2022-07-08T07:34:12.081Z" title="7/8/2022, 3:34:12 PM">2022-07-08</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/learn-in-NJUST/">learn in NJUST</a></span><span class="level-item">27 分钟读完 (大约4086个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">compliers</h1><div class="content"><h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><p>SpeedCoding(1953，John Backus)：占用大量的内存</p>
+<p>Fortran(1954-1957)：1958年时约50%的程序使用Fortran编写</p>
+<ol>
+<li><strong>Lexical Analysis</strong>: Lexical analysis divides program text into “words” or “tokens”</li>
+<li><strong>Parsing</strong>: diagraming sentences(The diagram is a tree)</li>
+<li><strong>Semantic Analysis</strong>: to catch inconsistencies</li>
+<li><strong>Optimization</strong>: automatically modify programs so that they run faster and use less memory</li>
+<li><strong>Code Generation</strong>: Produces assembly code(usually); A translation into another language</li>
+</ol>
+<hr>
+<span id="more"></span>
+
+<p><strong>为什么有很多种编程语言？</strong></p>
+<blockquote>
+<p>Application domains have distinctive&#x2F;conflicting needs</p>
+</blockquote>
+<p>科学计算(Fortran)：</p>
+<ol>
+<li>优秀的浮点计算</li>
+<li>优秀的阵列计算</li>
+<li>并行性</li>
+</ol>
+<p>商业应用(SQL)：</p>
+<ol>
+<li>持续性</li>
+<li>报表生成工具</li>
+<li>并发性</li>
+</ol>
+<p>系统编程(C&#x2F;C++)：</p>
+<ol>
+<li>资源管理</li>
+<li>实时控制</li>
+</ol>
+<p><strong>为什么会有新的编程语言？</strong></p>
+<blockquote>
+<p>Claim: Programmer training is the dominant cost for programming language</p>
+</blockquote>
+<ol>
+<li>广泛使用的语言很难去改变(Widespread language are slow to change)</li>
+<li>开始一种新的语言比较容易(easy to start a new language)</li>
+<li>语言会被用来填补空缺(languages adopted to fill a void)</li>
+</ol>
+<p><strong>什么是好的编程语言？</strong></p>
+<blockquote>
+<p>There is no universally accepted metric for language design</p>
+</blockquote>
+<hr>
+<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><p>Cool: Classroom Object Oriented Language, designed to be implementable in a short time.</p>
+<ul>
+<li>Abstraction</li>
+<li>Static typing</li>
+<li>Reuse(inheritance)</li>
+<li>Memory management</li>
+<li>And more…</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><span class="line">class Main &#123;</span><br><span class="line">	main() : Int &#123;</span><br><span class="line">		1</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Main &#123;</span><br><span class="line">	i : IO &lt;- new IO;</span><br><span class="line">	main() : IO &#123;</span><br><span class="line">		i.out_string(&quot;hello world!&quot;)</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Main &#123;</span><br><span class="line">	main() : Object &#123;</span><br><span class="line">		(new IO).out_string(&quot;hello world!&quot;)</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Main &#123;</span><br><span class="line">	main() : Object &#123;</span><br><span class="line">		(new IO).out_string((new IO).in_string().concat(&quot;\n&quot;))</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Main inherits A2I &#123;</span><br><span class="line">	main() : Object &#123;</span><br><span class="line">		(new IO).out_string(i2a(a2i((new IO).in_string())+1).concat(&quot;\n&quot;))</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Main inherits A2I &#123;</span><br><span class="line">	main() : Object &#123;</span><br><span class="line">		(new IO).out_string(i2a(fact(a2i((new IO).in_string()))).concat(&quot;\n&quot;))</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	fact(i : Int) : Int &#123;</span><br><span class="line">		i+1</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Main inherits A2I &#123;</span><br><span class="line">	main() : Object &#123;</span><br><span class="line">		(new IO).out_string(i2a(fact(a2i((new IO).in_string()))).concat(&quot;\n&quot;))</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	fact(i : Int) : Int &#123;</span><br><span class="line">		if (i = 0) then 1 else i * fact(i-1) fi</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Main inherits A2I &#123;</span><br><span class="line">	main() : Object &#123;</span><br><span class="line">		(new IO).out_string(i2a(fact(a2i((new IO).in_string()))).concat(&quot;\n&quot;))</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	fact(i : Int) : Int &#123;</span><br><span class="line">		let fact: Int &lt;- 1 in&#123;</span><br><span class="line">			while(not(i = 0)) loop</span><br><span class="line">				&#123;</span><br><span class="line">					fact &lt;- fact * i;</span><br><span class="line">					i &lt;- i - 1;</span><br><span class="line">				&#125;</span><br><span class="line">			pool;</span><br><span class="line">			fact;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Main inherits IO &#123;</span><br><span class="line">	main() : Object &#123;</span><br><span class="line">		let hello : String &lt;- &quot;Hello &quot;,</span><br><span class="line">			world : String &lt;- &quot;World!&quot;,</span><br><span class="line">			newline : String &lt;- &quot;\n&quot;</span><br><span class="line">		in</span><br><span class="line">			out_string(hello.concat(world.concat(newline)))</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class List &#123;</span><br><span class="line">	item: String;</span><br><span class="line">	next: List;</span><br><span class="line">	</span><br><span class="line">	init(i: String, n: List)&#123;</span><br><span class="line">		&#123;</span><br><span class="line">			item &lt;- i;</span><br><span class="line">			next &lt;- n;</span><br><span class="line">			self;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	fatten(): String &#123;</span><br><span class="line">		if(isvoid next) then </span><br><span class="line">			item</span><br><span class="line">		else</span><br><span class="line">			item.conccat(next.flatten())</span><br><span class="line">		fi</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line">class Main inherits IO &#123;</span><br><span class="line">	main() : Object &#123;</span><br><span class="line">		let hello : String &lt;- &quot;Hello &quot;,</span><br><span class="line">			world : String &lt;- &quot;World!&quot;,</span><br><span class="line">			newline : String &lt;- &quot;\n&quot;,</span><br><span class="line">			nil: List,</span><br><span class="line">			list: List &lt;- (new List).init(hello, (new List).init(world, (new List).init(newline, nil)))</span><br><span class="line">		in</span><br><span class="line">			out_string(list.flatten())</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class List inherits A2I &#123;</span><br><span class="line">	item: String;</span><br><span class="line">	next: List;</span><br><span class="line">	</span><br><span class="line">	init(i: String, n: List)&#123;</span><br><span class="line">		&#123;</span><br><span class="line">			item &lt;- i;</span><br><span class="line">			next &lt;- n;</span><br><span class="line">			self;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	fatten(): String &#123;</span><br><span class="line">		let String: String &lt;- </span><br><span class="line">			case item of</span><br><span class="line">				i: Int =&gt; i2a(i);</span><br><span class="line">				s: String =&gt; s;</span><br><span class="line">				o: Object =&gt; &#123;abort();&quot;&quot;;&#125;;</span><br><span class="line">			esac</span><br><span class="line">		in</span><br><span class="line">			if(isvoid next) then </span><br><span class="line">				string</span><br><span class="line">			else</span><br><span class="line">				string.conccat(next.flatten())</span><br><span class="line">			fi</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line">class Main inherits IO &#123;</span><br><span class="line">	main() : Object &#123;</span><br><span class="line">		let hello : String &lt;- &quot;Hello &quot;,</span><br><span class="line">			world : String &lt;- &quot;World!&quot;,</span><br><span class="line">			i: Int &lt;- 42,</span><br><span class="line">			newline : String &lt;- &quot;\n&quot;,</span><br><span class="line">			nil: List,</span><br><span class="line">			list: List &lt;- (new List).init(hello, (new List).init(i, (new List).init(newline, nil)))</span><br><span class="line">		in</span><br><span class="line">			out_string(list.flatten())</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1><p><strong>Token class</strong>:</p>
+<ul>
+<li><p>Identifier: 由字母或数字组成的字符串，以字母为首字符</p>
+</li>
+<li><p>Integer: 非空的数字字符串</p>
+</li>
+<li><p>Keyword: 关键字</p>
+</li>
+<li><p>Whitespace: 一个由blanks,newlines,tabs组成的非空集合</p>
+</li>
+<li><p>Classify program substrings according to role</p>
+</li>
+<li><p>Communicate tolens to the parser</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/1.png"></p>
+<hr>
+<p>example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if(i==j)</span><br><span class="line">	z=0;</span><br><span class="line">else</span><br><span class="line">	z=1</span><br><span class="line">	</span><br><span class="line">\tif(i==j)\n\t\tz=0;\n\telse\n\t\tz=1;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>whitespace: \t	\n\t\t	\n\t	\n\t\t</li>
+<li>kewords: if	else</li>
+<li>Identifiers: i	j	z	z</li>
+<li>numbers: 0	1</li>
+<li>operator: &#x3D;&#x3D;	&#x3D;	&#x3D;</li>
+<li>(	)	;</li>
+</ul>
+<hr>
+<p>An implementation must do two things</p>
+<ol>
+<li>Recognize substrings cooresponding to tokens</li>
+<li>Identify the tolen class of each lexeme</li>
+</ol>
+<p>$$<br>&lt;token\quad class,\quad lexeme&gt;\quad is\quad token<br>$$</p>
+<hr>
+<p>LA Examples:</p>
+<p>Fortran rule: whitespace是不重要的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DO 5 I = 1,25</span><br><span class="line">DO 5 I = 1.25</span><br></pre></td></tr></table></figure>
+
+<p>由于whitespace被忽略，因此产生分歧，第一个式子为循环，第二个式子为将1.25赋值给DO5I，但是在逗号与点之前具有相同的字符串序列，直至逗号和点才能得出结果。这就需要<strong>lookhead</strong>。</p>
+<ol>
+<li>The goal is to partition the string. This is implemented by reading left-to-right, recognizing one token at a time.</li>
+<li>“Lookhead” may be required to decide where one token ends and the next token begins.</li>
+</ol>
+<p>PL&#x2F;I keywords are not reserved</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IF ELSE THEN THEN = ELSE;ELSE ELSE = THEN</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>The goal of lexical analysis is to<ul>
+<li>Partion the input string into lexemes</li>
+<li>Identify the token of each lexeme</li>
+</ul>
+</li>
+<li>Left-to-right scan &#x3D;&gt; lookahead sometimes required</li>
+</ul>
+<hr>
+<p><strong>Regular languages</strong></p>
+<p><em>正则表达式(regular expression)</em></p>
+<ul>
+<li><p>Single character</p>
+<p>‘c’ &#x3D; {“c”}</p>
+</li>
+<li><p>epsilon</p>
+<p>$\epsilon$ &#x3D; {“”}</p>
+</li>
+<li><p>Union</p>
+<p>A + B &#x3D;{a|a$\in$A}$\bigcup${b|b$\in$B}</p>
+</li>
+<li><p>Concatenation</p>
+<p>AB &#x3D; {ab|a$\in$A $\bigwedge$ b$\in$B}</p>
+</li>
+<li><p>Iteration</p>
+<p>$A^*$&#x3D;$\underset{i\geq0}{\bigcup}A^i$</p>
+</li>
+</ul>
+<blockquote>
+<p>Def.The regular expressions over $\Sigma$ are the smallest set of expression including</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/2.png"></p>
+<ul>
+<li>Regular expressions specify regular languages</li>
+<li>Five constructs<ul>
+<li>Two base cases: empty and 1-character strings</li>
+<li>Three compound expressions: union, concatenation, iteration</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong>Formal Languages</strong></p>
+<blockquote>
+<p>Def.Let $\Sigma$ be a set of characters.A language over $\Sigma$ is a set of strings of characters drawn from $\Sigma$</p>
+</blockquote>
+<p>Meaning function <em>L</em> maps syntax to senmantics<br>$$<br>L:\quad expression\rightarrow Set\quad of\quad Strings<br>$$<br><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/3.png"></p>
+<p><strong>为什么使用meaning function？</strong></p>
+<ul>
+<li>Makes clear what is syntax, what is semantics.</li>
+<li>Allows us to consider notation as a separate issue</li>
+<li>Because expressions and meanings are not one to one correspondings.</li>
+</ul>
+<blockquote>
+<p>Meaning is many to one(<strong>Never one to many!</strong>)</p>
+</blockquote>
+<hr>
+<p><strong>Lexical Specifications</strong></p>
+<p>关键字：”if” or “else” or “then” or …</p>
+<p>‘i’ ‘f’ + ‘e’ ‘l’ ‘s’ ‘e’</p>
+<p>“if” + “else”</p>
+<p>整数：一个非空的数字字符串</p>
+<p>digit &#x3D; ‘o’+’1’+’2’+’3’+’4’+’5’+’6’+’7’+’8’+’9’<br>$$<br>digit(digit^*)&#x3D;digit^+<br>$$</p>
+<p>标识符：以字母开头的字母或者数字串</p>
+<p>letter &#x3D; [a-z A-Z]<br>$$<br>letter(letter+digit)^*<br>$$</p>
+<p>Whitespace：a non-empty sequence of blanks, newlines, and tabs<br>$$<br>(‘\ ‘ + ‘\backslash’ + ‘\backslash+’)^+<br>$$</p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/5.png"></p>
+<p>Example:</p>
+<p><em><a href="mailto:&#97;&#x6e;&#121;&#x6f;&#110;&#101;&#64;&#x63;&#x73;&#46;&#x73;&#x74;&#97;&#x6e;&#x66;&#x6f;&#114;&#100;&#46;&#x65;&#100;&#x75;">&#97;&#x6e;&#121;&#x6f;&#110;&#101;&#64;&#x63;&#x73;&#46;&#x73;&#x74;&#97;&#x6e;&#x66;&#x6f;&#114;&#100;&#46;&#x65;&#100;&#x75;</a></em></p>
+<p>$letter^+$‘@’$letter^+$’.’$letter^+$’.’$letter^+$</p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/4.png"></p>
+<ul>
+<li>Regular expressions describe many useful languages</li>
+<li>Regular languages are a language specification<ul>
+<li>We still need an implementation</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h1><ol>
+<li><p>Write a rexp for the lexemes of each token class</p>
+<ul>
+<li>Number &#x3D; $digit^+$</li>
+<li>Keyword &#x3D; ‘if’ + ‘else’ + …</li>
+<li>Identifier &#x3D; $letter(letter + digit)^*$</li>
+<li>OpenPar &#x3D; ‘(‘</li>
+<li>…</li>
+</ul>
+</li>
+<li><p>Construct <em>R</em>, matching all lexemes for all tokens</p>
+</li>
+<li><p>Let input be $x_1…x_n$</p>
+<p>For $1\leq i\leq n$ check $x_1…x_i\in L(R)$</p>
+</li>
+<li><p>If success, then we know that $_1…x_i\in L(R_j)$ for some <em>j</em></p>
+</li>
+<li><p>Remove $X_1…x_i$ from input adn go to (3)</p>
+</li>
+</ol>
+<p><strong>How much input is used?</strong></p>
+<p>当面对不同长度的前缀时，通常选择更长的前缀（它被称为<em>Maximal Munch</em>）</p>
+<p><strong>Which token is used?</strong></p>
+<p>按照优先级排序，选择排序在第一个的token</p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/6.png"></p>
+<p><strong>What if no rules matches?</strong></p>
+<p>编写一个新的正则表达式，对于所有可能出现的错误字符串都将作为无效字符串出现，并且放在优先级的最后面</p>
+<blockquote>
+<p><em>ERROR&#x3D;[all strings not in the lexical spec]</em>, put it last in priority.</p>
+</blockquote>
+<ul>
+<li>Regular expressions are a concise notation for string patterns</li>
+<li>use in lexical analyisis requires small extensions<ul>
+<li>To resolve ambiguities<ol>
+<li>matches as long as possible</li>
+<li>highest priority match</li>
+</ol>
+</li>
+<li>to handle errors</li>
+</ul>
+</li>
+<li>Good algorithms known<ul>
+<li>Require only single pass over the input</li>
+<li>Few operations per character(table lookup)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>A finite automation(<em>有限自动机</em>) consists of</p>
+<ul>
+<li>An input alphabet $\Sigma$</li>
+<li>A set of states $S$</li>
+<li>A start state $n$</li>
+<li>A set of accepting states $F\subseteq S$</li>
+<li>A set of transitions $state\rightarrow ^{input}state$</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/7.png"></p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/8.png"></p>
+<blockquote>
+<p>Language of a FA &#x3D; set of accepted strings</p>
+</blockquote>
+<ul>
+<li><p>Another kind of transition: $\epsilon-moves$ 机器可以在不消耗任何输入的情况下进行状态转换</p>
+</li>
+<li><p>Deterministic Finite Automate(DFA)</p>
+<ul>
+<li>One transition per input per state</li>
+<li>No $\epsilon-moves$</li>
+</ul>
+</li>
+<li><p>Bibdeterministic Finite Automate(NFA)</p>
+<ul>
+<li>Can have multiple transitions for one input in a given state</li>
+<li>Can have $\epsilon-moves$</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>A DFA takes only one path through the state graph</p>
+<p>An NFA accepts if some choices lead to an accepting state</p>
+</blockquote>
+<ul>
+<li><p>NFAs and DFAs recognize the same set of languages</p>
+<ul>
+<li>regualr languges</li>
+</ul>
+</li>
+<li><p>DFAs are faster to execute</p>
+<ul>
+<li>There are no choices to consider</li>
+</ul>
+</li>
+<li><p>NFAs are, in general, smaller</p>
+</li>
+</ul>
+<hr>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/9.png"></p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/10.png"></p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/11.png"></p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/12.png"></p>
+<hr>
+<p><strong>NFA to DFA</strong></p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/13.png"><br>$$<br>\epsilon-closure(B)&#x3D;{B,C,D}\\epsilon-closure(G)&#x3D;{A,B,C,D,G,H,I}<br>$$</p>
+<p><strong>一共有多少种不同的状态？</strong></p>
+<p>若有N个状态，则存在$2^N-1$个非空子集(finite set of possible configurations)</p>
+<p>NFA</p>
+<ul>
+<li>states $S$</li>
+<li>start state $s\in S$</li>
+<li>final state $F\in S$</li>
+<li>转移函数：$a(x)&#x3D;{y|x\in X_n\quad x\stackrel{a}{\longrightarrow}1}$</li>
+<li>$\epsilon-closure()$</li>
+</ul>
+<p>DFA</p>
+<ul>
+<li>states: subsets of $S$(except the empty set)</li>
+<li>start state: $\epsilon-closure(s)$</li>
+<li>final state: ${x|x\cap F\neq\varphi}$</li>
+<li>$X\stackrel{a}{\longrightarrow}Y$ if $Y&#x3D;\epsilon-closure(a(X))$</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/14.png"></p>
+<hr>
+<p><strong>Implementing FA</strong></p>
+<ul>
+<li>A DFA can be implemented by a 2D table T<ul>
+<li>One dimension is <em>states</em></li>
+<li>Other dimension is <em>input symbol</em></li>
+<li>For every transition $S_i\rightarrow ^{a}S_k$ define $T[i,a]&#x3D;k$</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/15.png"></p>
+<p>缺点：表中有很多重复的行</p>
+<hr>
+<p>这个表将包含一个指向特定状态的vector of moves的指针</p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/16.png"></p>
+<p>缺点：these pointers actually take time to your reference</p>
+<hr>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/17.png"></p>
+<p>节省了大量的表格空间，但是运行速度会比DFA慢得多</p>
+<hr>
+<ul>
+<li>NFA $\rightarrow$ DFA conversion is key</li>
+<li>Tools trade between speed and space</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">DFAs</th>
+<th align="center">faster, less compact</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">NFAs</td>
+<td align="center">slower, concise</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h1><blockquote>
+<p>由于正则表达式无法表示所有的语言，我们需要Parser</p>
+</blockquote>
+<ul>
+<li><em>Input</em>: sequence of tokens from lexer</li>
+<li><em>Output</em>: parse tree of the program</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/18.png"></p>
+<table>
+<thead>
+<tr>
+<th align="center">Phase</th>
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Lexer</td>
+<td>String of characters</td>
+<td>String of tokens</td>
+</tr>
+<tr>
+<td align="center">Parse</td>
+<td>String of tokens</td>
+<td>Parse tree(may be implicit)</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>Context-Free Grammars</strong></p>
+<ul>
+<li>A CFG consists of<ul>
+<li>A set of terminals <em>T</em></li>
+<li>A set of non-terminals <em>N</em></li>
+<li>A start symbol <em>s</em> ($s\in N$)</li>
+<li>A set of productions $X\rightarrow Y_1..Y_n$, $x\in N$ , $Y_i\in N\cup T\cup{\epsilon}$</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Begin with a string with only the start sysmbol <em>S</em></li>
+<li>Replace any non-terminal <em>X</em> in the string by the right-hand side of some production $X\rightarrow Y_1…Y_n$</li>
+<li>Repeat (2) until there are no non-terminals</li>
+</ol>
+<p>$$<br>S\rightarrow…\rightarrow\alpha_0\rightarrow\alpha_1\rightarrow\alpha_2\rightarrow…\rightarrow\alpha_n\\alpha_0\stackrel{*}{\longrightarrow}\alpha_n\quad(in\geq0\ steps)<br>$$<br><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/19.png"></p>
+<p>The idea of a CFG is a big step. But:</p>
+<ul>
+<li>Membership in a lanugage is “yes” or “no”; alse need parse tree of the input</li>
+<li>Must handle errors gracefully</li>
+<li>Need an implementations of CFG’s (e.h., bison)</li>
+</ul>
+<hr>
+<p><strong>Derivations</strong></p>
+<p>A derivcation can be drawn as a tree</p>
+<ul>
+<li>Start symbol is the tree’s root</li>
+<li>For a production $X\rightarrow Y_1…Y_n$ add children $Y_1…Y_n$ to node $X$</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/20.png"></p>
+<ul>
+<li><p>一个解析树有</p>
+<ul>
+<li>叶子节点为终结符</li>
+<li>内部节点为非终结符</li>
+</ul>
+</li>
+<li><p>An in-order traversal of the leaves is the original input</p>
+</li>
+<li><p>解析树展示了操作符之间的关联，但是输入字符串并不会</p>
+</li>
+<li><p>上图的案例为最左推导(<em>left-most derivation</em>)：对于每一步，替换最左侧的非终结符</p>
+</li>
+<li><p>There is an quivalent notion of a right-most derivation</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/21.png"></p>
+<blockquote>
+<p>最右推导和最左推导有相同的解析树</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>如果对于一个字符串有多个解析树，那么这个语法就是<em>ambiguous</em></p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/22.png"></p>
+<ul>
+<li>Instead of rewriting the grammar<ul>
+<li>Use the more natural(ambiguous) grammar</li>
+<li>Along with disambiguating declarations</li>
+</ul>
+</li>
+<li>Most tools allow precedence and associativity declarations to disambiguate grammars</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/23.png"></p>
+<hr>
+<h1 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h1><p>许多种类的可能错误</p>
+<table>
+<thead>
+<tr>
+<th align="center">Error kind</th>
+<th align="center">Example</th>
+<th align="center">Detected by…</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Lexical</td>
+<td align="center">…$…</td>
+<td align="center">Lexer</td>
+</tr>
+<tr>
+<td align="center">Syntax</td>
+<td align="center">…x*%…</td>
+<td align="center">Parser</td>
+</tr>
+<tr>
+<td align="center">Semantic</td>
+<td align="center">…int x;y &#x3D; x(3);…</td>
+<td align="center">Type checker</td>
+</tr>
+<tr>
+<td align="center">Correctness</td>
+<td align="center">your favorite program</td>
+<td align="center">Tester&#x2F;User</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>错误处理应该</p>
+<ul>
+<li>准确并且清晰地报错错误</li>
+<li>快速地从错误中恢复</li>
+<li>不会减慢有效代码的编译</li>
+</ul>
+</li>
+<li><p>Panic mode</p>
+<ul>
+<li>When an error is dected:<ul>
+<li>Discard tokens until one with a clear role is found</li>
+<li>Continue from there</li>
+</ul>
+</li>
+<li>Looking for <em>synchronizing</em> tokens<ul>
+<li>typically the statementt or expression terminators</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Error productions</p>
+</li>
+<li><p>Automatic local or global correction</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/24.png"></p>
+<p>![](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/25.png&quot;">https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/25.png&quot;</a>   &gt;</p>
+<p>![](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/26.png&quot;">https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/26.png&quot;</a>   &gt;</p>
+<hr>
+<p><strong>Abstract Syntax Trees</strong></p>
+<hr>
+<p><strong>Recursive Descent</strong></p>
+<ul>
+<li><p>Define boolean functions that check for a match of:</p>
+<ul>
+<li>A given token terminal:<code>bool term(TOKEN tok)&#123;return *next++ == tok;&#125;</code></li>
+<li>The nth production of S:<code>bool Sn()&#123;...&#125;</code></li>
+<li>Try all productions of S:<code>bool S()&#123;...&#125;</code></li>
+</ul>
+</li>
+<li><p>For production $E\rightarrow T$</p>
+<ul>
+<li><code>bool E1() &#123;return T();&#125;</code></li>
+</ul>
+</li>
+<li><p>Fo production $E\rightarrow T+E$</p>
+<ul>
+<li><code>bool E2() &#123;return T() &amp;&amp; term(PLUS) &amp;&amp; E();&#125;</code></li>
+</ul>
+</li>
+<li><p>For all productions of E(with backtracking)</p>
+<ul>
+<li><pre><code>bool E() &#123;
+
+    Token *save = next;
+
+    return (next = save, E1()) || (next = save, E2());
+
+&#125;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/27.png"></p>
+<hr>
+<p><strong>Left Recursion</strong></p>
+<p>对于产生式$S\rightarrow Sa$</p>
+<ul>
+<li><code>bool S1() &#123;return S() &amp;&amp; term(a);&#125;</code></li>
+<li><code>bool S() &#123;return S1();&#125;</code></li>
+</ul>
+<p><code>S()</code>将会进入无限循环</p>
+<ul>
+<li>A left-recursive grammar has a non-terminal S $S\rightarrow ^{+}S\alpha$ for some $\alpha$</li>
+</ul>
+<p>对于left-recursive grammar$S\rightarrow S\alpha | \beta$，$S$生成的所有字符串以$\beta$为首，并且跟随任意数量的$\alpha$</p>
+<ul>
+<li><p>可以使用right-recursion重写</p>
+<ul>
+<li>$S\rightarrow\beta S’$</li>
+<li>$S’\rightarrow\alpha S’|\epsilon$</li>
+</ul>
+</li>
+<li><p>In general	$S\rightarrow S\alpha_1|…|S\alpha_n|\beta_1|…|\beta_m$</p>
+</li>
+<li><p>Rewrite as</p>
+<ul>
+<li>$S\rightarrow\beta_1S’|…|\beta_mS’$</li>
+<li>$S’\rightarrow\alpha_1S’|…|\alpha_nS’|\epsilon$</li>
+</ul>
+</li>
+<li><p>Recursive descent</p>
+<ul>
+<li>Simple and general parsing stratrgy</li>
+<li>Left-recursion must be eliminatied first</li>
+<li>… but that can be done automatically</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h1><p><strong>Predictive Parsers</strong></p>
+<ul>
+<li>Parser能够预测使用哪一条产生式<ul>
+<li>By looking at the next few tokens</li>
+<li>No backtracking</li>
+</ul>
+</li>
+<li>Predictive parsers accept LL(k) grammars(<em>left-to-right left-most derivation(k tokens lookahead)</em>)</li>
+</ul>
+<p>$E\rightarrow T+E|T$</p>
+<p>$T\rightarrow int|int*T|(E)$</p>
+<p>改写为</p>
+<p>$E\rightarrow TX$<br>$X\rightarrow+E|\epsilon$</p>
+<p>$T\rightarrow intT|(E)$</p>
+<p>$Y\rightarrow*T|\epsilon$</p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/28.png"></p>
+<ul>
+<li><p>方法类似于recursive descent，除了</p>
+<ul>
+<li>For the leftmost non-terminal <em>S</em></li>
+<li>We look a the next input token <em>a</em></li>
+<li>And choose the production shown at <em>[S,a]</em></li>
+</ul>
+</li>
+<li><p>A stack records fromtier of parse tree</p>
+<ul>
+<li>Non-terminals that have yet to be expanded</li>
+<li>Terminals that have yet to matched against the input</li>
+<li>Top of stack &#x3D; leftmost pending terminal or non-terminal</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/29.png"></p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/30.png"></p>
+<hr>
+<p><strong>First Sets</strong></p>
+<ul>
+<li>Consider non-termianl <em>A</em>, production$A\rightarrow\alpha$, token <em>t</em></li>
+<li>$T[A,t]&#x3D;\alpha$ in two cases:<ul>
+<li>if $\alpha\rightarrow^{*}t\beta$<ul>
+<li>$\alpha$ can derive a <em>t</em> in the first position, We say that $t\in First(\alpha)$</li>
+</ul>
+</li>
+<li>if$A\rightarrow\alpha$ and $\alpha\rightarrow^{<em>}\epsilon$ and $S\rightarrow^{</em>}\beta At\delta$<ul>
+<li>we say $t\in Follow(A)$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>Definition</em><br>$$<br>First(X)&#x3D;{t|X\rightarrow^{<em>}t\alpha}\cup{\epsilon|X\rightarrow^{</em>}\epsilon}<br>$$<br><em>Algotithm sketch</em></p>
+<ol>
+<li>$First(t)&#x3D;{t}$</li>
+<li>$\epsilon\in First(X)$<ul>
+<li>if $X\rightarrow\epsilon$</li>
+<li>if $X\rightarrow A_1…A_n$ and $\epsilon\in First(A_i)$ for $1\leq i\leq n$</li>
+</ul>
+</li>
+<li>$First(\alpha)\subseteq First(X)$ if $X\rightarrow A_1…A_n\alpha$<ul>
+<li>and $\epsilon\in First(A_i)$ for $1\leq i\leq n$</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/31.png"></p>
+<hr>
+<p><strong>Follow Sets</strong></p>
+<p><em>Definition</em><br>$$<br>Follow(X)&#x3D;{t|S\rightarrow^{*}\beta Xt\delta}<br>$$<br><em>Intuition</em></p>
+<ul>
+<li>if $X\rightarrow AB$ then $First(B)\subseteq Follow(A)$ and $Follow(X)\subseteq Follow(B)$<ul>
+<li>if $B\rightarrow^{*}\epsilon$ then $Follow(X)\subseteq Follow(A)$</li>
+</ul>
+</li>
+<li>If <em>S</em> is the start symbol then $$\in Follow(S)$</li>
+</ul>
+<p><em>Algorithm sketch</em></p>
+<ol>
+<li>$$\in Follow(S)$</li>
+<li>$Firset(\beta)-{\epsilon}\subseteq Follow(X)$<ul>
+<li>For each porduction $A\rightarrow\alpha X\beta$</li>
+</ul>
+</li>
+<li>$Follow(A)\subseteq Follow(X)$<ul>
+<li>For each production $A\rightarrow\alpha X\beta$ where $\epsilon\in First(\beta)$</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/32.png"></p>
+<hr>
+<p><strong>LL(1) Parsing Tables</strong></p>
+<p>For each production $A\rightarrow\alpha$ in CFG <em>G</em> do:</p>
+<ul>
+<li>for each terminal $t\in First(\alpha)$ do $T[A,t]&#x3D;\alpha$</li>
+<li>if $\epsilon\in First(\alpha)$, for each $t\in Follow(A)$ do $T[A,t]&#x3D;\alpha$</li>
+<li>if $\epsilon\in First(\alpha)$ and $$\in Follow(A)$ do $T[A,$]&#x3D;\alpha$</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/33.png"></p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/34.png"></p>
+<ul>
+<li>If any entry is multiply defined then G is not LL(1)</li>
+</ul>
+<hr>
+<p><strong>Bottom-Up Parsing</strong></p>
+<p>Bottom-up parsing reduces a string to the start symbol by inverting productions</p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/35.png"></p>
+<blockquote>
+<p>A bottom-up parser traces a rightmost derivation in reverse</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/36.png"></p>
+<hr>
+<p><strong>Shift-Reduce Parsing</strong></p>
+<ul>
+<li><p>Shift(移进): Move <em>|</em> one place to the right, Shift a terminal to the left string</p>
+<ul>
+<li>$ABC|xyz\Longrightarrow ABCx|yz$</li>
+</ul>
+</li>
+<li><p>Reduce(归约): Apply an inverse production at the right end of the left string</p>
+<ul>
+<li>If $A\rightarrow xy$ is a production, then $Cbxy|ijk\Longrightarrow CbA|ijk$</li>
+</ul>
+</li>
+<li><p>Left string can be implemented by a stack: Top of the stack is the <em>|</em></p>
+</li>
+<li><p>Shift pushes a terminal on the stack</p>
+</li>
+<li><p>Reduce</p>
+<ul>
+<li>pops symbols off of the stack(production rhs)</li>
+<li>pushed a non-terminal on the stack(production lhs)</li>
+</ul>
+</li>
+<li><p>如果移进或者归约都合法，将会存在<em>shift-reduce conflict</em>(移进-归约冲突)</p>
+</li>
+<li><p>如果可以使用两个不同的产生式进行归约，将会存在<em>reduce-reduce conflict</em>(归约-归约冲突)</p>
+</li>
+</ul>
+<hr>
+<h1 id="第八章"><a href="#第八章" class="headerlink" title="第八章"></a>第八章</h1><p><strong>Handles</strong></p>
+<p>Intuition: Want to reduce only if the result can still be reduced to the start symbol</p>
+<ul>
+<li>Assume a rightmost derivation: $S\rightarrow^{*}\alpha X\omega\rightarrow\alpha\beta\omega$<ul>
+<li>Then $\alpha\beta$ is a handle of $\alpha\beta\omega$</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>A handle is a reduction that also allows further reductions back to the start symbol</p>
+</blockquote>
+<blockquote>
+<p>In shift-reduce parsing, handles appear only at the top of the stack, never inside</p>
+</blockquote>
+<hr>
+<p><strong>Recognizing Handles</strong></p>
+<p>$\alpha$ is a viable prefix if there is an $\omega$ such that $\alpha|\omega$ is a state of a shift-reduce parser</p>
+<p>PS:$\alpha$ is stack and $\omega$ is rest of input;</p>
+<blockquote>
+<p>For any grammar, the set of viable prefixes is a regular language</p>
+</blockquote>
+<ul>
+<li>An item is a production with a “.” somewhere on the rhs</li>
+<li>Items are often called “LR(0) items”</li>
+</ul>
+<p>Example:</p>
+<p>$E\rightarrow T+E|T$</p>
+<p>$T\rightarrow int*T|int|(E)$</p>
+<ul>
+<li>Then $(E|)$ is a state of a shift-reduce parse</li>
+<li>$(E$ is a prefix of the rhs of $T\rightarrow(E)$, will be reduced after the next shift</li>
+<li>Item $T\rightarrow(E.)$ says that so far we have seen $(E$ of this production and hope to see $)$</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/37.png"></p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/38.png"></p>
+<p>To recognize viable prefixes, we must</p>
+<ul>
+<li>Recognize a sequence of partial rhs’s of productions, where</li>
+<li>Each partial rhs can eventually reduce to part of the missing suffix of its prdecessor</li>
+</ul>
+<hr>
+<p><strong>Recognizing Viable Prefix</strong></p>
+<ol>
+<li>Add a dummy production $S’\rightarrow S$ to <em>G</em></li>
+<li>The NFA states are the items of <em>G</em></li>
+<li>For item $E\rightarrow\alpha.X\beta$ add transition, $E\rightarrow\alpha.X\beta\rightarrow\alpha X.\beta$</li>
+<li>For item $E\rightarrow\alpha. X\beta$ and production $X\rightarrow\gamma$ add $E\rightarrow\alpha .X\beta\rightarrow.\gamma$</li>
+<li>Every state is an accepting state</li>
+<li>Start state is $S’\rightarrow S$</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/39.png"></p>
+<hr>
+<p><strong>Valid Items</strong></p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/40.png"></p>
+<hr>
+<p><strong>SLR Parsing</strong></p>
+<ul>
+<li>LR(0) Parsing: Assume<ul>
+<li>stack contains $\alpha$</li>
+<li>next input is <em>t</em></li>
+<li>DFA on input $\alpha$ terminates in state <em>s</em></li>
+</ul>
+</li>
+<li>Reduce by $X\rightarrow\beta$ if <em>s</em> contains item $X\rightarrow\beta$</li>
+<li>Shift if<ul>
+<li><em>s</em> contains item $X\rightarrow\beta .t\omega$</li>
+<li>equivalent to saying <em>s</em> has a transition labeled <em>t</em></li>
+</ul>
+</li>
+</ul>
+<p><em>Assume</em></p>
+<ul>
+<li><p>stack contains $\alpha$</p>
+</li>
+<li><p>next input is <em>t</em></p>
+</li>
+<li><p>DFA on input $\alpha$ terminates in state <em>s</em></p>
+</li>
+<li><p>Reduce by $X\rightarrow\beta$ if</p>
+<ul>
+<li><em>s</em> contains item $X\rightarrow\beta$</li>
+<li>$t\in Follow(X)$</li>
+</ul>
+</li>
+<li><p>Shift if</p>
+<ul>
+<li><em>s</em> contains item $X\rightarrow\beta.t\omega$</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/41.png"></p>
+<ul>
+<li>If there is a conflict in the last step, grammar is not SLR(k), k is the amount of lookahead.</li>
+</ul>
+<hr>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/42.png"></p>
+<hr>
+<p><strong>SLLR improvement</strong></p>
+<ul>
+<li><p>Define <em>goto[i,A]&#x3D;j</em> jf $state_i\rightarrow^{A}state_j$</p>
+</li>
+<li><p><em>goto</em> is just the transition function of the DFA</p>
+</li>
+<li><p>Shift <em>x</em></p>
+<ul>
+<li>Push <em>&lt;a,x&gt;</em> on the stack</li>
+<li><em>a</em> is current input</li>
+<li><em>x</em> is a DFA state</li>
+</ul>
+</li>
+<li><p>Reduce $X\rightarrow\alpha$</p>
+<ul>
+<li>As before</li>
+</ul>
+</li>
+<li><p>Accept</p>
+</li>
+<li><p>Error</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/43.png"></p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/44.png"></p>
+<ul>
+<li>LR(1) is more powerful<ul>
+<li>Build lookahead into the items</li>
+<li>An LR(1) item is a pair: LR(0) item x lookahead</li>
+<li>$[T\rightarrow .int*T,$]$ means<ul>
+<li>After seeing $T\rightarrow int*T$ reduce if lookahead is $$$</li>
+</ul>
+</li>
+<li>More accurate than just using follow sets</li>
+<li>Take a look at the LR(1) automaton for your parser</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong>SLR Examples</strong></p>
+<p><img src="https://raw.githubusercontent.com/MaxKev1n/Pictures/main/Compilers/45.png"></p>
+<p><strong>因此，该语法不是SLR(1)</strong></p>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>compliers</p><p><a href="http://example.com/2022/07/08/compliers/">http://example.com/2022/07/08/compliers/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>ChenZihang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-07-08</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-07-08</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/computer-science/">computer science</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>爱发电</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/" alt="支付宝"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/07/08/Computer_Architecture/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Computer Architecture</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/07/08/algorithm/"><span class="level-item">algorithm</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://pic1.zhimg.com/v2-4aa4114f6b5fd6a1f23283d19f0bb1ff_xl.jpg?source=32738c0c" alt="ChenZihang"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">ChenZihang</p><p class="is-size-6 is-block">undergraduate student from CSE, NJUST</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>NanJing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">26</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">3</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/maxkev1n" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/maxkev1n"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Zhihu" href="https://www.zhihu.com/people/maxkev1n"><i class="fab fa-zhihu"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Njust Envelope" href="mailto:chenzihang@njust.edu.cn"><i class="fas fa-at"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="BOSC mail" href="mailto:chenzihang@bosc.ac.cn"><i class="fa fa-envelope-open"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/article-reading-note/"><span class="level-start"><span class="level-item">article reading note</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/diary/"><span class="level-start"><span class="level-item">diary</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/learn-in-NJUST/"><span class="level-start"><span class="level-item">learn in NJUST</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/other-study/"><span class="level-start"><span class="level-item">other study</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:24:38.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/internship-diary/">实习小寄</a></p><p class="categories"><a href="/categories/diary/">diary</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:23:11.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-10/">Computer Architecture论文阅读笔记（9）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:21:47.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-9/">Computer Architecture论文阅读笔记（9）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:20:52.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-8/">Computer Architecture论文阅读笔记（8）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:19:15.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-7/">Computer Architecture论文阅读笔记（7）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/07/"><span class="level-start"><span class="level-item">七月 2022</span></span><span class="level-end"><span class="level-item tag">26</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/computer-architecture/"><span class="tag">computer architecture</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/computer-science/"><span class="tag">computer science</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/diary/"><span class="tag">diary</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">广告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="chenzihang" data-ad-slot="chenzihang" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">ChenZihang&#039;s Blog</a><p class="is-size-7"><span>&copy; 2022 ChenZihang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

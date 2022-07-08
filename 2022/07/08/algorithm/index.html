@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>algorithm - ChenZihang&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="ChenZihang&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="ChenZihang&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="算法需满足的4个性质：  输入：零个或多个外部量作为输出 输出：至少产生一个量作为输出 确定性：组成算法的每条指令都是清晰、无歧义的 有限性：每条指令的执行次数有限，执行每条指令的时间也有限  算法的复杂度：算法运行时需要耗费计算机资源的量，可以分为时间复杂度和空间复杂度。 依赖于三个方面：  待求解问题的规模 算法的输入 算法本身"><meta property="og:type" content="blog"><meta property="og:title" content="algorithm"><meta property="og:url" content="http://example.com/2022/07/08/algorithm/"><meta property="og:site_name" content="ChenZihang&#039;s Blog"><meta property="og:description" content="算法需满足的4个性质：  输入：零个或多个外部量作为输出 输出：至少产生一个量作为输出 确定性：组成算法的每条指令都是清晰、无歧义的 有限性：每条指令的执行次数有限，执行每条指令的时间也有限  算法的复杂度：算法运行时需要耗费计算机资源的量，可以分为时间复杂度和空间复杂度。 依赖于三个方面：  待求解问题的规模 算法的输入 算法本身"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:published_time" content="2022-07-08T07:07:44.000Z"><meta property="article:modified_time" content="2022-07-08T07:17:22.581Z"><meta property="article:author" content="ChenZihang"><meta property="article:tag" content="computer science"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/08/algorithm/"},"headline":"algorithm","image":["http://example.com/img/og_image.png"],"datePublished":"2022-07-08T07:07:44.000Z","dateModified":"2022-07-08T07:17:22.581Z","author":{"@type":"Person","name":"ChenZihang"},"publisher":{"@type":"Organization","name":"ChenZihang's Blog","logo":{"@type":"ImageObject","url":{"text":"ChenZihang's Blog"}}},"description":"算法需满足的4个性质：  输入：零个或多个外部量作为输出 输出：至少产生一个量作为输出 确定性：组成算法的每条指令都是清晰、无歧义的 有限性：每条指令的执行次数有限，执行每条指令的时间也有限  算法的复杂度：算法运行时需要耗费计算机资源的量，可以分为时间复杂度和空间复杂度。 依赖于三个方面：  待求解问题的规模 算法的输入 算法本身"}</script><link rel="canonical" href="http://example.com/2022/07/08/algorithm/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><script data-ad-client="chenzihang" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">ChenZihang&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/maxkev1n"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-07-08T07:07:44.000Z" title="7/8/2022, 3:07:44 PM">2022-07-08</time>发表</span><span class="level-item"><time dateTime="2022-07-08T07:17:22.581Z" title="7/8/2022, 3:17:22 PM">2022-07-08</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/learn-in-NJUST/">learn in NJUST</a></span><span class="level-item">19 分钟读完 (大约2797个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">algorithm</h1><div class="content"><p>算法需满足的4个性质：</p>
+<ul>
+<li>输入：零个或多个外部量作为输出</li>
+<li>输出：至少产生一个量作为输出</li>
+<li>确定性：组成算法的每条指令都是清晰、无歧义的</li>
+<li>有限性：每条指令的执行次数有限，执行每条指令的时间也有限</li>
+</ul>
+<p>算法的复杂度：算法运行时需要耗费计算机资源的量，可以分为时间复杂度和空间复杂度。</p>
+<p>依赖于三个方面：</p>
+<ol>
+<li>待求解问题的规模</li>
+<li>算法的输入</li>
+<li>算法本身</li>
+</ol>
+<span id="more"></span>
+
+<p>时间复杂度的具体化：假设计算机提供k种元运算，分别记为$O_1, O_2,…,O_k$。元运算$O_i$每执行一次需要的时间为$t_i$，对于给定的算法A，已经用到的元运算$O_i$的执行次数为$e_i$，很显然$T(n,I)&#x3D;\sum_{i &#x3D; 1}^k t_ie_i(n,I)$。<strong>通常可以考虑三种情形下的时间复杂度：最坏情形、最好情形以及平均情形</strong>。</p>
+<hr>
+<h5 id="渐进分析（Asymptotic-Analysis）"><a href="#渐进分析（Asymptotic-Analysis）" class="headerlink" title="渐进分析（Asymptotic Analysis）"></a>渐进分析（Asymptotic Analysis）</h5><p>对于T(n)，当n单调递增并趋于$\infty$时，T(n)也是单调增加并趋于$\infty$。为此，如果存在一个T’(n)，使得n$\to \infty$时有$(T(n)-T’(n))&#x2F;T(n) \to 0$，就称T’(n)时T(n)当$n\to \infty$的渐近性态，或称T’(n)是给定算法在$n\to \infty$时的渐近复杂度。显然，T’(n)不是唯一的。我们可以尽可能的选择简单的T’(n)，然后使用T’(n)来替代T(n)作为$n\to \infty$的复杂度度量。</p>
+<hr>
+<h5 id="4种阶：-O-Omega-Theta-o"><a href="#4种阶：-O-Omega-Theta-o" class="headerlink" title="4种阶：$O, \Omega, \Theta, o$"></a>4种阶：$O, \Omega, \Theta, o$</h5><p>定义1 ($O$)：如果存在正的常数$C$和自然数$n_0$，使得当 $n≥n_0$时，有$f(n)≤C·g(n)$，则称函数$f (n)$ 在n充分大时有上有界，且g(n) 是它的一个上界，记做$f (n) &#x3D;  O(g(n))$ ，并称$f (n)$ 的阶不高于$g(n)$ 的阶。</p>
+<ul>
+<li><p>在进行阶的运算时，<u>常系数</u>、<u>低的阶</u>以及<u>常数项</u>可以忽略。</p>
+</li>
+<li><p>根据$O$的定义，得到的是在问题规模充分大时，算法 复杂度的一个上界。上界的阶<u>越低</u>则评估越有价值。</p>
+</li>
+<li><ul>
+<li>$O( f ) + O(g) &#x3D; O(max( f , g))$</li>
+<li>$O( f )·O(g) &#x3D; O( f·g)$</li>
+<li>$O(C·f (n)) &#x3D; O(f (n))$</li>
+<li>$f &#x3D; O( f )$</li>
+</ul>
+</li>
+</ul>
+<p>定义2($\Omega$)： 如果存在正的常数$C$ 和自然数$n_0$ ，使得当$n ≥ n_0$时， 有$f(n)≥C·g(n)$，则称函数$f(n)$在n充分大时有下有界，且$g(n)$是它的一个下界，记做$f(n) &#x3D;\Omega (g(n))$ ，并称$f(n)$的阶不低于$g(n)$的阶。</p>
+<ul>
+<li>下界的阶越高，则评估精度越高，也就越有价值</li>
+</ul>
+<p>定义3($\Theta$)：$f(n) &#x3D; \Theta(g(n))$，当且仅当$f(n)&#x3D;O(g(n))$，且$f(n)&#x3D;\Omega(g(n))$，称$f(n)$和$g(n)$是同阶。</p>
+<p>定义4($o$) ：对于任意给定的$\epsilon&gt;0$ ，存在正整数$n_0$ ，使得当$n ≥ n_0$ 时，有$f(n)&#x2F;g(n)≤\epsilon$ ，则称函数$f(n)$在n充分大时的阶比$g(n)$低，记为$f(n)&#x3D;o(g(n))$。</p>
+<hr>
+<p>如何计算算法的时间复杂度：</p>
+<ol>
+<li>计算迭代次数：计算算法的迭代次数通常可以作为算法运行时间的指示器。使用计算迭代次数的技术来分析算法的时间复杂度时，一般仅需考虑最深层次的迭代</li>
+<li>使用递归方程</li>
+<li>频度分析</li>
+</ol>
+<p>快速排序：以待排序数组的首元素作为基准元素，将待排序数组分成左右两个子数组。使得左边子数组中的元素都小于等于基准元素；右边子数组中的元素都大于等于基准元素。左右子数组交替排序。</p>
+<hr>
+<ul>
+<li>如果$f&#x3D;O(g)$且$g&#x3D;O(h)$，那么$f&#x3D;O(h)$</li>
+<li>如果$f&#x3D;\Omega(g)$且$g&#x3D;\Omega(h)$，那么$f&#x3D;\Omega(h)$</li>
+<li>如果$f&#x3D;\Theta(g)$且$g&#x3D;\Theta(h)$，那么$f&#x3D;\Theta(h)$</li>
+<li>假设$f$和$g$是两个函数，若对于另外某个函数$h$，有$f&#x3D;O(h)$和$g&#x3D;O(h)$，那么$f+g&#x3D;O(h)$</li>
+<li>假设$f$和$g$是两个函数（取非负值），且$g&#x3D;O(f)$。那么，$f+g&#x3D;\Theta(f)$</li>
+<li>设$f$为$d$阶多项式，其中系数$a_d$为正，那么$f&#x3D;O(n^d)$</li>
+<li>对于所有$b&gt;1$和所有$x&gt;0$，有$log_bn&#x3D;O(n^x)$</li>
+<li>对每个$r&gt;1$和每个$d&gt;0$，有$n^d&#x3D;O(r^n)$</li>
+</ul>
+<hr>
+<h4 id="递归方程求解"><a href="#递归方程求解" class="headerlink" title="递归方程求解"></a>递归方程求解</h4><ul>
+<li><p>常系数线性同质递归方程</p>
+<p>$T(n)&#x3D;a_1T(n-1)&#x3D;a_2T(n-2)+…+a_kT(n-k)$称为k阶常系数线性同质递归方程。其特征方程为：$x^k&#x3D;a_1x^{k-1}+a_2x^{k-2}+…+a_k \to x^k-a_1x^{k-1}-a_2x^{k-2}-…-a_k&#x3D;0$</p>
+<p>对于一阶情形：$T(n)&#x3D;aT(n-1)&#x3D;a^2T(n-1)&#x3D;…&#x3D;a^nT(0)$</p>
+<p>对于二阶情形：$T(n)&#x3D;\left{\begin{aligned}<br>c_1<em>x_1^n+c_2</em>x_2^n,x_1 \neq x_2\<br>c_1<em>r^n+c_2</em>n*r^n,x_1&#x3D;x_2&#x3D;r<br>\end{aligned}<br>\right.$</p>
+</li>
+<li><p>非同质递归方程</p>
+</li>
+</ul>
+<p><strong>Master定理</strong>：设$a\geq 1,b &gt;1$为阐述。$s(n)$为一给定的函数，$T(n)$递归定义如下：$T(n)&#x3D;a*T(n&#x2F;b)+s(n)$并且$T(n)$有适当的初始值。那么，当n充分大时，有：</p>
+<ol>
+<li>若存在$\varepsilon &gt;0$，使得$s(n)&#x3D;O(n^{log_b^a-\varepsilon})$成立，那么有$T(n)&#x3D;\Theta(n^{log_b^a})$</li>
+<li>若$s(n)&#x3D;\Theta(n^{log_b^a})$，呢么$T(n)&#x3D;\Theta(n^{log_b^a}*logn)$</li>
+<li>若存在$\varepsilon &gt;0$，使得$s(n)&#x3D;\Omega(n^{log_b^a+\varepsilon})$成立，并且存在$c&lt;1$，使得$a<em>s(n&#x2F;b)\leq c</em>s(n)$，那么有$T(n)&#x3D;\Theta(s(n))$</li>
+</ol>
+<hr>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p><strong>堆</strong>：堆是一个几乎完全的二叉树，每个节点都满足这样的特性，任一父节点的键值不小于子节点的键值</p>
+<p>堆的基本操作：</p>
+<ul>
+<li>make-heap(A)：从数组A创建堆</li>
+<li>insert(H, x)：插入元素x到堆H中</li>
+<li>delete(H, i)：删除堆H的第i项</li>
+<li>delete-max(H)：从非空堆H中删除最大键值并返回数据项</li>
+</ul>
+<p><strong>辅助运算Sift-up（向上调整）</strong>：</p>
+<ul>
+<li>若某个结点H[i]的键值大于其父节点的键值，就违背了堆的特性，需要进行调整</li>
+<li>调整方法：上移</li>
+<li>沿着H[i]到根节点的唯一一条路径，将H[i]移动到合适的位置上：比较H[i]及其父节点H[|i&#x2F;2|]的键值，若key(H[i]) &gt; key(H[|i&#x2F;2|])，则将两者进行交换，直至达到合适的位置</li>
+</ul>
+<hr>
+<h3 id="不相交集"><a href="#不相交集" class="headerlink" title="不相交集"></a>不相交集</h3><p>假设有n个元素，被分成若干个集合并分别命名。事实上，每个子集可以用树表示，除根节点外，每个节点都有指针指向父节点。用根节点表示集合的名字。</p>
+<ul>
+<li>FIND(x)：寻找包含元素x的集合的名字</li>
+<li>UNION(x, y)：将包含元素x和y的两个集合合并，重命名</li>
+</ul>
+<p>记root(x)为包含元素x的树的根，则FIND(x)找到root(x)。</p>
+<p>执行合并UNION(x, y)时，首先依据x找到root(x),记为u,依据y找到root(y)，记为v；然后，将u指向v。</p>
+<p>目标：降低树的高度。措施：Rank Heuristic。</p>
+<ol>
+<li>给每个树的根节点定义一个秩(rank，标量)，表示该树的高度。</li>
+<li>在执行UNION(x, y) ，首先找到u&#x3D;root(x)，v&#x3D;root(y)。</li>
+<li>然后比较rank(u)和rank(v) </li>
+<li><ul>
+<li>若rank(u) &#x3D; rank(v)，则使u指向v，v成为u的父亲，同时rank(v)+1</li>
+<li>若rank(u) &lt; rank(v)，则使u指向v，v成为u的父亲</li>
+<li>若rank(u) &gt; rank(v)，则使v指向u，u成为v的父亲</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="分治策略"><a href="#分治策略" class="headerlink" title="分治策略"></a>分治策略</h3><ul>
+<li>把规模较大的问题分解为若干个规模较小的子问题，这些子问题相互独立且与原问题同类；(该子问题的规模减小到一定的程度就可以容易地解决）</li>
+<li>依次求出这些子问题的解，然后把这些子问题的解组合起来得到原问题的解</li>
+<li>由于子问题与原问题是同类的,故分治法可以很自然地应用递归</li>
+</ul>
+<p>假设算法将规模为n的问题分解为a(a&gt;&#x3D;1)个规模为n&#x2F;b(b&gt;1)的子问题解决。分解子问题以及合并子问题的解耗费的时间为s(n)，则算法的时间复杂度可以递归表示为：<br>$$<br>T(n)&#x3D;\left{<br>\begin{aligned}<br>c\quad, n &lt;&#x3D; n_0 \<br>aT(n&#x2F;b)+s(n),n&gt;&#x3D;n_0<br>\end{aligned}<br>\right.<br>$$</p>
+<p><strong>寻找中项和第k小元素</strong></p>
+<p>给定已排好序的数组A[1,…,n]，中项是指其中间元素，若n为奇数，则中项为第(n+1)&#x2F;2个元素；若n为偶数，取第n&#x2F;2个元素作为元素。综上，中项为第[n&#x2F;2]个最小元素。</p>
+<ul>
+<li>若数组A中元素的个数小于一个阈值，那么采用直接排序的方法寻找第k小元素</li>
+<li>否则将n个元素分为[n&#x2F;5]组，每组6个元素，如果n不是5的倍数，则排除剩余的元素</li>
+<li>对每组元素排序，并取出它们的中项，共有[n&#x2F;5]个。然后，这[n&#x2F;5]个中项的中项，我们记为mm</li>
+<li>依据mm将数组A划分为三个子数组：$A_1&#x3D;{a|a&lt;mm}、A_2&#x3D;{a|a&#x3D;mm}、A_3&#x3D;{a|a&gt;mm}$</li>
+<li>判断第k小元素可能在哪一个子数组中出现：如果在$A_2$中出现，则已经找到；否则，在$A_1$或$A_3$上进行递归</li>
+</ul>
+<hr>
+<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>基本步骤：</p>
+<ol>
+<li>找出最优解的性质，并刻画其结构特征</li>
+<li>递归地定义最优值</li>
+<li>以自底向上的方式计算出最优值</li>
+<li>根据计算最优值时得到的信息，构造最优解</li>
+</ol>
+<h4 id="矩阵链相乘"><a href="#矩阵链相乘" class="headerlink" title="矩阵链相乘"></a>矩阵链相乘</h4><p><strong>穷举法</strong></p>
+<ol>
+<li>找出所有可能的相乘结合方式</li>
+<li>计算每种相乘结合方式所需要的乘法次数</li>
+<li>求min</li>
+</ol>
+<p>f(n)表示n个矩阵连乘所有可能的结合方式<br>$(M_1<em>M_2</em>M_3…M_k)*(M_{k+1}…M_n)$&#x3D;f(k)*f(n-k)<br>$f(n)&#x3D;\sum_{k&#x3D;1}^{n-1}f(k)f(n-k)$&#x3D;$\frac{4^n}{4\sqrt{\pi}n^{1.5}}$<br>$f(n)&#x3D;\Omega(\frac{4^n}{n^{1.5}})$</p>
+<p><strong>动态规划法</strong><br>$M_{i,j}&#x3D;M_i<em>M_{i+1}…M_j$<br>$C[i,j]$：计算$M_{i,j}$所需的最小乘法次数。<br>$C[i,j]&#x3D;min{C[i,k-1]+C[k,j]+r_i</em>r_k*r_{j+1}}$<br>$T(n)&#x3D;\Theta(n^3)$</p>
+<h3 id="0-1背包问题"><a href="#0-1背包问题" class="headerlink" title="0-1背包问题"></a>0-1背包问题</h3><p>设V[i,j]表示从前i个物品${u_1,u_2,…,u_i}$中取出一部分装入称重量为j的背包所能取得的最大价值。那么，当i&#x3D;n，j&#x3D;c时，V[n,C]就是问题的解<br>$$<br>V[i,j]&#x3D;\left{<br>\begin{aligned}<br>0, \quad if\quad i&#x3D;0\quad or\quad j&#x3D;0 \<br>V[i-1,j], \quad if\quad j&lt;w_i \<br>max{V[i-1,j],V[i-1,j-w_i]+v)i}<br>\end{aligned}<br>\right.<br>$$</p>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>algorithm</p><p><a href="http://example.com/2022/07/08/algorithm/">http://example.com/2022/07/08/algorithm/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>ChenZihang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-07-08</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-07-08</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/computer-science/">computer science</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>爱发电</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/" alt="支付宝"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/07/08/compliers/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">compliers</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/07/08/hello-world/"><span class="level-item">Hello World</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://pic1.zhimg.com/v2-4aa4114f6b5fd6a1f23283d19f0bb1ff_xl.jpg?source=32738c0c" alt="ChenZihang"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">ChenZihang</p><p class="is-size-6 is-block">undergraduate student from CSE, NJUST</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>NanJing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">26</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">3</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/maxkev1n" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/maxkev1n"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Zhihu" href="https://www.zhihu.com/people/maxkev1n"><i class="fab fa-zhihu"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Njust Envelope" href="mailto:chenzihang@njust.edu.cn"><i class="fas fa-at"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="BOSC mail" href="mailto:chenzihang@bosc.ac.cn"><i class="fa fa-envelope-open"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/article-reading-note/"><span class="level-start"><span class="level-item">article reading note</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/diary/"><span class="level-start"><span class="level-item">diary</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/learn-in-NJUST/"><span class="level-start"><span class="level-item">learn in NJUST</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/other-study/"><span class="level-start"><span class="level-item">other study</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:24:38.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/internship-diary/">实习小寄</a></p><p class="categories"><a href="/categories/diary/">diary</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:23:11.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-10/">Computer Architecture论文阅读笔记（9）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:21:47.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-9/">Computer Architecture论文阅读笔记（9）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:20:52.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-8/">Computer Architecture论文阅读笔记（8）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:19:15.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-7/">Computer Architecture论文阅读笔记（7）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/07/"><span class="level-start"><span class="level-item">七月 2022</span></span><span class="level-end"><span class="level-item tag">26</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/computer-architecture/"><span class="tag">computer architecture</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/computer-science/"><span class="tag">computer science</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/diary/"><span class="tag">diary</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">广告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="chenzihang" data-ad-slot="chenzihang" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">ChenZihang&#039;s Blog</a><p class="is-size-7"><span>&copy; 2022 ChenZihang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

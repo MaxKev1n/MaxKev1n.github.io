@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>TCP/IP - ChenZihang&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="ChenZihang&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="ChenZihang&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="第一章Internet —— 当前覆盖全球的因特网，指全球范围内由采用TCP&amp;#x2F;IP协议簇的众多计算机网相互连接而成的最大的开放式计算机网络，前身是阿帕网，是互联网的一个特例 internet —— 采用互联网技术互联起来的互联网 IAB：因特网体系结构委员会，Internet Architecture Board  建立因特网标准 管理RFC文档的发布 建立因特网的策略性研究计划"><meta property="og:type" content="blog"><meta property="og:title" content="TCP/IP"><meta property="og:url" content="http://example.com/2022/07/08/tcpip/"><meta property="og:site_name" content="ChenZihang&#039;s Blog"><meta property="og:description" content="第一章Internet —— 当前覆盖全球的因特网，指全球范围内由采用TCP&amp;#x2F;IP协议簇的众多计算机网相互连接而成的最大的开放式计算机网络，前身是阿帕网，是互联网的一个特例 internet —— 采用互联网技术互联起来的互联网 IAB：因特网体系结构委员会，Internet Architecture Board  建立因特网标准 管理RFC文档的发布 建立因特网的策略性研究计划"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211226214611664.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211226215500832.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211226222245612.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211226222225657.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211226233729833.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211226235055914.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211228191644535.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211228191718040.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211228205110913.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211228214429299.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211228215857907.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211230090120710.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211230233422636.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211230091555158.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211230091640617.png"><meta property="og:image" content="c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211230093811758.png"><meta property="article:published_time" content="2022-07-08T07:51:02.000Z"><meta property="article:modified_time" content="2022-07-08T07:51:30.221Z"><meta property="article:author" content="ChenZihang"><meta property="article:tag" content="computer science"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211226214611664.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/08/tcpip/"},"headline":"TCP/IP","image":["c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211226214611664.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211226215500832.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211226222245612.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211226222225657.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211226233729833.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211226235055914.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211228191644535.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211228191718040.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211228205110913.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211228214429299.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211228215857907.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211230090120710.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211230233422636.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211230091555158.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211230091640617.png","c:/Users/c1048/AppData/Roaming/Typora/typora-user-images/image-20211230093811758.png"],"datePublished":"2022-07-08T07:51:02.000Z","dateModified":"2022-07-08T07:51:30.221Z","author":{"@type":"Person","name":"ChenZihang"},"publisher":{"@type":"Organization","name":"ChenZihang's Blog","logo":{"@type":"ImageObject","url":{"text":"ChenZihang's Blog"}}},"description":"第一章Internet —— 当前覆盖全球的因特网，指全球范围内由采用TCP&#x2F;IP协议簇的众多计算机网相互连接而成的最大的开放式计算机网络，前身是阿帕网，是互联网的一个特例 internet —— 采用互联网技术互联起来的互联网 IAB：因特网体系结构委员会，Internet Architecture Board  建立因特网标准 管理RFC文档的发布 建立因特网的策略性研究计划"}</script><link rel="canonical" href="http://example.com/2022/07/08/tcpip/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><script data-ad-client="chenzihang" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">ChenZihang&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/maxkev1n"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-07-08T07:51:02.000Z" title="7/8/2022, 3:51:02 PM">2022-07-08</time>发表</span><span class="level-item"><time dateTime="2022-07-08T07:51:30.221Z" title="7/8/2022, 3:51:30 PM">2022-07-08</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/learn-in-NJUST/">learn in NJUST</a></span><span class="level-item">31 分钟读完 (大约4672个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">TCP/IP</h1><div class="content"><h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p><strong>Internet</strong> —— 当前覆盖全球的因特网，指全球范围内由采用TCP&#x2F;IP协议簇的众多计算机网相互连接而成的最大的开放式计算机网络，前身是阿帕网，是互联网的一个特例</p>
+<p><strong>internet</strong> —— 采用互联网技术互联起来的<strong>互联网</strong></p>
+<p><strong>IAB</strong>：因特网体系结构委员会，Internet Architecture Board</p>
+<ul>
+<li>建立因特网标准</li>
+<li>管理RFC文档的发布</li>
+<li>建立因特网的策略性研究计划</li>
+</ul>
+<span id="more"></span>
+
+<p><strong>IETF</strong>：因特网工程任务组，Internet Engineering Task Force</p>
+<p><strong>IRTF</strong>：因特网研究任务组，Internet Research Task Force</p>
+<p><strong>IESG</strong>：因特网工程指导组，Internet Engineering Steering Group</p>
+<p><strong>ISOC</strong>：因特网协会，Internet Society</p>
+<p><strong>InterNIC</strong>：因特网网络信息中心，Internet Network Information Center</p>
+<p><strong>CNNIC</strong>：中国互联网络信息中心，China Internet Network Information Center</p>
+<p><strong>ICANN</strong>：Internet Corporation for Assigned Names and Numbers</p>
+<p><strong>W3C</strong>：World Wide Web Consortium</p>
+<p><strong>RFC</strong>：请求注解，Request For Comments</p>
+<ul>
+<li>标准化轨迹的RFC<ul>
+<li>提案标准</li>
+<li>草案标准</li>
+<li>因特网标准</li>
+</ul>
+</li>
+<li>非标准化轨迹的RFC<ul>
+<li>实验性的RFC</li>
+<li>信息性的RFC</li>
+<li>历史性的RFC</li>
+</ul>
+</li>
+<li>其他状态的RFC<ul>
+<li>最佳当前实现的RFC</li>
+<li>未知性的RFC</li>
+</ul>
+</li>
+</ul>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p><strong>计算机网络的分类</strong></p>
+<p>按照拓扑结构：</p>
+<ul>
+<li>总线型网（早期LAN）</li>
+<li>星型网(LAN)</li>
+<li>环型网(令牌环网，FDDI)</li>
+<li>网状网(WAN主干)</li>
+</ul>
+<p>按照覆盖范围：</p>
+<ul>
+<li>广域网</li>
+<li>城域网</li>
+<li>局域网</li>
+<li>个域网</li>
+</ul>
+<p><strong>网络协议</strong>(network protocol)：通信双方事先约定好和通信时必须遵守的规则的集合</p>
+<ul>
+<li>语法：定义用户数据和控制信息的结构与格式</li>
+<li>语义：解释控制信息每个部分的意义</li>
+<li>同步规则（时序）：定义事件发生的详细顺序</li>
+</ul>
+<p><strong>通信子网</strong>：由通信设备和通信介质构成</p>
+<p><strong>资源子网</strong>：由计算机和其他终端系统构成</p>
+<p><strong>OSI&#x2F;RM</strong>：开放系统互连参考模型</p>
+<p><strong>以太网的分层</strong>：物理层、数据链路层（LLC+MAC）</p>
+<p><strong>X.25</strong></p>
+<ul>
+<li>物理层</li>
+<li>数据链路层</li>
+<li>分组层</li>
+</ul>
+<p><strong>ATM</strong>：异步传输模式，Asynchronous Transfer Mode。传输单元为信元（cell），采用统计时分复用</p>
+<p><strong>WWAN</strong>：无线广域网，Wireless WAN</p>
+<p><strong>WMAN</strong>：无线城域网，Wireless MAN</p>
+<p><strong>WLAN</strong>：无线局域网，Wireless LAN</p>
+<p><strong>Wi-Fi</strong>：Wireless Fidelity，无线保真</p>
+<p><strong>TCP&#x2F;IP网络体系结构</strong>：</p>
+<ul>
+<li>应用层</li>
+<li>传输层</li>
+<li>网络层</li>
+<li>网络接口层</li>
+</ul>
+<img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211226214611664.png" alt="image-20211226214611664" style="zoom: 67%;" />
+
+
+
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211226215500832.png" alt="image-20211226215500832" style="zoom:67%;" />
+
+
+
+<p><strong>A类地址</strong>：最高位为0，剩下的7位的网络号中全0一般不用，全1(127)用作特殊的环回地址，所以只能表示$2^7-2$ &#x3D;126个A类网络。24位主机号全0时表示本网络，全1时表示本网络的广播地址，所以，每个A类网络最多可以容纳$2^{24} -2$&#x3D;16,777,214台主机</p>
+<p><strong>B类地址</strong>：最高2位为10，剩下的14位的网络号可以表示$2^{14}$&#x3D;16384个B类网络。16位的主机号不能为全0和全1，所以，每个B类网络最多可以容纳$2^{16}-2$ &#x3D; 65,534台主机</p>
+<p><strong>C类地址</strong>：最高3位为110，剩下的21位的网络号可以标识$2^{21}$ &#x3D;2,097,152个C类网络。8位主机号不能为全0和全1，所以，每个C类网络最多可以容纳$2^8-2$&#x3D; 254台主机</p>
+<p><strong>D类地址</strong>：最高4位为1110。组播地址，不能分配给设备的网络接口，只能作为信息的目的地址，表示信息的接收者是一组设备接口</p>
+<p><strong>E类地址</strong>：最高5位为11110。保留地址，可以用于实验目的</p>
+<p><strong>网络地址</strong>：因特网上的每个网络都有一个IP地址，其主机号全 “0”</p>
+<p><strong>直接广播地址</strong>：主机号全 “1”，向某个网络上的所有主机(包括计算机和路由器的)发送信息</p>
+<p><strong>受限广播地址</strong>：32比特全为“1” ，表示该信息发往本网络上的所有主机（设备接口）</p>
+<p><strong>本网络地址</strong>：网络号全为“0”，表示信息发给本网络的指定主机（设备接口）</p>
+<p><strong>环回地址</strong>：以127开头的IP地址，表示信息的接收者是本机，不会被网卡传到网络上去</p>
+<p><strong>子网掩码</strong>：本网络的网络号和子网号置1，主机号置0</p>
+<p><strong>超网</strong>：32个比特，超网号的比特置1，主机号的比特置0</p>
+<img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211226222245612.png" alt="image-20211226222245612" style="zoom:50%;" />
+
+<img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211226222225657.png" alt="image-20211226222225657" style="zoom:50%;" />
+
+
+
+<p><strong>CIDR掩码</strong>：32位，采用斜线表示法：W.X.Y.Z &#x2F;n。斜线前是IP地址，n是掩码中连续“1”的个数，如11.126.60.41 &#x2F;28</p>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><p><strong>ARP</strong>：地址解析协议，Address Resolution Protocol，IP地址到物理地址</p>
+<p><strong>RARP</strong>：反向地址解析协议，Reverse ARP</p>
+<img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211226233729833.png" alt="image-20211226233729833" style="zoom:50%;" />
+
+
+
+<ul>
+<li><p>ARP和RARP请求帧以广播方式发送，此时帧的目的地址为广播地址 (以太网为48个1)</p>
+</li>
+<li><p>由于ARP和RARP报文较短（28个字节），在进行以太网帧的封装时还需增加18个字节的填充字段(PAD) 。以太网帧大小范围：64B-1518B</p>
+</li>
+</ul>
+<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><p><strong>IP协议</strong>：提供无连接、不可靠的主机到主机的IP数据报(IP分组)传输服务</p>
+<img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211226235055914.png" alt="image-20211226235055914" style="zoom:50%;" />
+
+
+
+<ul>
+<li>IP协议对<strong>IP首部</strong>进行<strong>点到点</strong>的校验</li>
+</ul>
+<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p><strong>ICMP</strong>：因特网控制报文协议，位于网络层，IP协议之上，所以ICMP报文使用IP数据报进行封装</p>
+<img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211228191644535.png" alt="image-20211228191644535" style="zoom:50%;" />
+
+<p><strong>ICMP报文</strong>: 首部+数据。首部固定为8个字节</p>
+<img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211228191718040.png" alt="image-20211228191718040" style="zoom: 67%;" />
+
+
+
+<p>往返时延＝(t当前－t初始)－(t发送－t接收)</p>
+<p>假设请求和应答传输时延相同，单程时延&#x3D;往返时延&#x2F;2</p>
+<p>两设备时间差＝t接收－(t初始＋单程时延)，结果为正数，表示应答方的时间比请求方快</p>
+<img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211228205110913.png" alt="image-20211228205110913" style="zoom:67%;" />
+
+
+
+<ul>
+<li>ICMP将上层请求转变为ICMP报文，然后使用IP数据报进行封装 (此时IP首部的协议字段为“1”)</li>
+<li>ICMP报文由ICMP的校验字段进行端到端的校验。而IP首部由IP的校验字段进行点到点的校验</li>
+</ul>
+<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p><strong>内部网关协议</strong></p>
+<ul>
+<li>路由信息协议RIP (Routing Information Protocol)</li>
+<li>开放最短路径优先OSPF (Open Shortest Path First)</li>
+</ul>
+<p><strong>外部网关协议</strong></p>
+<ul>
+<li>边界网关协议BGP (Border Gateway Protocol)</li>
+</ul>
+<p><strong>水平分割法</strong>：如果路由器从某个接口收到某些网络的VD信息，不允许再从此接口发出这些网络的信息</p>
+<p><strong>毒性逆转法</strong>：路由器从某个接口上收到某个网络的VD信息，可以从此接口发送此网络V-D信息，只是跳数要设为16</p>
+<p><strong>保持法</strong>：路由器在得知某直连网络不可达的一段时间内，禁止使用收到的V-D报文刷新此不可达信息</p>
+<blockquote>
+<p>保持法RIP是应用层协议，RIP报文封装于UDP数据报中,RIP报文最大512字节，所以有最多25个V-D信息，否则需要增加报文数量</p>
+</blockquote>
+<img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211228214429299.png" alt="image-20211228214429299" style="zoom:50%;" />
+
+<blockquote>
+<p>BGP协议位于应用层，使用TCP作为传输层协议</p>
+</blockquote>
+<p><strong>直接传递</strong>：在信宿网络中，直接传到信宿的过程</p>
+<p><strong>间接传递</strong>：在非信宿网络中的传递过程</p>
+<h2 id="第八章"><a href="#第八章" class="headerlink" title="第八章"></a>第八章</h2><p><strong>TCP</strong>：传输控制协议，Transmission Control Protocol</p>
+<img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211228215857907.png" alt="image-20211228215857907" style="zoom:50%;" />
+
+<ul>
+<li><p>端到端校验</p>
+</li>
+<li><p>不仅校验整个TCP段(含端口信息)，还校验来自于IP首部的伪首部（包括双方IP地址、所用的协议、TCP段长度）</p>
+</li>
+<li><p>为了可靠建立连接，TCP设计了三次握手方式</p>
+</li>
+<li><p>TCP采用四次握手来安全断开连接</p>
+</li>
+</ul>
+<p>TCP基于IP，为实现可靠传输服务，增加了</p>
+<ul>
+<li>流量控制：进程把本方的接收窗口大小告知对方，要求对方发送窗口大小不超过这个值</li>
+<li>拥塞控制：控制发送方的发送速率，使得网络来得及传输<ul>
+<li>慢启动</li>
+<li>拥塞避免</li>
+<li>拥塞控制<ul>
+<li>快速重传：发送方只要一连收到三个重复确认ACK就认为报文段丢失，并立即重传对方尚未收到ACK的报文段</li>
+<li>快速恢复：当在快速重传阶段收到连续三个重复的确认时，不执行慢启动算法，即拥塞窗口 cwnd 现在不设置为 1，而是设置为慢开始门限 ssthresh (减少后)的数值 — 进入快速恢复</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>差错控制：<ul>
+<li>段丢失。检测：发送方使用重传计时器。处理：超时重传。确认段的丢失不需处理，因为TCP采用累计确认</li>
+<li>段损坏。检测：接收方使用校验和字段。处理：丢弃出错的段，不返回确认段，由发送方超时重传</li>
+<li>段重复。一般由超时重传造成的。检测：接收方分析段序号。处理：直接丢弃重复段</li>
+<li>段失序。由于TCP基于IP，不能保证按序到达。处理：接收方对先到达的段暂不确认，放入接收缓存，直到前面的段都到齐了再一起向上提交并返回确认</li>
+</ul>
+</li>
+</ul>
+<h2 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h2><p><strong>递归解析</strong>：客户机请求所在区域的服务器解析，若不能给出结果，服务器将请求另一个服务器（通常是其父或子服务器）并等待响应，后续的服务器也是进行类似的处理。一直到找到能解析的服务器，然后原路返回解析结果</p>
+<p><strong>反复解析</strong>：客户机请求所在区域的域名服务器解析，若不能给出结果，则返回另一个服务器的IP地址，客户机再向第二个服务器发出解析请求，后续的服务器也是进行类似的处理，直到找到可以解析的服务器</p>
+<h2 id="第十章"><a href="#第十章" class="headerlink" title="第十章"></a>第十章</h2><p><strong>BOOTP</strong>：BOOTstrap Protocol，位于应用层，基于UDP协议。使计算机获得上述四种网络参数，IP地址，所在网络的掩码，默认路由器的IP地址，默认DNS服务器的IP地址</p>
+<p>动态主机配置协议DHCP是在TCP&#x2F;IP网络上使客户机获得配置信息的协议，自动分配IP地址等网络参数，实现设备即插即用。IPv4, IPv6网络都可使用。服务器收到客户请求后，首先根据其物理地址检查静态数据库，如果没有查到，就从IP地址池中选择一个地址给客户，并协商该地址的租用期</p>
+<blockquote>
+<p>客户机进程使用UDP 68端口在网络层中广播BOOTP请求</p>
+</blockquote>
+<h2 id="第十一章"><a href="#第十一章" class="headerlink" title="第十一章"></a>第十一章</h2><p><strong>FTP</strong>：文件传输协议，实现不同计算机之间可靠的文件传输。不同操作系统、不同字符集、不同文件结构和存储方式等。</p>
+<p>FTP建立两条TCP连接，一条传送控制信息(命令和响应)，另一条传送文件数据</p>
+<p><strong>控制连接的建立</strong>：服务器控制进程在TCP 21端口侦听，客户机控制进程使用临时端口，向服务器控制进程发出连接请求</p>
+<p><strong>数据连接的建立</strong>：通常，FTP数据连接由服务器发起。客户机在已建立的控制连接上，使用PORT命令将其数据进程的临时端口号发给服务器。服务器数据进程在TCP 20端口，向客户机数据进程发出连接请求</p>
+<h2 id="第十三章"><a href="#第十三章" class="headerlink" title="第十三章"></a>第十三章</h2><img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211230090120710.png" alt="image-20211230090120710" style="zoom: 67%;" />
+
+<p><strong>UA</strong>：User Agent，用户代理。用户与电子邮件系统的接口软件，实现与邮件服务器通信（使用SMTP将邮件发送至邮件服务器；使用POP3或IMAP从邮件服务器读取邮件）。如果使用网页收发邮件，则是使用HTTP协议访问邮件服务器，又称为Webmail</p>
+<p><strong>SMTP</strong>：简单邮件传输协议。应用层，基于TCP。</p>
+<p><strong>MIME</strong>：通用因特网邮件扩充，SMTP的补充，使得非ASCII信息也可以通过SMTP传送，如非英文字符，图片，附件等</p>
+<p><strong>POP3</strong>：邮局协议第3版本，应用层，基于TCP，服务器进程使用TCP 110端口</p>
+<p><strong>IMAP</strong>：Internet Mail Access Protocol，因特网邮件访问协议，基于TCP</p>
+<blockquote>
+<p>POP3中邮件由客户端管理，IMAP由服务器管理</p>
+</blockquote>
+<img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211230233422636.png" alt="image-20211230233422636" style="zoom:67%;" />
+
+
+
+<h2 id="第十四章"><a href="#第十四章" class="headerlink" title="第十四章"></a>第十四章</h2><p><strong>Telnet</strong>：远程登录协议，工作在应用层，基于传输层的TCP，服务器进程使用TCP 23端口。提供远程登录功能，客户机将命令传送到服务器上执行，服务器返回执行结果</p>
+<p>为了避免控制命令和用户数据不混淆，Telnet采用IAC转义控制字符(ASCII编码255)。IAC表示其后一个字符是控制命令，而不是用户数据</p>
+<p><strong>选项协商</strong>：用于双方协商工作模式，如是否采用全双工方式通信等。当一方要配置某个选项时，通过SEND命令发出请求，若对方同意，则选项起作用，否则保持原来的模式</p>
+<p>Telnet的服务器进程和客户进程有<strong>4种操作模式</strong>：</p>
+<ul>
+<li>半双工方式(默认模式)</li>
+<li>一次一个字符方式</li>
+<li>一次一行方式</li>
+<li>行方式</li>
+</ul>
+<h2 id="第十五章"><a href="#第十五章" class="headerlink" title="第十五章"></a>第十五章</h2><p><strong>HTTP</strong>: HyperText Transfer Protocol，超文本传输协议，应用层，基于TCP，服务器进程默认使用TCP 80端口，也可指定使用临时端口。用于超文本文件的传输，也会使用MIME进行数据格式的转换</p>
+<p><strong>URL</strong>：Uniform Resource Locator，统一资源定位符，也称网址，是因特网资源的标准地址。</p>
+<blockquote>
+<p><strong>传输协议</strong>:&#x2F;&#x2F;主机域名**(或IP地址) :** <strong>端口号</strong> <strong>+</strong> <strong>路径</strong>+<strong>文件名</strong></p>
+</blockquote>
+<p>URL中端口号和文件名都可以省略的</p>
+<p><strong>HTTP的通信方式</strong>：</p>
+<ul>
+<li>点对点方式：客户机与服务器直接通信</li>
+<li>中间服务器方式：通过中间服务器中转通信</li>
+<li>缓存方式：客户机或中间服务器的缓存中，保存先前HTTP请求及应答的内容，当相同请求到来时直接应答</li>
+</ul>
+<img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211230091555158.png" alt="image-20211230091555158" style="zoom:67%;" />
+
+<img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211230091640617.png" alt="image-20211230091640617" style="zoom:50%;" />
+
+
+
+<h2 id="第十七章"><a href="#第十七章" class="headerlink" title="第十七章"></a>第十七章</h2><p>**移动代理(Mobility Agent)**：移动代理分归属代理(Home Agent)和外地代理(Foreign Agent)两类，它们是服务器或路由器，能知道移动结点实际连接在何处</p>
+<p><strong>移动IP地址</strong>：移动IP节点拥有两个IP地址。归属地址(Home Address) 是移动结点与归属网连接时使用的地址。不管移动结点连至网络何处，其归属地址保持不变。转交地址(Care-of Address)是移动节点目前所在的外地网络临时分配给移动结点地址（如通过DHCP）。转交地址是移动结点与外地网络连接时使用的临时地址。每当移动结点接入到一个新的网络，转交地址就发生变化</p>
+<blockquote>
+<p>要和远程主机通信，移动主机要经过三个阶段：代理发现、注册和数据传送</p>
+</blockquote>
+<p>**代理发现(Agent Discovery)**：包括两个阶段：移动主机在离开它的归属网络前必须发现归属代理，即知道它的地址。移动主机在移动到外地网络后，还必须发现外地代理</p>
+<p>移动IP定义了<strong>两种</strong>发现移动代理的方法：</p>
+<ul>
+<li>被动发现：移动结点等待代理利用ICMP路由器通告报文周期性地广播代理通告报文</li>
+<li>主动发现：当移动主机已经移动到新的网络而没有收到代理通告时，它可以使用ICMP询问报文主动发起代理询问</li>
+</ul>
+<p>**注册(Registration)**：移动节点必须将其位置信息向其归属代理进行注册，以便被找到。注册报文用UDP进行封装，代理进程使用UDP 434端口，移动主机使用临时端口</p>
+<p>**隧道技术(Tunneling)**：当移动结点在外地网络时，归属代理需要将远程主机传来的数据报转发给已注册的外地代理。此时，归属代理使用IP隧道技术，将原始IP数据包封装在转发的IP数据包中，转发到处于隧道终点的转交地址处</p>
+<p>移动IP使用<strong>三种</strong>隧道技术：</p>
+<ul>
+<li>用IP封装的IP</li>
+<li>最小封装</li>
+<li>通用路由封装</li>
+</ul>
+<blockquote>
+<p>移动IP对通信对端和上层应用是透明的</p>
+</blockquote>
+<p>移动IP的不足</p>
+<ul>
+<li>三角路由带来的时延问题</li>
+<li>隧道封装带来的开销问题</li>
+<li>QoS和集中处理问题</li>
+</ul>
+<h2 id="第二十一章"><a href="#第二十一章" class="headerlink" title="第二十一章"></a>第二十一章</h2><img src="C:\Users\c1048\AppData\Roaming\Typora\typora-user-images\image-20211230093811758.png" alt="image-20211230093811758" style="zoom: 67%;" />
+
+
+
+<p>IPv6只在源节点进行数据报分片：源节点在发送数据报之前，检查传输路径，找出路径上所有网络的最小的MTU，然后源节点按此MTU进行分片。也可无需检查，源节点直接使用IPv6的最小MTU (1280字节)分片</p>
+<p>十六进制数字的前导0可以去掉，如0042写成42；一连串的0可使用双冒号表示，但只能用一次。例如，地址0:0:0:42:0:0:0:A63C可以缩写成 ::42:0:0:0:A63C 或者 0:0:0:42::A63C，但不能写成 ::42::A63C</p>
+<p><strong>IPv4向IPv6过渡</strong>：</p>
+<ul>
+<li>双协议栈</li>
+<li>隧道技术</li>
+</ul>
+<p><strong>IPv6的改进</strong>：</p>
+<ul>
+<li>更大的地址空间</li>
+<li>简化的基本首部</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>网络层</strong>：<em>ARP</em>(但在IP之下)、<em>IP</em>协议、<em>ICMP</em>(IP之上，使用IP封装)、<em>OSPF</em>(使用IP数据报封装)</p>
+<p><strong>应用层</strong>：<em>RIP</em>(封装于UDP)、<em>BGP</em>(使用TCP作为传输层协议)、<em>DNS</em>(基于TCP或UDP)，<em>BOOTP</em>(基于UDP)、<em>FTP</em>(基于TCP)、<em>SMTP</em>(基于TCP)、<em>POP3</em>(基于TCP)、<em>Telnet</em>(基于TCP)、<em>HTTP</em>(基于TCP)</p>
+<p><strong>传输层</strong>：<em>TCP</em>(基于IP)，<em>UDP</em>(基于IP)</p>
+<blockquote>
+<p>RARP使用链路层广播也能获取IP地址，但不能跨路由器</p>
+</blockquote>
+</div><div class="article-licensing box"><div class="licensing-title"><p>TCP/IP</p><p><a href="http://example.com/2022/07/08/tcpip/">http://example.com/2022/07/08/tcpip/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>ChenZihang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-07-08</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-07-08</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/computer-science/">computer science</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>爱发电</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/" alt="支付宝"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/07/08/digital-image-process/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">数字图像处理</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/07/08/riscv/"><span class="level-item">RISC-V Chinese Reader</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://pic1.zhimg.com/v2-4aa4114f6b5fd6a1f23283d19f0bb1ff_xl.jpg?source=32738c0c" alt="ChenZihang"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">ChenZihang</p><p class="is-size-6 is-block">undergraduate student from CSE, NJUST</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>NanJing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">26</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">3</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/maxkev1n" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/maxkev1n"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Zhihu" href="https://www.zhihu.com/people/maxkev1n"><i class="fab fa-zhihu"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Njust Envelope" href="mailto:chenzihang@njust.edu.cn"><i class="fas fa-at"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="BOSC mail" href="mailto:chenzihang@bosc.ac.cn"><i class="fa fa-envelope-open"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/article-reading-note/"><span class="level-start"><span class="level-item">article reading note</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/diary/"><span class="level-start"><span class="level-item">diary</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/learn-in-NJUST/"><span class="level-start"><span class="level-item">learn in NJUST</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/other-study/"><span class="level-start"><span class="level-item">other study</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:24:38.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/internship-diary/">实习小寄</a></p><p class="categories"><a href="/categories/diary/">diary</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:23:11.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-10/">Computer Architecture论文阅读笔记（9）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:21:47.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-9/">Computer Architecture论文阅读笔记（9）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:20:52.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-8/">Computer Architecture论文阅读笔记（8）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:19:15.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-7/">Computer Architecture论文阅读笔记（7）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/07/"><span class="level-start"><span class="level-item">七月 2022</span></span><span class="level-end"><span class="level-item tag">26</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/computer-architecture/"><span class="tag">computer architecture</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/computer-science/"><span class="tag">computer science</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/diary/"><span class="tag">diary</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">广告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="chenzihang" data-ad-slot="chenzihang" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">ChenZihang&#039;s Blog</a><p class="is-size-7"><span>&copy; 2022 ChenZihang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

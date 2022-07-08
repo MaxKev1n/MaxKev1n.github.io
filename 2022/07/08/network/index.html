@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>network - ChenZihang&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="ChenZihang&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="ChenZihang&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="第一章：计算机网络和因特网 传输速率（transmission rate） 点对点协议：PPP 分组（packet）：当一台端系统要向另一台端系统发送数据时，发送端系统将数据分段，并为每段加上首部字节。由此形成的信息包用术语来说称为分组 因特网服务提供商（Internet Service Provider，ISP）"><meta property="og:type" content="blog"><meta property="og:title" content="network"><meta property="og:url" content="http://example.com/2022/07/08/network/"><meta property="og:site_name" content="ChenZihang&#039;s Blog"><meta property="og:description" content="第一章：计算机网络和因特网 传输速率（transmission rate） 点对点协议：PPP 分组（packet）：当一台端系统要向另一台端系统发送数据时，发送端系统将数据分段，并为每段加上首部字节。由此形成的信息包用术语来说称为分组 因特网服务提供商（Internet Service Provider，ISP）"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:published_time" content="2022-07-08T07:47:02.000Z"><meta property="article:modified_time" content="2022-07-08T07:47:27.401Z"><meta property="article:author" content="ChenZihang"><meta property="article:tag" content="computer science"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/08/network/"},"headline":"network","image":["http://example.com/img/og_image.png"],"datePublished":"2022-07-08T07:47:02.000Z","dateModified":"2022-07-08T07:47:27.401Z","author":{"@type":"Person","name":"ChenZihang"},"publisher":{"@type":"Organization","name":"ChenZihang's Blog","logo":{"@type":"ImageObject","url":{"text":"ChenZihang's Blog"}}},"description":"第一章：计算机网络和因特网 传输速率（transmission rate） 点对点协议：PPP 分组（packet）：当一台端系统要向另一台端系统发送数据时，发送端系统将数据分段，并为每段加上首部字节。由此形成的信息包用术语来说称为分组 因特网服务提供商（Internet Service Provider，ISP）"}</script><link rel="canonical" href="http://example.com/2022/07/08/network/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><script data-ad-client="chenzihang" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">ChenZihang&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/maxkev1n"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-07-08T07:47:02.000Z" title="7/8/2022, 3:47:02 PM">2022-07-08</time>发表</span><span class="level-item"><time dateTime="2022-07-08T07:47:27.401Z" title="7/8/2022, 3:47:27 PM">2022-07-08</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/learn-in-NJUST/">learn in NJUST</a></span><span class="level-item">1 小时读完 (大约6747个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">network</h1><div class="content"><h3 id="第一章：计算机网络和因特网"><a href="#第一章：计算机网络和因特网" class="headerlink" title="第一章：计算机网络和因特网"></a>第一章：计算机网络和因特网</h3><ul>
+<li><strong>传输速率</strong>（transmission rate）</li>
+<li><strong>点对点协议</strong>：PPP</li>
+<li><strong>分组</strong>（packet）：当一台端系统要向另一台端系统发送数据时，发送端系统将数据分段，并为每段加上首部字节。由此形成的信息包用术语来说称为<strong>分组</strong></li>
+<li><strong>因特网服务提供商</strong>（Internet Service Provider，ISP）</li>
+</ul>
+<span id="more"></span>
+
+<blockquote>
+<p>家庭的DSL调制解调器得到数字数据后将其转换成高频音，以通过电话线传输给本地中心局；来自许多家庭的模拟信号在DSLAM处被转换回数字形式</p>
+</blockquote>
+<blockquote>
+<p>物理媒体分成两种类型：<strong>导引型媒体</strong>和<strong>非导引型媒体</strong></p>
+<p>双绞线连接设备两种方法：<strong>直连线</strong>和<strong>交叉线</strong></p>
+<p>同轴电缆可分为两种基本类型：<strong>基带同轴电缆</strong>和<strong>宽带同轴电缆</strong></p>
+<p>一般按传输模式的不同把光纤分为两种：<strong>多模光纤（MMF）</strong>和<strong>单模光纤（SMF）</strong></p>
+</blockquote>
+<ul>
+<li><strong>协议</strong>（protocol）：定义了在两个或多个通信实体之间交换的报文的格式和顺序，以及报文发送和&#x2F;或接收一条报文或其他事件所采取的动作</li>
+</ul>
+<blockquote>
+<p>协议：对等层实体(peer entity)之间在相互通信的过程中，需要遵循的规则的集合，水平（<em>来自PPT</em>）</p>
+</blockquote>
+<ul>
+<li><strong>频分复用</strong>（Frequency-Division Multiplexing，FDM）</li>
+<li><strong>时分复用</strong>（Time-Division Multiplexing，TDM）</li>
+<li><strong>带宽</strong>（band-width）</li>
+<li><strong>调制</strong>：数字信号转化为模拟信号</li>
+<li><strong>解调</strong>：模拟信号转化为数字信号</li>
+<li><strong>静默期</strong>（silent period）</li>
+<li><strong>节点处理时延</strong>（nodal processing delay）：检查分组首部和决定将该分组导向何处所需要的时间是<strong>处理时延</strong>的一部分</li>
+<li><strong>排队时延</strong>（queuing delay）：在队列中，当分组在链路上等待传输时，它经受<strong>排队时延</strong></li>
+<li><strong>传输时延</strong>（transmission delay）：将所有分组的比特推向链路所需要的时间。在毫秒到微秒量级</li>
+<li><strong>传播时延</strong>（propagation delay）：从该链路的起点到路由器B传播所需要的时间</li>
+</ul>
+<p>$$<br>d_{nodal}&#x3D;d_{proc}+d_{queue}+d_{trans}+d_{prop}<br>$$</p>
+<ul>
+<li><strong>流量强度</strong>（traffic intensity）</li>
+<li><strong>丢失</strong>（lost）：由于没有地方存储这个分组，路由器将<strong>丢弃</strong>（drop）该分组，即该分组会<strong>丢失</strong></li>
+<li><strong>瞬时吞吐量</strong>（instantaneous throughput）：在任何时间瞬时的<strong>瞬时吞吐量</strong>是主机B接收到该文件的速率（以<em>bps</em>计）</li>
+<li><strong>平均吞吐量</strong>（average throughput）：如果该文件由F比特组成，主机B接收到所有F比特用去T秒，则文件传输的<strong>平均吞吐量</strong>是<em>F&#x2F;T bps</em></li>
+<li><strong>瓶颈链路</strong>（bottleneck link）</li>
+<li><strong>协议栈</strong>（protocol stack）：各层的所有协议被称为<strong>协议栈</strong></li>
+<li><strong>应用层</strong>：应用层是网络应用程序及它们的应用层协议存留的地方</li>
+<li><strong>运输层</strong>：因特网的运输层在应用程序端点之间传送应用层报文</li>
+<li><strong>网络层</strong>：因特网的网络层负责将称为数据报的网络层分组从一台主机移动到另一台主机</li>
+<li><strong>链路层</strong>：在每个节点，网络层将数据报下传给链路层，链路层沿着路径将数据报传递给下一个节点。在该下一个节点，链路层将数据报上传给网络层</li>
+<li><strong>报文</strong>（message）：我们把这种位于应用层的信息分组称为<strong>报文</strong></li>
+<li><strong>报文段</strong>（segment）：我们把运输层的分组称为<strong>报文段</strong></li>
+<li><strong>数据报</strong>（datagram）：因特网的网络层负责将<strong>数据报</strong>的网络层分组从一台主机移动到另一台主机</li>
+<li><strong>帧</strong>（frame）：我们把链路层分组称为<strong>帧</strong></li>
+<li><strong>OSI参考模型</strong>：应用层、表示层、会话层、运输层、网络层、数据链路层和物理层</li>
+<li><strong>封装</strong>（encapsulation）</li>
+<li><strong>运输层报文段</strong>（transport-layer segment）：应用层报文和运输层首部信息一道构成了<strong>运输层报文段</strong></li>
+<li><strong>网络层数据报</strong>（network-layer datagram）：运输层则向网络层传递运输层报文段，网络层增加了如源和目的端系统地址等网络层首部信息，生成了<strong>网络层数据报</strong></li>
+<li><strong>链路层帧</strong>（link-layer frame）：网路层数据报接下来被传递给链路层，链路层增加它自己的链路层首部信息并生成<strong>链路层帧</strong></li>
+<li><strong>有效载荷字段</strong>（payload field）：有效载荷通常是来自上一层的分组</li>
+<li><strong>僵尸网络</strong>（botnet）</li>
+<li><strong>拒绝服务攻击</strong>（Denial-of-Service attack，DOS attack）</li>
+<li><strong>IP哄骗</strong>（IP spoofing）</li>
+</ul>
+<h3 id="第二章：应用层"><a href="#第二章：应用层" class="headerlink" title="第二章：应用层"></a>第二章：应用层</h3><blockquote>
+<p>两种网络应用程序体系结构：<strong>客户-服务器体系结构给</strong>或<strong>对等（P2P）体系结构</strong></p>
+</blockquote>
+<ul>
+<li><strong>进程</strong></li>
+</ul>
+<blockquote>
+<p>在一对进程之间的通信会话场景中，发起通信的进程被标识为<strong>客户</strong>，在会话开始时等待联系的进程是<strong>服务器</strong></p>
+</blockquote>
+<ul>
+<li><strong>套接字</strong>（socket）：进程通过一个称为<strong>套接字</strong>的软件接口向网络发送报文和从网络接受报文。<strong>套接字</strong>也被称为应用程序和网络之间的<strong>应用程序编程接口</strong>（Application Programming Interface）</li>
+<li><strong>IP地址</strong>（IP address）：主机由其<strong>IP地址</strong>标识</li>
+<li><strong>用户代理</strong>（user agent）</li>
+<li><strong>端口号</strong>（port number）：用于标识运行在接受主机上的接收进程（更具体地说，接收套接字）</li>
+<li><strong>可靠数据传输</strong>（reliable data transfer）</li>
+<li><strong>容忍丢失的应用</strong>（loss-tolerant application）</li>
+<li><strong>吞吐量</strong>（throughput）</li>
+<li><strong>定时</strong>（timing）</li>
+<li><strong>流媒体</strong>（stcp）</li>
+</ul>
+<blockquote>
+<p>大体上对应用程序服务要求进行分类：可靠数据传输、吞吐量、定时和安全性</p>
+</blockquote>
+<p><strong>应用层协议</strong>（application-layer protocol）</p>
+<ol>
+<li>交换的报文类型</li>
+<li>各种报文类型的语法</li>
+<li>字段的语义</li>
+<li>确定一个进程何时以及如何发送报文，对报文进行相应的规则</li>
+</ol>
+<blockquote>
+<p>UDP是一种不提供不必要服务的轻量级运输协议，它仅提供最小服务。UDP协议提供一种不可靠数据传送服务。UDP没有包括拥塞控制机制，所以UDP的发送端可以用它选定的任何速率向其下层注入数据。</p>
+</blockquote>
+<ul>
+<li><strong>超文本传输协议</strong>（HyperText Transfer Protocol， HTTP）</li>
+</ul>
+<blockquote>
+<p>HTTP是一个<strong>无状态协议</strong>（stateless protocol）</p>
+</blockquote>
+<ul>
+<li><strong>非持续连接</strong>（non-persistent connection）</li>
+<li><strong>持续连接</strong>（persistent connection）</li>
+<li><strong>采用非持续连接的HTTP</strong>：HTTP 1.0</li>
+<li><strong>采用持续连接的HTTP</strong>：HTTP 1.1</li>
+<li><strong>cookie</strong>：某些网站为了辨别用户身份、进行session跟踪而储存在用户本地终端上的数据（通常经过加密）（<em>来自作业</em>）</li>
+</ul>
+<blockquote>
+<p><strong>Web缓存器</strong>也叫<strong>代理服务器</strong>，它是能够代表初始Web服务器来满足HTTP请求的网络实体。</p>
+</blockquote>
+<blockquote>
+<p><strong>条件GET</strong>允许缓存器证实它的对象是最新的。</p>
+</blockquote>
+<blockquote>
+<p>电子邮件系统总体结构的三个组成部分：<strong>用户代理</strong>、邮件服务器和<strong>简单的邮件传输协议</strong>（SMTP）</p>
+</blockquote>
+<ul>
+<li><p><strong>简单的邮件传输协议</strong>（Simple Mail Transfer Protocol，SMTP）：SMTP用于从发送方的邮件服务器发送报文到接收方的邮件服务器</p>
+</li>
+<li><p><strong>邮件访问协议</strong>：用于将邮件从邮件服务器传送到接收方的用户代理</p>
+</li>
+<li><p><strong>第三版的邮局协议</strong>（Post Office Protocol-Version 3，POP3）</p>
+</li>
+<li><p><strong>因特网邮件访问协议</strong>（Internet Mail Access Protocol， IMAP）</p>
+</li>
+<li><p><strong>因特网的目录服务</strong>（domain name system，DNS）</p>
+</li>
+</ul>
+<p>DNS是</p>
+<ol>
+<li>一个由分层的DNS服务器实现的分布式数据库</li>
+<li>一个使得主机能够查询分布式数据库的应用层协议</li>
+</ol>
+<ul>
+<li><strong>分布式、层次数据库</strong>（distributed，hierarchical database）</li>
+<li><strong>分布式拒绝服务</strong>（DDoS）</li>
+<li><strong>内容分发网</strong>（content distribution network，CDN）</li>
+<li><strong>集群选择策略</strong>（cluster selection strategy）：任何CDN部署，其核心是<strong>集群选择策略</strong></li>
+</ul>
+<h3 id="第三章：运输层"><a href="#第三章：运输层" class="headerlink" title="第三章：运输层"></a>第三章：运输层</h3><ul>
+<li><strong>用户数据报协议</strong>（User Datagram Protocol，UDP）</li>
+</ul>
+<ol>
+<li>关于发送什么数据以及何时发送的应用层控制更为精细</li>
+<li>无须连接建立</li>
+<li>无连接状态</li>
+<li>分组首部开销小</li>
+</ol>
+<ul>
+<li><strong>传输控制协议</strong>（TCP，Transmission Control Protocol）</li>
+<li><strong>不可靠服务</strong>（unreliable service）</li>
+<li><strong>运输层的多路复用</strong>（transport-layer multiplexing）：在源主机从不同套接字中收集数据块，并为每个数据块封装上首部信息从而生成报文段，然后将报文段传递到网络层，所有这些工作称<strong>多路复用</strong></li>
+<li><strong>多路分解</strong>（demultiplexing）：在接收端，运输层检查这些字段，标识出接收套接字，进而将报文段定向到该套接字。将运输层报文段中的数据交付到正确的套接字的工作称为<strong>多路分解</strong></li>
+<li><strong>可靠数据传输</strong>（reliable data transfer）</li>
+<li><strong>拥塞控制</strong>（congestion control）</li>
+<li><strong>单向数据传输</strong>（unidirectional data transfer）</li>
+<li><strong>双向数据传输</strong>（bidirectional data transfer）</li>
+<li><strong>自动重传请求</strong>（Automatic Repeat reQuest，ARQ）</li>
+<li><strong>回退N步</strong>（Go-Back-N，GBN）</li>
+<li><strong>选择重传</strong>（Selective Repeat，SR）</li>
+<li><strong>最大报文段长度</strong>（Maximum Segment Size，MSS）：MSS通常根据最初确定的由本地发送主机发送的最大链路层帧长度（即所谓的<strong>最大传输单元</strong>（Maximum Transmission Unit，MTU）来设置</li>
+</ul>
+<blockquote>
+<p>TCP在IP不可靠的尽力而为服务之上创建了一种<strong>可靠数据传输服务</strong>（reliable data transfer service）</p>
+</blockquote>
+<ul>
+<li><strong>流量控制服务</strong>（flow-control service）：流量控制是一个速度匹配服务，即发送方的发送速率与接收方应用程序的读取速率相匹配（ 控制发送进程，使接收进程来得及接收）</li>
+<li><strong>拥塞控制</strong>（congestion control）：TCP发送方也可能因为IP网络的拥塞而被遏制；这种形式的发送方的控制被称为<strong>拥塞控制</strong>（控制发送进程，使网络来得及传送）</li>
+</ul>
+<blockquote>
+<p>TCP通过让<em>发送方</em>维护一个称为<strong>接收窗口</strong>（receive window）的变量来提供流量控制</p>
+</blockquote>
+<p>TCP拥塞控制算法包括三个主要部分</p>
+<ol>
+<li>慢启动</li>
+<li>拥塞避免</li>
+<li>快速回复</li>
+</ol>
+<h3 id="第四章：网络层：数据平面"><a href="#第四章：网络层：数据平面" class="headerlink" title="第四章：网络层：数据平面"></a>第四章：网络层：数据平面</h3><p>自治系统内部协议：<em>OSPF</em>、<em>RIP（Routing Information Protocol）</em></p>
+<p>自治系统外部协议：<em>BGP</em></p>
+<ul>
+<li><strong>转发</strong>（forwarding）：指将分组从一个输入链路接口转移到适当的输出链路接口的路由器本地动作</li>
+<li><strong>路由选择</strong>（routing）：指确定分组从源到目的地所采取的端到端路径的网络范围处理过程</li>
+<li><strong>软件定义网络</strong>（Software-Defined Networking，SDN）</li>
+<li><strong>链路层交换机</strong>（link-layer switch）：基于链路层帧中的字段值做出转发决定</li>
+<li><strong>路由器</strong>（router）：基于网络层数据报中的首部字段值做出转发决定</li>
+</ul>
+<blockquote>
+<p>路由器的四个组件：输入端口、交换结构、输出端口和路由选择处理器</p>
+</blockquote>
+<ul>
+<li><strong>输入端口</strong>：在路由器中执行终结入物理链路的物理层功能</li>
+<li><strong>交换结构</strong>：将路由器的输入端口连接到它的输出端口</li>
+<li><strong>输出端口</strong>：存储从交换结构接收的分组，并通过执行必要的链路层和物理层功能在输出链路上传输这些分组</li>
+<li><strong>路由选择处理器</strong>：执行控制平面功能</li>
+</ul>
+<blockquote>
+<p>三种交换结构：经内存交换、经总线交换、经互联网络交换</p>
+</blockquote>
+<ul>
+<li><strong>转发表</strong>（forwarding table）：转发表是由路由选择处理器计算和更新的，或者转发表接收来自远程SDN控制器的内容</li>
+<li><strong>最长前缀匹配规则</strong>（longest prefix matching rule）：在最长匹配转发表中寻找最长的匹配项，并向最长前缀匹配相关联的链路接口转发分组</li>
+<li><strong>丢包</strong>（packet loss）：随着路由器输入或输出端口排队的队列的增长，路由器的缓存空间最终将会耗尽，并且当无内存可用于存储到达的分组时将会出现丢包</li>
+<li><strong>线路前部</strong>（Head-Of-the-Line，HOL）<strong>阻塞</strong></li>
+<li><strong>主动队列管理</strong>（Active Queue Management，AQM）算法</li>
+<li><strong>随机早期检测</strong>（Random Early Detection，RED）算法</li>
+<li><strong>分组调度</strong>（packet scheduler）</li>
+<li><strong>先进先出</strong>（First-In-First-Out，FIFO）：也称<strong>先来先服务</strong>（FCFS）</li>
+<li><strong>优先权排队</strong>（priority queuing）</li>
+<li><strong>非抢占式优先权排队</strong>（non-preemptive priority queuing）</li>
+<li><strong>循环排队规则</strong>（round robin queuing discipline）</li>
+<li><strong>保持工作排队</strong>（work-conserving queuing）</li>
+<li><strong>加权公平排队</strong>（Weighted Fair Queuing，WFQ）</li>
+</ul>
+<blockquote>
+<p>IP分组交付服务主要特点：不可靠、尽力而为、无连接</p>
+</blockquote>
+<p>IPv4数据包中的关键字段如下：</p>
+<ol>
+<li>版本</li>
+<li>首部长度</li>
+<li>服务类型</li>
+<li>数据报长度</li>
+<li>标识、标志、片偏移</li>
+<li>寿命</li>
+<li>协议</li>
+<li>首部检验和</li>
+<li>源和目的IP地址</li>
+<li>选项</li>
+<li>数据（有效载荷）</li>
+</ol>
+<blockquote>
+<p>IPv4地址通常按所谓<strong>点分十进制记法</strong>（dotted-decimal notation）书写</p>
+</blockquote>
+<ul>
+<li><strong>子网掩码</strong>（network mask）：指示32比特中的最左侧24比特定义了子网地址</li>
+<li><strong>无类别域间路由选择</strong>（Classless Interdomain Routing，CIDR）：因特网的地址分配策略被称为<strong>无类别域间路由选择</strong></li>
+<li><strong>动态主机配置协议</strong>（Dynamic Host Configuration，DHCP）：允许主机自动获取（被分配）一个IP地址，被称为<strong>即插即用协议</strong>或<strong>零配置协议</strong></li>
+</ul>
+<p>DHCP协议的4个步骤：</p>
+<ol>
+<li>DHCP服务器发现</li>
+<li>DHCP服务器提供</li>
+<li>DHCP请求</li>
+<li>DHCP ACK</li>
+</ol>
+<ul>
+<li><strong>网络地址转换</strong>（Network Address Translation，NAT）</li>
+</ul>
+<blockquote>
+<p>路由器怎样知道它应将某个分组转发给哪个内部主机呢？</p>
+<p>技巧就是使用NAT路由器上的一张<strong>NAT转化表</strong>（NAT translation table），并且在表项中包含了端口号及其IP地址</p>
+</blockquote>
+<p>IPv6中定义的字段：</p>
+<ol>
+<li>版本</li>
+<li>流量类型</li>
+<li>流标签</li>
+<li>有效载荷长度</li>
+<li>下一个首部</li>
+<li>跳限制</li>
+<li>源地址和目的地址</li>
+<li>数据</li>
+</ol>
+<ul>
+<li><strong>流表</strong>（flow table）：匹配加动作转发表在OpenFlow中称为<strong>流表</strong></li>
+</ul>
+<h3 id="第五章：网络层：控制平面"><a href="#第五章：网络层：控制平面" class="headerlink" title="第五章：网络层：控制平面"></a>第五章：网络层：控制平面</h3><ul>
+<li><strong>互联网控制报文协议</strong>（ICMP）：被主机和路由器用来彼此沟通网络层的信息</li>
+<li><strong>简单网络管理协议</strong>（SNMP）：SNMP是要给应用层协议，用于在管理服务器和代表管理服务器执行的代理之间传递网络管理控制和信息报文</li>
+<li><strong>链路状态</strong>（Link State，LS）<strong>算法</strong>：具有全局状态信息的算法常被称作<strong>链路状态算法</strong></li>
+<li><strong>距离向量</strong>（Distance-Vector）<strong>算法</strong></li>
+<li><strong>路由选择表</strong>（routing table）</li>
+<li><strong>毒性逆转</strong>（poisoned reverse）</li>
+<li><strong>自治系统</strong>（Autonomous System，AS）：聚合路由器为一个区域</li>
+<li><strong>自治系统内部路由选择协议</strong>（intra-autonomous system routing protocol）：在一个自治系统内运行的路由选择算法</li>
+<li><strong>开放最短路优先</strong>（OSPF）</li>
+<li><strong>自治系统间路由选择协议</strong>（inter-autonomous system routing protocol）</li>
+<li><strong>边界网关协议</strong>（Broder Gateway Protocol，BGP）</li>
+</ul>
+<p>BGP为每台路由器提供了一种完成以下人物的手段：</p>
+<ol>
+<li>从邻居AS获得前缀的可达性信息</li>
+<li>确定到该前缀的“最好的”路由</li>
+</ol>
+<ul>
+<li><strong>热土豆路由选择</strong>（hot potato routing）</li>
+<li><strong>多宿接入ISP</strong>（multi-homed stub network）</li>
+</ul>
+<p>SDN体系结构具有4个关键特征：</p>
+<ol>
+<li>基于流的转发</li>
+<li>数据平面和控制平面分离</li>
+<li>网络控制功能</li>
+<li>可编程的网络</li>
+</ol>
+<blockquote>
+<p>OpenFlow协议运行在SDN控制器和SDN控制的交换器或其他实现OpenFlow API的设备之间。</p>
+</blockquote>
+<h3 id="第六章：链路层和局域网"><a href="#第六章：链路层和局域网" class="headerlink" title="第六章：链路层和局域网"></a>第六章：链路层和局域网</h3><ul>
+<li><strong>成帧</strong>（framing）：在每个网络层数据报经链路传送之前，几乎所有的链路层协议都要将其用链路层帧封装起来</li>
+<li><strong>链路接入</strong>：<strong>媒体访问控制</strong>（Medium Access Control，MAC）协议规定了帧在链路上传输的规则</li>
+<li><strong>可靠交付</strong>：当链路层协议提供可靠交付服务时，它保证无差错地经链路层移动每个网络层数据报</li>
+<li><strong>差错检测和纠正</strong>：通过让发送节点在帧中包括差错检测比特，让接收节点进行差错检查，以此来完成这项工作</li>
+<li><strong>网络适配器</strong>（network adapter）</li>
+<li><strong>网络接口卡</strong>（Network Interface Card，NIC）</li>
+</ul>
+<blockquote>
+<p>在发送端，控制器取得了由协议栈较高层生成并存储在主机内存中的数据报，在链路层帧中封装该数据报，然后遵循链路接入协议将该帧传进通信链路中。在接收端，控制器接收了整个帧，抽取出网络层数据报。</p>
+</blockquote>
+<ul>
+<li><strong>奇偶校验位</strong>（parity bit）</li>
+<li><strong>前向纠错</strong>（Forward Error Correction，FEC）：接收方检测和纠正差错的能力被称为前向纠错</li>
+<li><strong>循环冗余检测</strong>（Cyclic Redundancy Check，CRC）<strong>编码</strong>：现今的计算机网络中广泛应用的差错检测技术基于<strong>循环冗余检测编码</strong>。CRC编码也称为<strong>多项式编码</strong>（polynomial code）。</li>
+<li><strong>点对点链路</strong>：由链路一端的单个发送方和链路另一端的单个接收方组成</li>
+<li><strong>广播链路</strong>：能够让多个发送和接受节点都连接到相同的、单一的、共享的广播信道中</li>
+</ul>
+<blockquote>
+<p>因为所有的节点都能够传输帧，所以多个节点可能会同时传输帧。当发生这种情况时，所有节点同时接到多个帧；这就是说，传输的帧在所有的接收方处<strong>碰撞</strong>。</p>
+</blockquote>
+<blockquote>
+<p>任何多路访问协议都可以分为3种类型之一：信道划分协议、随机接入协议、轮流协议	</p>
+</blockquote>
+<ul>
+<li><strong>信道划分协议</strong>（channel partitioning protocol）</li>
+<li><strong>随机接入协议</strong>（random access protocol）</li>
+<li><strong>轮流协议</strong>（taking-turns protocol）</li>
+<li><strong>时间帧</strong>（time frame）</li>
+<li><strong>时隙</strong>（slot）</li>
+<li><strong>码分多址</strong>（Code Division Multiple Access，CDMA）</li>
+<li><strong>时隙ALOHA</strong>：最简单的随机接入协议之一，<em>效率最多为37%</em></li>
+<li><strong>ALOHA</strong>：第一个ALOHA协议实际上是一个非时隙、完全分散的协议，<em>效率最多为18%</em></li>
+<li><strong>载波侦听多路访问</strong>（CSMA）</li>
+<li><strong>具有碰撞检测的CSMA</strong>（CSMA with Collision Detection，CSMA&#x2F;CD）</li>
+<li><strong>信道传播时延</strong>（channel propagation delay）：信号从一个节点传播到另一个节点所花费的时间</li>
+<li><strong>二进制指数后退</strong>（binary exponential backoff）算法</li>
+<li><strong>轮询协议</strong>（polling protocol）：轮询协议要求这些节点之一要被指定为主节点。主节点以循环的方式轮询每个节点。特别是，主节点首先向节点1发送要给报文，告诉它能够传输的最多数量。在节点1传输了某些帧后，主节点告诉节点2它能够传输的帧的最多数量。上述过程以这种方式继续进行，主节点以循环的方式轮询了每个节点</li>
+<li><strong>令牌传递协议</strong>（token-passing protocol）：在这种协议中没有主节点。一个称为令牌的小的特殊帧在节点之间以某种固定的次序进行交换</li>
+<li><strong>电缆调制解调器端接系统</strong>（Cable Modem Termination System，CMTS）</li>
+<li><strong>数据经电缆服务接口</strong>（Data-Over-Cable Service Interface，CMTS）规范（DOCSIS）</li>
+<li><strong>地址解析协议</strong>（Address Resolution protocol，ARP）</li>
+</ul>
+<p>以太网帧的6个字段：</p>
+<ol>
+<li>数据字段（46~1500字节）：承载了IP数据报</li>
+<li>目的地址（6字节）：包含目的适配器的MAC地址</li>
+<li>源地址（6字节）：包含了传输该帧到局域网上的适配器的MAC地址</li>
+<li>类型字段（2字节）：允许以太网复用多种网络层协议</li>
+<li>CRC（4字节）</li>
+<li>前同步码（8字节）</li>
+</ol>
+<ul>
+<li><strong>转发器</strong>（repeater）</li>
+<li><strong>过滤</strong>（filtering）：决定一个帧应该转发到某个接口还是应当将其丢弃的交换机功能</li>
+<li><strong>转发</strong>（forwarding）：决定一个帧应该被导向哪个接口，并把该帧移动到那些接口的交换机功能</li>
+<li><strong>交换机表</strong>（switch table）：该交换机表包含某局域网上某些主机和路由器但不必是全部的表项</li>
+</ul>
+<p>交换机的性质：</p>
+<ol>
+<li>消除碰撞</li>
+<li>异质的链路</li>
+<li>管理</li>
+</ol>
+<p>交换机表的一个表项包含：</p>
+<ol>
+<li>一个MAC地址</li>
+<li>通向该MAC地址的交换机接口</li>
+<li>表项放置在表中的时间</li>
+</ol>
+<blockquote>
+<p>局域网中常用的拓扑结构主要有<strong>总线型拓扑</strong>、<strong>星形拓扑</strong>、<strong>环形拓扑</strong>、<strong>树形拓扑</strong>（由总线型演变而来）以及它们的混合型。</p>
+</blockquote>
+<blockquote>
+<p>MAC地址前24位为厂商号，后24位为编号</p>
+</blockquote>
+<ul>
+<li><strong>虚拟局域网</strong>（Virtual Local Network，VLAN）</li>
+<li><strong>标签协议标识符</strong>（Tag Protocol Identifier，TPID）</li>
+<li><strong>多协议标签交换</strong>（Multiprotocol Label Switching，MPLS）</li>
+<li><strong>虚拟专用网</strong>（Virtual Private Network，VPN）</li>
+<li><strong>全连接拓扑</strong>（fully connected topology）</li>
+<li><strong>模块化数据中心</strong>（Modular Data Center，MDC）</li>
+<li><strong>自组织网络</strong>（ad hoc network）</li>
+</ul>
+<blockquote>
+<p>基带传输：信号源产生的原始电信号称为基带信号，将数字数据0、1直接用两种不同的电压表示，然后送到线路上去传输。</p>
+<p>宽带传输：将基带信号进行调制后形成模拟信号，然后采用频分复用技术实现宽带传输。</p>
+</blockquote>
+<blockquote>
+<p>常用以太网技术：<em>10BASE-2</em>、<em>100BASE-T</em>、<em>1000BASE-LX</em>、<em>10GBASE-T</em></p>
+</blockquote>
+<blockquote>
+<p>直通转发：交换机一旦解读到数据包目的地址，就开始向目的端口发送数据包</p>
+<p>存储转发：存储转发技术要求交换机在接收到全部数据包后再决定如何转发</p>
+</blockquote>
+<h3 id="第七章：无线网络和移动网络"><a href="#第七章：无线网络和移动网络" class="headerlink" title="第七章：无线网络和移动网络"></a>第七章：无线网络和移动网络</h3><p>有线链路和无线链路间的许多重要区别：</p>
+<ol>
+<li>递减的信号强度</li>
+<li>来自其他源的干扰</li>
+<li>多径传播</li>
+</ol>
+<blockquote>
+<p>无线网络四个组成要素：无线主机、无线链路、基站、网络基础设施</p>
+</blockquote>
+<blockquote>
+<p>无线网络两种通信模式：基础设施模式、自组织ad hoc模式</p>
+</blockquote>
+<blockquote>
+<p>无线网络四种类型：单跳，基于基础设施、单跳，无基础设施、多跳，基于基础设施、多跳，无基础设施</p>
+</blockquote>
+<ul>
+<li><strong>信噪比</strong>（Signal-to-Noise Ratio，SNR）</li>
+<li><strong>比特差错率</strong>（BER）</li>
+<li><strong>基本服务集</strong>（Basic Service Set，BSS）</li>
+<li><strong>接入点</strong>（Access Point，AP）</li>
+<li><strong>信标帧</strong>（beacon frame）</li>
+<li><strong>带碰撞避免的CSMA</strong>（CSMA with collision avoidance，CSMA&#x2F;CA）</li>
+</ul>
+<blockquote>
+<p>由于<em>802.11</em>无线局域网不使用碰撞检测，一旦站点开始发送一个帧，它就完全地发送该帧；也就是说，一旦站点开始发送，就不会返回。碰撞存在时仍发送整个数据帧将严重降低多路访问协议的性能。为了降低碰撞的可能性，802.11采用了集中碰撞避免技术。</p>
+</blockquote>
+<ul>
+<li><strong>短帧间间隔</strong>（Short Inter-Frame Spacing ，SIFS）</li>
+<li><strong>分布式帧间间隔</strong>（Distributed Inter-Frame Space，DIFS）</li>
+<li><strong>无线个人域网络</strong>（Wireless Personal Area Network，WPAN）</li>
+<li><strong>跳频扩展频谱</strong>（Frequency-Hopping Spread Spectrum，FHSS）</li>
+<li><strong>皮可网</strong>（piconet）</li>
+<li><strong>直接序列宽带CDMA</strong>（Direct Sequence Wideband CDMA，DS-WCDMA）</li>
+<li><strong>正交频分复用</strong>（Orthogonal Frequency Division Multiplexing，OFDM）</li>
+<li><strong>转交地址</strong>（Care-Of Address，COA）</li>
+</ul>
+<blockquote>
+<p>术语<strong>蜂窝</strong>（cellular）是指这样的事实，即由一个蜂窝网覆盖的区域被分成许多称作<strong>小区</strong>（cell）的地理覆盖范围。每个小区包含一个<strong>收发基站</strong>（Base Transceiver Station，BTS），负责向位于其小区内的移动站点发送或接收信号</p>
+</blockquote>
+<p>2G：语音和电话网连接</p>
+<p>3G：将因特网扩展到蜂窝用户</p>
+<p>4G：一个全IP核心网</p>
+<hr>
+<p>A类：(1.0.0.0-126.0.0.0)（默认子网掩码：255.0.0.0或 0xFF000000）第一个字节为网络号，后三个字节为主机号。该类IP地址的最前面为“0”，所以地址的网络号取值于1~126之间。一般用于大型网络。</p>
+<p>B类：(128.0.0.0-191.255.0.0)（默认子网掩码：255.255.0.0或0xFFFF0000）前两个字节为网络号，后两个字节为主机号。该类IP地址的最前面为“10”，所以地址的网络号取值于128~191之间。一般用于中等规模网络。</p>
+<p>C类：(192.0.0.0-223.255.255.0)（子网掩码：255.255.255.0或 0xFFFFFF00）前三个字节为网络号，最后一个字节为主机号。该类IP地址的最前面为“110”，所以地址的网络号取值于192~223之间。一般用于小型网络。</p>
+<p>D类：是多播地址。该类IP地址的最前面为“1110”，所以地址的网络号取值于224~239之间。一般用于多路广播用户[1] 。</p>
+<p>E类：是保留地址。该类IP地址的最前面为“1111”，所以地址的网络号取值于240~255之间。</p>
+<p>在IP地址3种主要类型里，各保留了3个区域作为私有地址，其地址范围如下：<br>A类地址：10.0.0.0～10.255.255.255<br>B类地址：172.16.0.0～172.31.255.255<br>C类地址：192.168.0.0～192.168.255.255</p>
+<p>回送地址：127.0.0.1。 也是本机地址，等效于localhost或本机IP。一般用于测试使用。例如：ping 127.0.0.1来测试本机TCP&#x2F;IP是否正常。</p>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>network</p><p><a href="http://example.com/2022/07/08/network/">http://example.com/2022/07/08/network/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>ChenZihang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-07-08</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-07-08</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/computer-science/">computer science</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>爱发电</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/" alt="支付宝"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/07/08/os/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Operating System</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/07/08/git/"><span class="level-item">git</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://pic1.zhimg.com/v2-4aa4114f6b5fd6a1f23283d19f0bb1ff_xl.jpg?source=32738c0c" alt="ChenZihang"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">ChenZihang</p><p class="is-size-6 is-block">undergraduate student from CSE, NJUST</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>NanJing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">26</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">3</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/maxkev1n" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/maxkev1n"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Zhihu" href="https://www.zhihu.com/people/maxkev1n"><i class="fab fa-zhihu"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Njust Envelope" href="mailto:chenzihang@njust.edu.cn"><i class="fas fa-at"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="BOSC mail" href="mailto:chenzihang@bosc.ac.cn"><i class="fa fa-envelope-open"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/article-reading-note/"><span class="level-start"><span class="level-item">article reading note</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/diary/"><span class="level-start"><span class="level-item">diary</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/learn-in-NJUST/"><span class="level-start"><span class="level-item">learn in NJUST</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/other-study/"><span class="level-start"><span class="level-item">other study</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:24:38.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/internship-diary/">实习小寄</a></p><p class="categories"><a href="/categories/diary/">diary</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:23:11.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-10/">Computer Architecture论文阅读笔记（9）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:21:47.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-9/">Computer Architecture论文阅读笔记（9）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:20:52.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-8/">Computer Architecture论文阅读笔记（8）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-08T08:19:15.000Z">2022-07-08</time></p><p class="title"><a href="/2022/07/08/article-read-7/">Computer Architecture论文阅读笔记（7）</a></p><p class="categories"><a href="/categories/article-reading-note/">article reading note</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/07/"><span class="level-start"><span class="level-item">七月 2022</span></span><span class="level-end"><span class="level-item tag">26</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/computer-architecture/"><span class="tag">computer architecture</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/computer-science/"><span class="tag">computer science</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/diary/"><span class="tag">diary</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">广告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="chenzihang" data-ad-slot="chenzihang" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">ChenZihang&#039;s Blog</a><p class="is-size-7"><span>&copy; 2022 ChenZihang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
