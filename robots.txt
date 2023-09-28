@@ -1,3 +1,0 @@
-User-agent: *
-
-Sitemap: https://maxkev1n.github.io/sitemap.xml
