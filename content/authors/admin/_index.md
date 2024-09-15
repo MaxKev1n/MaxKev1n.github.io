@@ -33,8 +33,8 @@ profiles:
   - icon: at-symbol
     url: 'mailto:zchen097@connect.hkust-gz.edu.cn'
     label: E-mail Me
-    - icon: brands/github
-      url: https://github.com/maxkev1n
+  - icon: brands/github
+    url: https://github.com/maxkev1n
 #   - icon: brands/x
 #     url: https://twitter.com/GetResearchDev
 #   - icon: brands/instagram
