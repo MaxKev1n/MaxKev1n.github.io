@@ -35,9 +35,7 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
-
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+        I'm a PhD student in the Prof.Hongyuan Liu's team at The Hong Kong University of Science and Technology (Guangzhou). I blog about machine learning, computer architecutre, and high-performance computing.
         
         Please reach out to collaborate 😃
     design:
@@ -63,16 +61,16 @@ sections:
         exclude_featured: false
     design:
       view: citation
-  - block: collection
-    id: talks
-    content:
-      title: Recent & Upcoming Talks
-      filters:
-        folders:
-          - event
-    design:
-      view: article-grid
-      columns: 1
+#   - block: collection
+#     id: talks
+#     content:
+#       title: Recent & Upcoming Talks
+#       filters:
+#         folders:
+#           - event
+#     design:
+#       view: article-grid
+#       columns: 1
   - block: collection
     id: news
     content:

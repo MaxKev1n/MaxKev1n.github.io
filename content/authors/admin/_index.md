@@ -2,8 +2,8 @@
 # Display name
 title: Zihang Chen
 
-# Name pronunciation (optional)
-name_pronunciation: Zihang Chen
+# # Name pronunciation (optional)
+# name_pronunciation: Zihang Chen
 
 # Full name (for SEO)
 first_name: Zihang
@@ -20,7 +20,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: Computer Architecture Researcher
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
@@ -68,7 +68,7 @@ education:
     date_start: 2023-09-01
     date_end: ''
     summary: |
-        Research on the GPU Architectures and Machine Learning System. Supervised by [Prof. Hongyuan Liu](https://www.liuhongyuan.com/).
+        Supervised by [Prof. Hongyuan Liu](https://www.liuhongyuan.com/). Research on the GPU Architectures and Machine Learning System.
     # summary: |
     #   GPA: 3.8/4.0
 
@@ -137,9 +137,9 @@ skills:
 
 languages:
   - name: English
-    percent: 100
+    percent: 80
   - name: Chinese
-    percent: 75
+    percent: 100
 
 # Awards.
 #   Add/remove as many awards below as you like.
