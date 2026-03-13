@@ -51,7 +51,7 @@ profiles:
 interests:
   - Computer Architecture
   - CPU-GPU Architecture
-  - Machine Learning Acceleration
+  - Machine Learning Accelerate
 
 education:
   - area: Bachelor of Engineering in Computer Science
@@ -68,7 +68,13 @@ education:
     date_start: 2023-09-01
     date_end: ''
     summary: |
-        Supervised by [Prof. Hongyuan Liu](https://www.liuhongyuan.com/). Research on the GPU Architectures and Machine Learning System.
+        Supervised by [Prof. Jiayi Huang](https://jyhuang91.github.io/) and [Prof. Hongyuan Liu](https://www.liuhongyuan.com/). Research on the GPU Architectures and Machine Learning System.
+  - area: Visiting Student
+    institution: Ghent University
+    date_start: 2025-09-17
+    date_end: ''
+    summary: |
+        Supervised by [Prof. Lieven Eeckhout](https://users.elis.ugent.be/~leeckhou/). Research on the GPU Architectures.
     # summary: |
     #   GPA: 3.8/4.0
 
@@ -175,4 +181,4 @@ languages:
 
 ## About Me
 
-Chen Zihang is a PhD student of microelectronics in The Hong Kong University of Science and Technology (Guangzhou). He received his bachelor degree of Computer Science and Technology from Nanjing University of Science and Technology in 2019. His research interests include computer architecture, micro-processor design, micro-architecture exploration, cuda programming and machine learning system. He used to be an intern at XiangShan group, Beijing Institute of Open Source Chip to develop high-performance RISC-V processor and implement some novel architectures on the simulators. Now, He is a second-year PhD student in The Hong Kong University of Science and Technology (Guangzhou), supervised by Prof LIU Hongyuan.
+Chen Zihang is a PhD student of microelectronics in The Hong Kong University of Science and Technology (Guangzhou). He received his bachelor degree of Computer Science and Technology from Nanjing University of Science and Technology in 2019. His research interests include computer architecture, micro-processor design, micro-architecture exploration, cuda programming and machine learning system. He used to be an intern at XiangShan group, Beijing Institute of Open Source Chip to develop high-performance RISC-V processor and implement some novel architectures on the simulators. Now, he is a third-year PhD student in The Hong Kong University of Science and Technology (Guangzhou), supervised by Prof. Jiayi Huang and Prof. Hongyuan Liu. Currently, he is a visiting student in Ghent University, supervised by Prof. Lieven Eeckhout.

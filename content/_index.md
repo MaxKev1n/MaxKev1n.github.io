@@ -35,7 +35,7 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        I'm a PhD student in the Prof.Hongyuan Liu's team at The Hong Kong University of Science and Technology (Guangzhou). I blog about machine learning, computer architecutre, and high-performance computing.
+        I'm a PhD student in the Prof. Jiayi Huang's team at The Hong Kong University of Science and Technology (Guangzhou). I blog about machine learning, computer architecutre, and high-performance computing.
         
         Please reach out to collaborate 😃
     design:
