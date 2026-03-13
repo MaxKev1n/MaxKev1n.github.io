@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications | </title>
+    <link>https://example.com/publications/</link>
+      <atom:link href="https://example.com/publications/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 10 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://example.com/media/icon_hu_da05098ef60dc2e7.png</url>
+      <title>Publications</title>
+      <link>https://example.com/publications/</link>
+    </image>
+    
+    <item>
+      <title>cuPTW: Leveraging Idle Compute Units for Massively Parallel GPU Page Table Walks</title>
+      <link>https://example.com/publications/sigmetrics-2026/</link>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://example.com/publications/sigmetrics-2026/</guid>
+      <description>&lt;!-- &gt; [!NOTE]
+&gt; Click the _Cite_ button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+
+&gt; [!NOTE]
+&gt; Create your slides in Markdown - click the _Slides_ button to check out the example.
+
+Add the publication&#39;s **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/). --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>VESTA: A Secure and Efficient FHE-based Three-Party Vectorized Evaluation System for Tree Aggregation Models</title>
+      <link>https://example.com/publications/sigmetrics-2025/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.com/publications/sigmetrics-2025/</guid>
+      <description>&lt;!-- &gt; [!NOTE]
+&gt; Click the _Cite_ button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+
+&gt; [!NOTE]
+&gt; Create your slides in Markdown - click the _Slides_ button to check out the example.
+
+Add the publication&#39;s **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/). --&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
