@@ -27,10 +27,10 @@ publishDate: '2017-01-01T00:00:00Z'
 publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
-publication: In *NONE*
+publication: In *Proceedings of the ACM on Measurement and Analysis of Computing Systems, Volume 10, Issue 2*
 publication_short: In *Sigmetrics 2026*
 
-abstract: 
+abstract: Virtual memory has become a cornerstone of modern GPUs, enabling unified address spaces and advanced memory management techniques. However, the performance of address translation has emerged as a critical bottleneck, particularly under irregular workloads with massive memory footprints, where frequent TLB misses and costly page table walks dominate total memory access latency. Prior work has primarily focused on improving TLB effectiveness or optimizing page table walks through batching and coalescing, but these approaches remain limited by the lack of locality and memory bandwidth constraints. In this work, we propose Compute Unit Page Table Walk (cuPTW), a novel address translation architecture that repurposes idle GPU compute resources to accelerate page table walks. Specifically, we introduce (1) a single-threaded synchronous cuPTW, which offloads translation requests to idle functional units within compute units, and (2) two optimizations that further reduce latency and improve throughput by caching page table walks in local data store memory (cuPTW-SW) and parallelizing them across multiple SIMD lanes (cuPTW-MT). When combined, cuPTW-Full transforms low-parallelism page table walks into a massively parallel computation task. Our evaluation across 15 representative GPU workloads, including deep learning, graph analytics and scientific simulations, demonstrates that cuPTW-Full achieves a performance speedup of 4.43× on average (up to 76.09×) by improving page table walk throughput by 9.92× on average over our baseline GPU architecture. Compared to state-of-the-art GPU address translation proposals, cuPTW-Full achieves a 1.97× to 2.08× average speedup.
 
 # Summary. An optional shortened abstract.
 # summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
@@ -44,7 +44,7 @@ featured: true
 # Standard identifiers for auto-linking
 hugoblox:
   ids:
-    doi: 
+    doi: 10.1145/3805633
 
 # Custom links
 links:
