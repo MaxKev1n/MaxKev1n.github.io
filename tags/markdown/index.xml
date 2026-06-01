@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Markdown | </title>
-    <link>https://example.com/tags/markdown/</link>
-      <atom:link href="https://example.com/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/tags/markdown/</link>
+      <atom:link href="http://localhost:1313/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     <description>Markdown</description>
     <generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 27 Oct 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://example.com/media/icon_hu_da05098ef60dc2e7.png</url>
+      <url>http://localhost:1313/media/icon_hu_1c0e9cb08cfb822a.png</url>
       <title>Markdown</title>
-      <link>https://example.com/tags/markdown/</link>
+      <link>http://localhost:1313/tags/markdown/</link>
     </image>
     
     <item>
       <title>🎉 Easily create your own simple yet highly customizable blog</title>
-      <link>https://example.com/blog/get-started/</link>
+      <link>http://localhost:1313/blog/get-started/</link>
       <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://example.com/blog/get-started/</guid>
+      <guid>http://localhost:1313/blog/get-started/</guid>
       <description>&lt;p&gt;Welcome 👋&lt;/p&gt;
 
 
@@ -303,33 +303,33 @@
     
     <item>
       <title>Pandas</title>
-      <link>https://example.com/projects/pandas/</link>
+      <link>http://localhost:1313/projects/pandas/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://example.com/projects/pandas/</guid>
+      <guid>http://localhost:1313/projects/pandas/</guid>
       <description>&lt;p&gt;Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PyTorch</title>
-      <link>https://example.com/projects/pytorch/</link>
+      <link>http://localhost:1313/projects/pytorch/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://example.com/projects/pytorch/</guid>
+      <guid>http://localhost:1313/projects/pytorch/</guid>
       <description>&lt;p&gt;PyTorch is a Python package that provides tensor computation (like NumPy) with strong GPU acceleration.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>scikit-learn</title>
-      <link>https://example.com/projects/scikit/</link>
+      <link>http://localhost:1313/projects/scikit/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://example.com/projects/scikit/</guid>
+      <guid>http://localhost:1313/projects/scikit/</guid>
       <description>&lt;p&gt;scikit-learn is a Python module for machine learning built on top of SciPy and is distributed under the 3-Clause BSD license.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>🧠 Sharpen your thinking with a second brain</title>
-      <link>https://example.com/blog/second-brain/</link>
+      <link>http://localhost:1313/blog/second-brain/</link>
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://example.com/blog/second-brain/</guid>
+      <guid>http://localhost:1313/blog/second-brain/</guid>
       <description>&lt;p&gt;Create a personal knowledge base and share your knowledge with your peers.&lt;/p&gt;
 &lt;p&gt;Hugo Blox web framework empowers you with one of the most flexible note-taking capabilities out there.&lt;/p&gt;
 &lt;p&gt;Create a powerful knowledge base that works on top of a local folder of plain text Markdown files.&lt;/p&gt;
@@ -513,9 +513,9 @@
     
     <item>
       <title>📈 Communicate your results effectively with the best data visualizations</title>
-      <link>https://example.com/blog/data-visualization/</link>
+      <link>http://localhost:1313/blog/data-visualization/</link>
       <pubDate>Wed, 25 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://example.com/blog/data-visualization/</guid>
+      <guid>http://localhost:1313/blog/data-visualization/</guid>
       <description>&lt;p&gt;Hugo Blox is designed to give technical content creators a seamless experience. You can focus on the content and Hugo Blox handles the rest.&lt;/p&gt;
 &lt;p&gt;Use popular tools such as Plotly, Mermaid, and data frames.&lt;/p&gt;
 &lt;h2 id=&#34;embed-rich-content&#34;&gt;Embed Rich Content&lt;/h2&gt;
@@ -556,8 +556,8 @@
     
     &lt;div class=&#34;p-6 space-y-4&#34;&gt;
       &lt;div class=&#34;flex items-center gap-6 pt-2&#34;&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
-          &lt;svg class=&#34;w-4 h-4 text-primary-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3&#34;/&gt;&lt;/svg&gt;&lt;span id=&#34;hb-hb-embed-7aa30c396b2f58a7972cf6a10cb190b4-downloads&#34;&gt;1.948437M&lt;/span&gt;&lt;/div&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
-          &lt;svg class=&#34;w-4 h-4 text-secondary-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12&#34;/&gt;&lt;/svg&gt;&lt;span id=&#34;hb-hb-embed-7aa30c396b2f58a7972cf6a10cb190b4-likes&#34;&gt;1.522k&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;svg class=&#34;w-4 h-4 text-primary-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3&#34;/&gt;&lt;/svg&gt;&lt;span id=&#34;hb-hb-embed-7aa30c396b2f58a7972cf6a10cb190b4-downloads&#34;&gt;1.880392M&lt;/span&gt;&lt;/div&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
+          &lt;svg class=&#34;w-4 h-4 text-secondary-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12&#34;/&gt;&lt;/svg&gt;&lt;span id=&#34;hb-hb-embed-7aa30c396b2f58a7972cf6a10cb190b4-likes&#34;&gt;1.682k&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;/div&gt;
     
     
@@ -616,13 +616,15 @@ This is a Dataset Repository mirror of prompts.chat — a social platform for AI
 
 	
 		
+	
+	
 		📢 Notice
 	
 
 This Hugging Face dataset is a mirror. For the …
   &lt;/p&gt;&lt;div class=&#34;flex items-center gap-6 pt-2&#34;&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
-          &lt;svg class=&#34;w-4 h-4 text-primary-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3&#34;/&gt;&lt;/svg&gt;&lt;span id=&#34;hb-hb-embed-68953fac599af64cedc452bf8ee23f8c-downloads&#34;&gt;23.229k&lt;/span&gt;&lt;/div&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
-          &lt;svg class=&#34;w-4 h-4 text-secondary-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12&#34;/&gt;&lt;/svg&gt;&lt;span id=&#34;hb-hb-embed-68953fac599af64cedc452bf8ee23f8c-likes&#34;&gt;9.614k&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+          &lt;svg class=&#34;w-4 h-4 text-primary-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3&#34;/&gt;&lt;/svg&gt;&lt;span id=&#34;hb-hb-embed-68953fac599af64cedc452bf8ee23f8c-downloads&#34;&gt;27.444k&lt;/span&gt;&lt;/div&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
+          &lt;svg class=&#34;w-4 h-4 text-secondary-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12&#34;/&gt;&lt;/svg&gt;&lt;span id=&#34;hb-hb-embed-68953fac599af64cedc452bf8ee23f8c-likes&#34;&gt;9.715k&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;/div&gt;
     
     
@@ -672,17 +674,17 @@ This Hugging Face dataset is a mirror. For the …
     
     &lt;div class=&#34;p-6 space-y-4&#34;&gt;
       &lt;p class=&#34;text-zinc-600 dark:text-zinc-400 text-base leading-relaxed line-clamp-3&#34;&gt;
-    ⚡ The Open Research Copilot. Build high-perf Portfolios, Lab Sites &amp;amp; Docs in Markdown + Jupyter. 100% Data Control. 🦫 数据科学家的开源 Copilot。一键部署 👇
+    🧱 Describe your site, AI builds it, you own it as Markdown. Snap together Tailwind blocks like Lego — landing pages, blogs, portfolios, docs &amp;amp; more. No AI slop. Free to deploy anywhere 👇
   &lt;/p&gt;&lt;div class=&#34;flex items-center gap-6 pt-2&#34;&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
-          &lt;span class=&#34;flex items-center justify-center leading-none text-lg text-primary-500&#34;&gt;git-fork&lt;/span&gt;&lt;span id=&#34;hb-hb-embed-3fc4624744c495fd8995995542224583-forks&#34;&gt;2.947k&lt;/span&gt;&lt;/div&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
+          &lt;span class=&#34;flex items-center justify-center leading-none text-lg text-primary-500&#34;&gt;git-fork&lt;/span&gt;&lt;span id=&#34;hb-hb-embed-3fc4624744c495fd8995995542224583-forks&#34;&gt;2.937k&lt;/span&gt;&lt;/div&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
           &lt;svg class=&#34;w-4 h-4 text-red-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M12 9v3.75m9-.75a9 9 0 1 1-18 0a9 9 0 0 1 18 0m-9 3.75h.008v.008H12z&#34;/&gt;&lt;/svg&gt;
-            &lt;a href=&#34;https://github.com/HugoBlox/kit/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;font-medium hover:text-primary-600 dark:hover:text-primary-400 hover:underline transition-colors duration-200&#34; id=&#34;hb-hb-embed-3fc4624744c495fd8995995542224583-issues&#34;&gt;2&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
-          &lt;svg class=&#34;w-4 h-4 text-yellow-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.563.563 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.563.563 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345z&#34;/&gt;&lt;/svg&gt;&lt;span id=&#34;hb-hb-embed-3fc4624744c495fd8995995542224583-stars&#34;&gt;9.858k&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;flex flex-wrap gap-1 pt-2&#34;&gt;&lt;span class=&#34;inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900/40 dark:text-primary-300&#34;&gt;
+            &lt;a href=&#34;https://github.com/HugoBlox/kit/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;font-medium hover:text-primary-600 dark:hover:text-primary-400 hover:underline transition-colors duration-200&#34; id=&#34;hb-hb-embed-3fc4624744c495fd8995995542224583-issues&#34;&gt;7&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
+          &lt;svg class=&#34;w-4 h-4 text-yellow-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.563.563 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.563.563 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345z&#34;/&gt;&lt;/svg&gt;&lt;span id=&#34;hb-hb-embed-3fc4624744c495fd8995995542224583-stars&#34;&gt;9.478k&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;flex flex-wrap gap-1 pt-2&#34;&gt;&lt;span class=&#34;inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900/40 dark:text-primary-300&#34;&gt;
           academic
         &lt;/span&gt;&lt;span class=&#34;inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900/40 dark:text-primary-300&#34;&gt;
           blog
         &lt;/span&gt;&lt;span class=&#34;inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900/40 dark:text-primary-300&#34;&gt;
-          blog-engine
+          documentation-tool
         &lt;/span&gt;&lt;span class=&#34;text-xs text-zinc-500 dark:text-zinc-500&#34;&gt;+17&lt;/span&gt;&lt;/div&gt;
     &lt;/div&gt;
     
@@ -780,9 +782,9 @@ This Hugging Face dataset is a mirror. For the …
     &lt;div class=&#34;p-6 space-y-4&#34;&gt;
       &lt;div class=&#34;mb-4 overflow-hidden rounded-lg&#34;&gt;
     &lt;img class=&#34;w-full h-auto transition-transform duration-500 ease-out group-hover:scale-105&#34; 
-         srcset=&#34;https://example.com/photo-1514888286974-6c03e2ca1dba_18145305924448453957_hu_f42347434e401e.webp 400w, https://example.com/photo-1514888286974-6c03e2ca1dba_18145305924448453957_hu_fa7b28e0af26f064.webp 600w, https://example.com/photo-1514888286974-6c03e2ca1dba_18145305924448453957_hu_b3366343b11897a8.webp 800w, https://example.com/photo-1514888286974-6c03e2ca1dba_18145305924448453957_hu_73e74c3c25201554.webp 800w&#34;
+         srcset=&#34;http://localhost:1313/photo-1514888286974-6c03e2ca1dba_18145305924448453957_hu_de20a62d536d9d98.webp 400w, http://localhost:1313/photo-1514888286974-6c03e2ca1dba_18145305924448453957_hu_657970ede8aed7f3.webp 600w, http://localhost:1313/photo-1514888286974-6c03e2ca1dba_18145305924448453957_hu_fc4ce0fefa9360bc.webp 800w, http://localhost:1313/photo-1514888286974-6c03e2ca1dba_18145305924448453957_hu_5da7641fc3e847f5.webp 800w&#34;
          sizes=&#34;(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw&#34;
-         src=&#34;https://example.com/photo-1514888286974-6c03e2ca1dba_18145305924448453957_hu_f42347434e401e.webp&#34; 
+         src=&#34;http://localhost:1313/photo-1514888286974-6c03e2ca1dba_18145305924448453957_hu_de20a62d536d9d98.webp&#34; 
          width=&#34;400&#34; 
          height=&#34;300&#34;
          loading=&#34;lazy&#34; 
@@ -842,9 +844,9 @@ This Hugging Face dataset is a mirror. For the …
     &lt;div class=&#34;p-6 space-y-4&#34;&gt;
       &lt;div class=&#34;mb-4 overflow-hidden rounded-lg&#34;&gt;
     &lt;img class=&#34;w-full h-auto transition-transform duration-500 ease-out group-hover:scale-105&#34; 
-         srcset=&#34;https://example.com/photo-1551288049-bebda4e38f71_10164962980614054447_hu_57b09d239a98fa3e.webp 400w, https://example.com/photo-1551288049-bebda4e38f71_10164962980614054447_hu_c8dc855a23876ee0.webp 600w, https://example.com/photo-1551288049-bebda4e38f71_10164962980614054447_hu_e954403c57038f5.webp 600w&#34;
+         srcset=&#34;http://localhost:1313/photo-1551288049-bebda4e38f71_10164962980614054447_hu_2051eb713359e856.webp 400w, http://localhost:1313/photo-1551288049-bebda4e38f71_10164962980614054447_hu_20f41c81caf34cd3.webp 600w, http://localhost:1313/photo-1551288049-bebda4e38f71_10164962980614054447_hu_7008299af3840961.webp 600w&#34;
          sizes=&#34;(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw&#34;
-         src=&#34;https://example.com/photo-1551288049-bebda4e38f71_10164962980614054447_hu_57b09d239a98fa3e.webp&#34; 
+         src=&#34;http://localhost:1313/photo-1551288049-bebda4e38f71_10164962980614054447_hu_2051eb713359e856.webp&#34; 
          width=&#34;400&#34; 
          height=&#34;267&#34;
          loading=&#34;lazy&#34; 
@@ -854,10 +856,10 @@ This Hugging Face dataset is a mirror. For the …
   &lt;/div&gt;&lt;p class=&#34;text-zinc-600 dark:text-zinc-400 text-base leading-relaxed line-clamp-3&#34;&gt;
     The interactive graphing library for Python ✨
   &lt;/p&gt;&lt;div class=&#34;flex items-center gap-6 pt-2&#34;&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
-          &lt;span class=&#34;flex items-center justify-center leading-none text-lg text-primary-500&#34;&gt;git-fork&lt;/span&gt;&lt;span id=&#34;hb-hb-embed-9dcc7bf290c28d07438cbcbefa65c250-forks&#34;&gt;2.787k&lt;/span&gt;&lt;/div&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
+          &lt;span class=&#34;flex items-center justify-center leading-none text-lg text-primary-500&#34;&gt;git-fork&lt;/span&gt;&lt;span id=&#34;hb-hb-embed-9dcc7bf290c28d07438cbcbefa65c250-forks&#34;&gt;2.805k&lt;/span&gt;&lt;/div&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
           &lt;svg class=&#34;w-4 h-4 text-red-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M12 9v3.75m9-.75a9 9 0 1 1-18 0a9 9 0 0 1 18 0m-9 3.75h.008v.008H12z&#34;/&gt;&lt;/svg&gt;
-            &lt;a href=&#34;https://github.com/plotly/plotly.py/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;font-medium hover:text-primary-600 dark:hover:text-primary-400 hover:underline transition-colors duration-200&#34; id=&#34;hb-hb-embed-9dcc7bf290c28d07438cbcbefa65c250-issues&#34;&gt;777&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
-          &lt;svg class=&#34;w-4 h-4 text-yellow-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.563.563 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.563.563 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345z&#34;/&gt;&lt;/svg&gt;&lt;span id=&#34;hb-hb-embed-9dcc7bf290c28d07438cbcbefa65c250-stars&#34;&gt;18.338k&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;flex flex-wrap gap-1 pt-2&#34;&gt;&lt;span class=&#34;inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900/40 dark:text-primary-300&#34;&gt;
+            &lt;a href=&#34;https://github.com/plotly/plotly.py/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; class=&#34;font-medium hover:text-primary-600 dark:hover:text-primary-400 hover:underline transition-colors duration-200&#34; id=&#34;hb-hb-embed-9dcc7bf290c28d07438cbcbefa65c250-issues&#34;&gt;758&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400&#34;&gt;
+          &lt;svg class=&#34;w-4 h-4 text-yellow-500&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.563.563 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.563.563 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345z&#34;/&gt;&lt;/svg&gt;&lt;span id=&#34;hb-hb-embed-9dcc7bf290c28d07438cbcbefa65c250-stars&#34;&gt;18.57k&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;flex flex-wrap gap-1 pt-2&#34;&gt;&lt;span class=&#34;inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900/40 dark:text-primary-300&#34;&gt;
           d3
         &lt;/span&gt;&lt;span class=&#34;inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900/40 dark:text-primary-300&#34;&gt;
           dashboard
@@ -884,7 +886,7 @@ This Hugging Face dataset is a mirror. For the …
 
 
 
-&lt;div id=&#34;chart-392548167&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-253897416&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     async function fetchChartJSON() {
@@ -902,7 +904,7 @@ This Hugging Face dataset is a mirror. For the …
 
       fetchChartJSON().then(chart =&gt; {
         console.debug(&#39;Plotting chart...&#39;)
-        window.Plotly.newPlot(&#39;chart-392548167&#39;, chart.data, chart.layout, {responsive: true});
+        window.Plotly.newPlot(&#39;chart-253897416&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -1085,7 +1087,7 @@ Crash --&gt; [*]
 &lt;div class=&#34;text-left&#34;&gt;
   &lt;a
     id=&#34;button-f6d402d3e0ef4f7871a71f74ddcbf5cc&#34;
-    href=&#34;https://example.com/&#34;
+    href=&#34;http://localhost:1313/&#34;
     
     
     
@@ -1170,7 +1172,7 @@ Crash --&gt; [*]
 &lt;div class=&#34;text-left&#34;&gt;
   &lt;a
     id=&#34;button-73171eb1b49c461e90dab01f45a3397d&#34;
-    href=&#34;https://example.com/data/results.csv&#34;
+    href=&#34;http://localhost:1313/data/results.csv&#34;
     
     
     
@@ -1293,9 +1295,9 @@ Crash --&gt; [*]
     
     <item>
       <title>👩🏼‍🏫 Teach academic courses</title>
-      <link>https://example.com/blog/teach-courses/</link>
+      <link>http://localhost:1313/blog/teach-courses/</link>
       <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://example.com/blog/teach-courses/</guid>
+      <guid>http://localhost:1313/blog/teach-courses/</guid>
       <description>&lt;p&gt;
  is designed to give technical content creators a seamless experience. You can focus on the content and the HugoBlox Kit which this template is built upon handles the rest.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Embed videos, podcasts, code, LaTeX math, and even test students!&lt;/strong&gt;&lt;/p&gt;
@@ -1333,8 +1335,8 @@ Crash --&gt; [*]
 &lt;pre&gt;&lt;code&gt;{{&amp;lt; youtube D2vj0WcvH5c &amp;gt;}}
 &lt;/code&gt;&lt;/pre&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/D2vj0WcvH5c?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
-    &lt;/div&gt;
+			&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/D2vj0WcvH5c?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+		&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Bilibili&lt;/strong&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{{&amp;lt; bilibili BV1WV4y1r7DF &amp;gt;}}
@@ -1367,7 +1369,7 @@ Crash --&gt; [*]
 
 
 &lt;audio controls &gt;
-  &lt;source src=&#34;https://example.com/blog/teach-courses/ambient-piano.mp3&#34; type=&#34;audio/mpeg&#34;&gt;
+  &lt;source src=&#34;http://localhost:1313/blog/teach-courses/ambient-piano.mp3&#34; type=&#34;audio/mpeg&#34;&gt;
 &lt;/audio&gt;
 
 &lt;h2 id=&#34;test-students&#34;&gt;Test students&lt;/h2&gt;
@@ -1426,9 +1428,9 @@ data.head()
     
     <item>
       <title>✅ Manage your projects</title>
-      <link>https://example.com/blog/project-management/</link>
+      <link>http://localhost:1313/blog/project-management/</link>
       <pubDate>Mon, 23 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://example.com/blog/project-management/</guid>
+      <guid>http://localhost:1313/blog/project-management/</guid>
       <description>&lt;p&gt;Easily manage your projects - create ideation mind maps, Gantt charts, todo lists, and more!&lt;/p&gt;
 &lt;h2 id=&#34;ideation&#34;&gt;Ideation&lt;/h2&gt;
 &lt;p&gt;Hugo Blox supports a Markdown extension for mindmaps.&lt;/p&gt;
@@ -1501,9 +1503,9 @@ Parallel 4   :         des6, after des4, 1d
     
     <item>
       <title>Create Beautiful Presentations with Markdown</title>
-      <link>https://example.com/events/example/</link>
+      <link>http://localhost:1313/events/example/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://example.com/events/example/</guid>
+      <guid>http://localhost:1313/events/example/</guid>
       <description>&lt;h2 id=&#34;-why-markdown-slides&#34;&gt;🎯 Why Markdown Slides?&lt;/h2&gt;
 
 
@@ -1988,7 +1990,7 @@ Navigate down for sub-topics!&lt;/p&gt;
 &lt;div class=&#34;text-left&#34;&gt;
   &lt;a
     id=&#34;button-7519dfcc27cf03dd985a63a0b9a6155b&#34;
-    href=&#34;https://example.com/slides/example/&#34;
+    href=&#34;http://localhost:1313/slides/example/&#34;
     target=&#34;_blank&#34;
     rel=&#34;noopener&#34;
     
@@ -2014,76 +2016,76 @@ Navigate down for sub-topics!&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-comparison&#34;&gt;🆚 Comparison&lt;/h2&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Feature&lt;/th&gt;
-          &lt;th&gt;PowerPoint&lt;/th&gt;
-          &lt;th&gt;Google Slides&lt;/th&gt;
-          &lt;th&gt;&lt;strong&gt;Hugo Blox&lt;/strong&gt;&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Cost&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;$159.99/year&lt;/td&gt;
-          &lt;td&gt;Free*&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;Free Forever&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Format&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;Binary (&lt;code&gt;.pptx&lt;/code&gt;)&lt;/td&gt;
-          &lt;td&gt;Proprietary&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;Plain Markdown&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Version Control&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;❌ Difficult&lt;/td&gt;
-          &lt;td&gt;❌ Limited&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Git Native&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Offline Editing&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;✅ Yes&lt;/td&gt;
-          &lt;td&gt;⚠️ Limited&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Fully Offline&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Platform Lock-in&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;⚠️ Microsoft&lt;/td&gt;
-          &lt;td&gt;⚠️ Google&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ None&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Code Highlighting&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;⚠️ Basic&lt;/td&gt;
-          &lt;td&gt;⚠️ Limited&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ 50+ Languages&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Math Equations&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;⚠️ Clunky&lt;/td&gt;
-          &lt;td&gt;⚠️ Basic&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Full LaTeX&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Portability&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;❌ Poor&lt;/td&gt;
-          &lt;td&gt;❌ Requires Google&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Works Anywhere&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Future-Proof&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;❌ Format changes&lt;/td&gt;
-          &lt;td&gt;⚠️ API changes&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Plain Text Forever&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Open Source&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;❌ No&lt;/td&gt;
-          &lt;td&gt;❌ No&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Yes&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Feature&lt;/th&gt;
+					&lt;th&gt;PowerPoint&lt;/th&gt;
+					&lt;th&gt;Google Slides&lt;/th&gt;
+					&lt;th&gt;&lt;strong&gt;Hugo Blox&lt;/strong&gt;&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Cost&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;$159.99/year&lt;/td&gt;
+					&lt;td&gt;Free*&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;Free Forever&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Format&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;Binary (&lt;code&gt;.pptx&lt;/code&gt;)&lt;/td&gt;
+					&lt;td&gt;Proprietary&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;Plain Markdown&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Version Control&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;❌ Difficult&lt;/td&gt;
+					&lt;td&gt;❌ Limited&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Git Native&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Offline Editing&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;✅ Yes&lt;/td&gt;
+					&lt;td&gt;⚠️ Limited&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Fully Offline&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Platform Lock-in&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;⚠️ Microsoft&lt;/td&gt;
+					&lt;td&gt;⚠️ Google&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ None&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Code Highlighting&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;⚠️ Basic&lt;/td&gt;
+					&lt;td&gt;⚠️ Limited&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ 50+ Languages&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Math Equations&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;⚠️ Clunky&lt;/td&gt;
+					&lt;td&gt;⚠️ Basic&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Full LaTeX&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Portability&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;❌ Poor&lt;/td&gt;
+					&lt;td&gt;❌ Requires Google&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Works Anywhere&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Future-Proof&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;❌ Format changes&lt;/td&gt;
+					&lt;td&gt;⚠️ API changes&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Plain Text Forever&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Open Source&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;❌ No&lt;/td&gt;
+					&lt;td&gt;❌ No&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Yes&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 
 

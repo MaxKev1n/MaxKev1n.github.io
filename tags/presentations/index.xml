@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Presentations | </title>
-    <link>https://example.com/tags/presentations/</link>
-      <atom:link href="https://example.com/tags/presentations/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/tags/presentations/</link>
+      <atom:link href="http://localhost:1313/tags/presentations/index.xml" rel="self" type="application/rss+xml" />
     <description>Presentations</description>
     <generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://example.com/media/icon_hu_da05098ef60dc2e7.png</url>
+      <url>http://localhost:1313/media/icon_hu_1c0e9cb08cfb822a.png</url>
       <title>Presentations</title>
-      <link>https://example.com/tags/presentations/</link>
+      <link>http://localhost:1313/tags/presentations/</link>
     </image>
     
     <item>
       <title>Create Beautiful Presentations with Markdown</title>
-      <link>https://example.com/events/example/</link>
+      <link>http://localhost:1313/events/example/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://example.com/events/example/</guid>
+      <guid>http://localhost:1313/events/example/</guid>
       <description>&lt;h2 id=&#34;-why-markdown-slides&#34;&gt;🎯 Why Markdown Slides?&lt;/h2&gt;
 
 
@@ -501,7 +501,7 @@ Navigate down for sub-topics!&lt;/p&gt;
 &lt;div class=&#34;text-left&#34;&gt;
   &lt;a
     id=&#34;button-7519dfcc27cf03dd985a63a0b9a6155b&#34;
-    href=&#34;https://example.com/slides/example/&#34;
+    href=&#34;http://localhost:1313/slides/example/&#34;
     target=&#34;_blank&#34;
     rel=&#34;noopener&#34;
     
@@ -527,76 +527,76 @@ Navigate down for sub-topics!&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-comparison&#34;&gt;🆚 Comparison&lt;/h2&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Feature&lt;/th&gt;
-          &lt;th&gt;PowerPoint&lt;/th&gt;
-          &lt;th&gt;Google Slides&lt;/th&gt;
-          &lt;th&gt;&lt;strong&gt;Hugo Blox&lt;/strong&gt;&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Cost&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;$159.99/year&lt;/td&gt;
-          &lt;td&gt;Free*&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;Free Forever&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Format&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;Binary (&lt;code&gt;.pptx&lt;/code&gt;)&lt;/td&gt;
-          &lt;td&gt;Proprietary&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;Plain Markdown&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Version Control&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;❌ Difficult&lt;/td&gt;
-          &lt;td&gt;❌ Limited&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Git Native&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Offline Editing&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;✅ Yes&lt;/td&gt;
-          &lt;td&gt;⚠️ Limited&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Fully Offline&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Platform Lock-in&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;⚠️ Microsoft&lt;/td&gt;
-          &lt;td&gt;⚠️ Google&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ None&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Code Highlighting&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;⚠️ Basic&lt;/td&gt;
-          &lt;td&gt;⚠️ Limited&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ 50+ Languages&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Math Equations&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;⚠️ Clunky&lt;/td&gt;
-          &lt;td&gt;⚠️ Basic&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Full LaTeX&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Portability&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;❌ Poor&lt;/td&gt;
-          &lt;td&gt;❌ Requires Google&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Works Anywhere&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Future-Proof&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;❌ Format changes&lt;/td&gt;
-          &lt;td&gt;⚠️ API changes&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Plain Text Forever&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Open Source&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;❌ No&lt;/td&gt;
-          &lt;td&gt;❌ No&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Yes&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Feature&lt;/th&gt;
+					&lt;th&gt;PowerPoint&lt;/th&gt;
+					&lt;th&gt;Google Slides&lt;/th&gt;
+					&lt;th&gt;&lt;strong&gt;Hugo Blox&lt;/strong&gt;&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Cost&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;$159.99/year&lt;/td&gt;
+					&lt;td&gt;Free*&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;Free Forever&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Format&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;Binary (&lt;code&gt;.pptx&lt;/code&gt;)&lt;/td&gt;
+					&lt;td&gt;Proprietary&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;Plain Markdown&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Version Control&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;❌ Difficult&lt;/td&gt;
+					&lt;td&gt;❌ Limited&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Git Native&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Offline Editing&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;✅ Yes&lt;/td&gt;
+					&lt;td&gt;⚠️ Limited&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Fully Offline&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Platform Lock-in&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;⚠️ Microsoft&lt;/td&gt;
+					&lt;td&gt;⚠️ Google&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ None&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Code Highlighting&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;⚠️ Basic&lt;/td&gt;
+					&lt;td&gt;⚠️ Limited&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ 50+ Languages&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Math Equations&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;⚠️ Clunky&lt;/td&gt;
+					&lt;td&gt;⚠️ Basic&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Full LaTeX&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Portability&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;❌ Poor&lt;/td&gt;
+					&lt;td&gt;❌ Requires Google&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Works Anywhere&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Future-Proof&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;❌ Format changes&lt;/td&gt;
+					&lt;td&gt;⚠️ API changes&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Plain Text Forever&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Open Source&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;❌ No&lt;/td&gt;
+					&lt;td&gt;❌ No&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Yes&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 
 

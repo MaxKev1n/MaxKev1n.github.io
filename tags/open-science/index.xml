@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Open Science | </title>
-    <link>https://example.com/tags/open-science/</link>
-      <atom:link href="https://example.com/tags/open-science/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/tags/open-science/</link>
+      <atom:link href="http://localhost:1313/tags/open-science/index.xml" rel="self" type="application/rss+xml" />
     <description>Open Science</description>
     <generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Jul 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://example.com/media/icon_hu_da05098ef60dc2e7.png</url>
+      <url>http://localhost:1313/media/icon_hu_1c0e9cb08cfb822a.png</url>
       <title>Open Science</title>
-      <link>https://example.com/tags/open-science/</link>
+      <link>http://localhost:1313/tags/open-science/</link>
     </image>
     
     <item>
       <title>⚡️ Turn Jupyter Notebooks into Blog Posts</title>
-      <link>https://example.com/blog/notebook-onboarding/</link>
+      <link>http://localhost:1313/blog/notebook-onboarding/</link>
       <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.com/blog/notebook-onboarding/</guid>
+      <guid>http://localhost:1313/blog/notebook-onboarding/</guid>
       <description>&lt;p&gt;As a researcher or data scientist, your work often lives in Jupyter Notebooks. But sharing those insights effectively usually means taking screenshots, messy copy-pasting, or exporting to PDF.&lt;/p&gt;
 &lt;p&gt;Hugo Blox changes that. With the &lt;code&gt;{{&amp;lt; notebook &amp;gt;}}&lt;/code&gt; shortcode, you can render your actual &lt;code&gt;.ipynb&lt;/code&gt; files directly as beautiful, interactive blog posts or project pages. Keep your code, outputs, and narrative in one place.&lt;/p&gt;
 
@@ -100,7 +100,7 @@
       &lt;p class=&#34;hb-notebook-title&#34;&gt;Launch Readiness Analysis&lt;/p&gt;
         &lt;p class=&#34;hb-notebook-subtitle&#34;&gt;Python · Kernel: Python 3 · nbformat 4.5 · 6 cells&lt;/p&gt;
     &lt;/div&gt;
-      &lt;a class=&#34;hb-notebook-download&#34; href=&#34;https://example.com/blog/notebook-onboarding/hugoblox-onboarding.ipynb&#34; download&gt;
+      &lt;a class=&#34;hb-notebook-download&#34; href=&#34;http://localhost:1313/blog/notebook-onboarding/hugoblox-onboarding.ipynb&#34; download&gt;
         &lt;svg class=&#34;w-4 h-4&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3&#34;/&gt;&lt;/svg&gt;
         &lt;span&gt;Download notebook&lt;/span&gt;
       &lt;/a&gt;
@@ -320,9 +320,9 @@ Done!
     
     <item>
       <title>Create Beautiful Presentations with Markdown</title>
-      <link>https://example.com/events/example/</link>
+      <link>http://localhost:1313/events/example/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://example.com/events/example/</guid>
+      <guid>http://localhost:1313/events/example/</guid>
       <description>&lt;h2 id=&#34;-why-markdown-slides&#34;&gt;🎯 Why Markdown Slides?&lt;/h2&gt;
 
 
@@ -807,7 +807,7 @@ Navigate down for sub-topics!&lt;/p&gt;
 &lt;div class=&#34;text-left&#34;&gt;
   &lt;a
     id=&#34;button-7519dfcc27cf03dd985a63a0b9a6155b&#34;
-    href=&#34;https://example.com/slides/example/&#34;
+    href=&#34;http://localhost:1313/slides/example/&#34;
     target=&#34;_blank&#34;
     rel=&#34;noopener&#34;
     
@@ -833,76 +833,76 @@ Navigate down for sub-topics!&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-comparison&#34;&gt;🆚 Comparison&lt;/h2&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Feature&lt;/th&gt;
-          &lt;th&gt;PowerPoint&lt;/th&gt;
-          &lt;th&gt;Google Slides&lt;/th&gt;
-          &lt;th&gt;&lt;strong&gt;Hugo Blox&lt;/strong&gt;&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Cost&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;$159.99/year&lt;/td&gt;
-          &lt;td&gt;Free*&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;Free Forever&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Format&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;Binary (&lt;code&gt;.pptx&lt;/code&gt;)&lt;/td&gt;
-          &lt;td&gt;Proprietary&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;Plain Markdown&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Version Control&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;❌ Difficult&lt;/td&gt;
-          &lt;td&gt;❌ Limited&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Git Native&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Offline Editing&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;✅ Yes&lt;/td&gt;
-          &lt;td&gt;⚠️ Limited&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Fully Offline&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Platform Lock-in&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;⚠️ Microsoft&lt;/td&gt;
-          &lt;td&gt;⚠️ Google&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ None&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Code Highlighting&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;⚠️ Basic&lt;/td&gt;
-          &lt;td&gt;⚠️ Limited&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ 50+ Languages&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Math Equations&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;⚠️ Clunky&lt;/td&gt;
-          &lt;td&gt;⚠️ Basic&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Full LaTeX&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Portability&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;❌ Poor&lt;/td&gt;
-          &lt;td&gt;❌ Requires Google&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Works Anywhere&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Future-Proof&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;❌ Format changes&lt;/td&gt;
-          &lt;td&gt;⚠️ API changes&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Plain Text Forever&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Open Source&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;❌ No&lt;/td&gt;
-          &lt;td&gt;❌ No&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;✅ Yes&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Feature&lt;/th&gt;
+					&lt;th&gt;PowerPoint&lt;/th&gt;
+					&lt;th&gt;Google Slides&lt;/th&gt;
+					&lt;th&gt;&lt;strong&gt;Hugo Blox&lt;/strong&gt;&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Cost&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;$159.99/year&lt;/td&gt;
+					&lt;td&gt;Free*&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;Free Forever&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Format&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;Binary (&lt;code&gt;.pptx&lt;/code&gt;)&lt;/td&gt;
+					&lt;td&gt;Proprietary&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;Plain Markdown&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Version Control&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;❌ Difficult&lt;/td&gt;
+					&lt;td&gt;❌ Limited&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Git Native&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Offline Editing&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;✅ Yes&lt;/td&gt;
+					&lt;td&gt;⚠️ Limited&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Fully Offline&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Platform Lock-in&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;⚠️ Microsoft&lt;/td&gt;
+					&lt;td&gt;⚠️ Google&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ None&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Code Highlighting&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;⚠️ Basic&lt;/td&gt;
+					&lt;td&gt;⚠️ Limited&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ 50+ Languages&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Math Equations&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;⚠️ Clunky&lt;/td&gt;
+					&lt;td&gt;⚠️ Basic&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Full LaTeX&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Portability&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;❌ Poor&lt;/td&gt;
+					&lt;td&gt;❌ Requires Google&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Works Anywhere&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Future-Proof&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;❌ Format changes&lt;/td&gt;
+					&lt;td&gt;⚠️ API changes&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Plain Text Forever&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Open Source&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;❌ No&lt;/td&gt;
+					&lt;td&gt;❌ No&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;✅ Yes&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 
 

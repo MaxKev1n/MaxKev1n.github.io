@@ -1,10 +1,10 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: March 14, 2026 --><html lang="en-us" dir="ltr"
+<!-- Last Published: June 1, 2026 --><html lang="en-us" dir="ltr"
       data-wc-theme-default="system"
       data-hbb-relurl="/">
   
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -54,10 +54,10 @@
   
   
   
-  <meta name="description" content="" />
+  <meta name="description" content="Virtual memory has become a cornerstone of modern GPUs, enabling unified address spaces and advanced memory management techniques. However, the performance of address translation has emerged as a critical bottleneck, particularly under irregular workloads with massive memory footprints, where frequent TLB misses and costly page table walks dominate total memory access latency. Prior work has primarily focused on improving TLB effectiveness or optimizing page table walks through batching and coalescing, but these approaches remain limited by the lack of locality and memory bandwidth constraints. In this work, we propose Compute Unit Page Table Walk (cuPTW), a novel address translation architecture that repurposes idle GPU compute resources to accelerate page table walks. Specifically, we introduce (1) a single-threaded synchronous cuPTW, which offloads translation requests to idle functional units within compute units, and (2) two optimizations that further reduce latency and improve throughput by caching page table walks in local data store memory (cuPTW-SW) and parallelizing them across multiple SIMD lanes (cuPTW-MT). When combined, cuPTW-Full transforms low-parallelism page table walks into a massively parallel computation task. Our evaluation across 15 representative GPU workloads, including deep learning, graph analytics and scientific simulations, demonstrates that cuPTW-Full achieves a performance speedup of 4.43× on average (up to 76.09×) by improving page table walk throughput by 9.92× on average over our baseline GPU architecture. Compared to state-of-the-art GPU address translation proposals, cuPTW-Full achieves a 1.97× to 2.08× average speedup." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://example.com/publications/sigmetrics-2026/" />
+  <link rel="alternate" hreflang="en-us" href="http://localhost:1313/publications/sigmetrics-2026/" />
 
   
   
@@ -9146,9 +9146,7 @@
   
   
     
-      
-        <link rel="stylesheet" href="/css/_entry.cf68a0e837380f6b8e9a0cdf676152e9ed1b191bd986ef604778a85097456ac1.css" integrity="sha256-z2ig6Dc4D2uOmgzfZ2FS6e0bGRvZhu9gR3ioUJdFasE=" crossorigin="anonymous">
-      
+      <link rel="stylesheet" href="/css/_entry.css">
     
   
 
@@ -9161,7 +9159,7 @@
 
   
 
-  <script src="/js/hb-head.min.e9ff67ddf77122b225756bf5a926e24420bea2586199fddcb3b1813a009f4ee5.js" integrity="sha256-6f9n3fdxIrIldWv1qSbiRCC&#43;olhhmf3cs7GBOgCfTuU=" crossorigin="anonymous"></script>
+  <script src="/js/hb-head.min.js"></script>
 
   
   
@@ -9209,17 +9207,17 @@
   
   
   
-    <link rel="icon" type="image/png" href="/media/icon_hu_86cdaf2f328898c0.png" />
+    <link rel="icon" type="image/png" href="/media/icon_hu_43d65de9230a6c05.png" />
   
   
   
   
     
-      <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_8b8256cf55eeeae1.png" />
+      <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_39902579fe17d0b4.png" />
     
   
 
-  <link rel="canonical" href="https://example.com/publications/sigmetrics-2026/" />
+  <link rel="canonical" href="http://localhost:1313/publications/sigmetrics-2026/" />
 
   
   
@@ -9244,10 +9242,10 @@
     <meta property="twitter:creator" content="@MakeOwnable" />
   
   <meta property="og:site_name" content="Zihang Chen&#39;s Homepage" />
-  <meta property="og:url" content="https://example.com/publications/sigmetrics-2026/" />
+  <meta property="og:url" content="http://localhost:1313/publications/sigmetrics-2026/" />
   <meta property="og:title" content="cuPTW: Leveraging Idle Compute Units for Massively Parallel GPU Page Table Walks | Zihang Chen&#39;s Homepage" />
-  <meta property="og:description" content="" /><meta property="og:image" content="https://example.com/publications/sigmetrics-2026/featured.jpg" />
-    <meta property="twitter:image" content="https://example.com/publications/sigmetrics-2026/featured.jpg" /><meta property="og:locale" content="en-us" />
+  <meta property="og:description" content="Virtual memory has become a cornerstone of modern GPUs, enabling unified address spaces and advanced memory management techniques. However, the performance of address translation has emerged as a critical bottleneck, particularly under irregular workloads with massive memory footprints, where frequent TLB misses and costly page table walks dominate total memory access latency. Prior work has primarily focused on improving TLB effectiveness or optimizing page table walks through batching and coalescing, but these approaches remain limited by the lack of locality and memory bandwidth constraints. In this work, we propose Compute Unit Page Table Walk (cuPTW), a novel address translation architecture that repurposes idle GPU compute resources to accelerate page table walks. Specifically, we introduce (1) a single-threaded synchronous cuPTW, which offloads translation requests to idle functional units within compute units, and (2) two optimizations that further reduce latency and improve throughput by caching page table walks in local data store memory (cuPTW-SW) and parallelizing them across multiple SIMD lanes (cuPTW-MT). When combined, cuPTW-Full transforms low-parallelism page table walks into a massively parallel computation task. Our evaluation across 15 representative GPU workloads, including deep learning, graph analytics and scientific simulations, demonstrates that cuPTW-Full achieves a performance speedup of 4.43× on average (up to 76.09×) by improving page table walk throughput by 9.92× on average over our baseline GPU architecture. Compared to state-of-the-art GPU address translation proposals, cuPTW-Full achieves a 1.97× to 2.08× average speedup." /><meta property="og:image" content="http://localhost:1313/publications/sigmetrics-2026/featured.jpg" />
+    <meta property="twitter:image" content="http://localhost:1313/publications/sigmetrics-2026/featured.jpg" /><meta property="og:locale" content="en-us" />
   
     
       <meta
@@ -9278,12 +9276,12 @@
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://example.com/publications/sigmetrics-2026/"
+    "@id": "http://localhost:1313/publications/sigmetrics-2026/"
   },
   "headline": "cuPTW: Leveraging Idle Compute Units for Massively Parallel GPU Page Table Walks",
   
   "image": [
-    "https://example.com/publications/sigmetrics-2026/featured.jpg"
+    "http://localhost:1313/publications/sigmetrics-2026/featured.jpg"
   ],
   
   "datePublished": "2017-01-01T00:00:00Z",
@@ -9302,7 +9300,7 @@
       "url":  null 
     }
   },
-  "description": "\u003c!-- \u003e [!NOTE]\n\u003e Click the _Cite_ button above to demo the feature to enable visitors to import publication metadata into their reference management software.\n\n\u003e [!NOTE]\n\u003e Create your slides in Markdown - click the _Slides_ button to check out the example.\n\nAdd the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/). --\u003e"
+  "description": "Virtual memory has become a cornerstone of modern GPUs, enabling unified address spaces and advanced memory management techniques. However, the performance of address translation has emerged as a critical bottleneck, particularly under irregular workloads with massive memory footprints, where frequent TLB misses and costly page table walks dominate total memory access latency. Prior work has primarily focused on improving TLB effectiveness or optimizing page table walks through batching and coalescing, but these approaches remain limited by the lack of locality and memory bandwidth constraints. In this work, we propose Compute Unit Page Table Walk (cuPTW), a novel address translation architecture that repurposes idle GPU compute resources to accelerate page table walks. Specifically, we introduce (1) a single-threaded synchronous cuPTW, which offloads translation requests to idle functional units within compute units, and (2) two optimizations that further reduce latency and improve throughput by caching page table walks in local data store memory (cuPTW-SW) and parallelizing them across multiple SIMD lanes (cuPTW-MT). When combined, cuPTW-Full transforms low-parallelism page table walks into a massively parallel computation task. Our evaluation across 15 representative GPU workloads, including deep learning, graph analytics and scientific simulations, demonstrates that cuPTW-Full achieves a performance speedup of 4.43× on average (up to 76.09×) by improving page table walk throughput by 9.92× on average over our baseline GPU architecture. Compared to state-of-the-art GPU address translation proposals, cuPTW-Full achieves a 1.97× to 2.08× average speedup."
 }
 </script>
 
@@ -9319,25 +9317,26 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@id": "https://example.com/publications/sigmetrics-2026/",
+  "@id": "http://localhost:1313/publications/sigmetrics-2026/",
   "@type": "WebPage",
   "dateModified": "2026-06-10T00:00:00Z",
   "datePublished": "2026-06-10T00:00:00Z",
+  "description": "Virtual memory has become a cornerstone of modern GPUs, enabling unified address spaces and advanced memory management techniques. However, the performance of address translation has emerged as a critical bottleneck, particularly under irregular workloads with massive memory footprints, where frequent TLB misses and costly page table walks dominate total memory access latency. Prior work has primarily focused on improving TLB effectiveness or optimizing page table walks through batching and coalescing, but these approaches remain limited by the lack of locality and memory bandwidth constraints. In this work, we propose Compute Unit Page Table Walk (cuPTW), a novel address translation architecture that repurposes idle GPU compute resources to accelerate page table walks. Specifically, we introduce (1) a single-threaded synchronous cuPTW, which offloads translation requests to idle functional units within compute units, and (2) two optimizations that further reduce latency and improve throughput by caching page table walks in local data store memory (cuPTW-SW) and parallelizing them across multiple SIMD lanes (cuPTW-MT). When combined, cuPTW-Full transforms low-parallelism page table walks into a massively parallel computation task. Our evaluation across 15 representative GPU workloads, including deep learning, graph analytics and scientific simulations, demonstrates that cuPTW-Full achieves a performance speedup of 4.43× on average (up to 76.09×) by improving page table walk throughput by 9.92× on average over our baseline GPU architecture. Compared to state-of-the-art GPU address translation proposals, cuPTW-Full achieves a 1.97× to 2.08× average speedup.",
   "inLanguage": "en-us",
   "isPartOf": {
-    "@id": "https://example.com/",
+    "@id": "http://localhost:1313/",
     "@type": "WebSite",
     "name": "",
-    "url": "https://example.com/"
+    "url": "http://localhost:1313/"
   },
   "name": "cuPTW: Leveraging Idle Compute Units for Massively Parallel GPU Page Table Walks",
   "primaryImageOfPage": {
     "@type": "ImageObject",
     "height": 848,
-    "url": "https://example.com/publications/sigmetrics-2026/featured.jpg",
+    "url": "http://localhost:1313/publications/sigmetrics-2026/featured.jpg",
     "width": 1926
   },
-  "url": "https://example.com/publications/sigmetrics-2026/"
+  "url": "http://localhost:1313/publications/sigmetrics-2026/"
 }
 </script>
 
@@ -9351,7 +9350,7 @@
     {
       "@type": "ListItem",
       "item": {
-        "@id": "https://example.com/",
+        "@id": "http://localhost:1313/",
         "name": "Home"
       },
       "name": "Home",
@@ -9360,7 +9359,7 @@
     {
       "@type": "ListItem",
       "item": {
-        "@id": "https://example.com/publications/",
+        "@id": "http://localhost:1313/publications/",
         "name": "Publications"
       },
       "name": "Publications",
@@ -9369,7 +9368,7 @@
     {
       "@type": "ListItem",
       "item": {
-        "@id": "https://example.com/publications/sigmetrics-2026/",
+        "@id": "http://localhost:1313/publications/sigmetrics-2026/",
         "name": "cuPTW: Leveraging Idle Compute Units for Massively Parallel GPU Page Table Walks"
       },
       "name": "cuPTW: Leveraging Idle Compute Units for Massively Parallel GPU Page Table Walks",
@@ -9754,8 +9753,8 @@
 
   <script
     defer
-    src="/js/hugo-blox-en.min.8e67887d1e4e773521ed17aef87acbf3d4d07207c99e1e3f4d76d00fc44e7065.js"
-    integrity="sha256-jmeIfR5OdzUh7Reu&#43;HrL89TQcgfJnh4/TXbQD8ROcGU="
+    src="/js/hugo-blox-en.min.js"
+    integrity=""
   ></script>
 
   
@@ -9781,7 +9780,7 @@
 
 
 
-<script defer src="/js/hb-search.min.135366008264b9d452ff89aad28374bc7e4b40d2c047098318511786419873b0.js" integrity="sha256-E1NmAIJkudRS/4mq0oN0vH5LQNLARwmDGFEXhkGYc7A="></script>
+<script defer src="/js/hb-search.min.js"></script>
 
 
 
@@ -10895,7 +10894,7 @@
           <div class="group inline-flex items-center text-current gap-x-1.5 mx-1">
             
               
-              <img src="/media/authors/me_hu_8c1e42a40b18c979.webp" 
+              <img src="/media/authors/me_hu_9a6b977c6864cf75.webp" 
                    width="16"
                    height="16"
                    alt="Zihang Chen" 
@@ -11014,7 +11013,7 @@
     
 
     
-      <a class="hb-attachment-link hb-attachment-link-large" href="https://doi.org/%3cnil%3e" target="_blank" rel="noopener">
+      <a class="hb-attachment-link hb-attachment-link-large" href="https://doi.org/10.1145/3805633" target="_blank" rel="noopener">
         <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/></svg>
         DOI
       </a>
@@ -11064,9 +11063,9 @@
         
         <div class="article-header article-container featured-image-wrapper mt-4 mb-16" style="max-width: 720px; max-height: 317px;">
           <div style="position: relative">
-            <img srcset="/publications/sigmetrics-2026/featured_hu_ec1ee345d3045420.webp 320w, /publications/sigmetrics-2026/featured_hu_f3172d6b6fc53bd6.webp 480w, /publications/sigmetrics-2026/featured_hu_f5f3f43f25a37adf.webp 640w, /publications/sigmetrics-2026/featured_hu_11ea7b04203a731c.webp 720w, /publications/sigmetrics-2026/featured_hu_c231064f55e5323c.webp 720w"
+            <img srcset="/publications/sigmetrics-2026/featured_hu_b7b7e18bf6e5c0de.webp 320w, /publications/sigmetrics-2026/featured_hu_5751ecd909c6dd11.webp 480w, /publications/sigmetrics-2026/featured_hu_8a430fe18eba585c.webp 640w, /publications/sigmetrics-2026/featured_hu_83273b050dfc21fe.webp 720w, /publications/sigmetrics-2026/featured_hu_36f1af154bd2ada.webp 720w"
                  sizes="(max-width: 480px) 100vw, (max-width: 640px) 90vw, (max-width: 720px) 80vw, 720px"
-                 src="/publications/sigmetrics-2026/featured_hu_ec1ee345d3045420.webp" 
+                 src="/publications/sigmetrics-2026/featured_hu_b7b7e18bf6e5c0de.webp" 
                  data-pagefind-meta="image[src]"
                  width="720" 
                  height="317" 
@@ -11084,6 +11083,9 @@
         <div class="max-w-prose grid grid-cols-1 md:grid-cols-[200px_auto] gap-4 my-6">
 
         
+          <div class="font-bold text-2xl">Abstract</div>
+          <div>Virtual memory has become a cornerstone of modern GPUs, enabling unified address spaces and advanced memory management techniques. However, the performance of address translation has emerged as a critical bottleneck, particularly under irregular workloads with massive memory footprints, where frequent TLB misses and costly page table walks dominate total memory access latency. Prior work has primarily focused on improving TLB effectiveness or optimizing page table walks through batching and coalescing, but these approaches remain limited by the lack of locality and memory bandwidth constraints. In this work, we propose Compute Unit Page Table Walk (cuPTW), a novel address translation architecture that repurposes idle GPU compute resources to accelerate page table walks. Specifically, we introduce (1) a single-threaded synchronous cuPTW, which offloads translation requests to idle functional units within compute units, and (2) two optimizations that further reduce latency and improve throughput by caching page table walks in local data store memory (cuPTW-SW) and parallelizing them across multiple SIMD lanes (cuPTW-MT). When combined, cuPTW-Full transforms low-parallelism page table walks into a massively parallel computation task. Our evaluation across 15 representative GPU workloads, including deep learning, graph analytics and scientific simulations, demonstrates that cuPTW-Full achieves a performance speedup of 4.43× on average (up to 76.09×) by improving page table walk throughput by 9.92× on average over our baseline GPU architecture. Compared to state-of-the-art GPU address translation proposals, cuPTW-Full achieves a 1.97× to 2.08× average speedup.</div>
+        
 
         
         
@@ -11099,7 +11101,7 @@
 
         
           <div class="font-bold text-2xl">Publication</div>
-          <div>In <em>NONE</em></div>
+          <div>In <em>Proceedings of the ACM on Measurement and Analysis of Computing Systems, Volume 10, Issue 2</em></div>
         
 
         
@@ -11158,7 +11160,7 @@ Add the publication's **full text** or **supplementary notes** here. You can use
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://x.com/intent/tweet?url=https%3A%2F%2Fexample.com%2Fpublications%2Fsigmetrics-2026%2F&amp;text=cuPTW%3A&#43;Leveraging&#43;Idle&#43;Compute&#43;Units&#43;for&#43;Massively&#43;Parallel&#43;GPU&#43;Page&#43;Table&#43;Walks"
+    href="https://x.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A1313%2Fpublications%2Fsigmetrics-2026%2F&amp;text=cuPTW%3A&#43;Leveraging&#43;Idle&#43;Compute&#43;Units&#43;for&#43;Massively&#43;Parallel&#43;GPU&#43;Page&#43;Table&#43;Walks"
     title="X"
     aria-label="X"
     id="share-link-x"
@@ -11176,7 +11178,7 @@ Add the publication's **full text** or **supplementary notes** here. You can use
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fexample.com%2Fpublications%2Fsigmetrics-2026%2F&amp;t=cuPTW%3A&#43;Leveraging&#43;Idle&#43;Compute&#43;Units&#43;for&#43;Massively&#43;Parallel&#43;GPU&#43;Page&#43;Table&#43;Walks"
+    href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A1313%2Fpublications%2Fsigmetrics-2026%2F&amp;t=cuPTW%3A&#43;Leveraging&#43;Idle&#43;Compute&#43;Units&#43;for&#43;Massively&#43;Parallel&#43;GPU&#43;Page&#43;Table&#43;Walks"
     title="Facebook"
     aria-label="Facebook"
     id="share-link-facebook"
@@ -11196,7 +11198,7 @@ Add the publication's **full text** or **supplementary notes** here. You can use
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="mailto:?subject=cuPTW%3A%20Leveraging%20Idle%20Compute%20Units%20for%20Massively%20Parallel%20GPU%20Page%20Table%20Walks&amp;body=https%3A%2F%2Fexample.com%2Fpublications%2Fsigmetrics-2026%2F"
+    href="mailto:?subject=cuPTW%3A%20Leveraging%20Idle%20Compute%20Units%20for%20Massively%20Parallel%20GPU%20Page%20Table%20Walks&amp;body=http%3A%2F%2Flocalhost%3A1313%2Fpublications%2Fsigmetrics-2026%2F"
     title="Email"
     aria-label="Email"
     id="share-link-email"
@@ -11214,7 +11216,7 @@ Add the publication's **full text** or **supplementary notes** here. You can use
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fexample.com%2Fpublications%2Fsigmetrics-2026%2F&amp;title=cuPTW%3A&#43;Leveraging&#43;Idle&#43;Compute&#43;Units&#43;for&#43;Massively&#43;Parallel&#43;GPU&#43;Page&#43;Table&#43;Walks"
+    href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Flocalhost%3A1313%2Fpublications%2Fsigmetrics-2026%2F&amp;title=cuPTW%3A&#43;Leveraging&#43;Idle&#43;Compute&#43;Units&#43;for&#43;Massively&#43;Parallel&#43;GPU&#43;Page&#43;Table&#43;Walks"
     title="LinkedIn"
     aria-label="LinkedIn"
     id="share-link-linkedin"
@@ -11232,7 +11234,7 @@ Add the publication's **full text** or **supplementary notes** here. You can use
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="whatsapp://send?text=cuPTW%3A&#43;Leveraging&#43;Idle&#43;Compute&#43;Units&#43;for&#43;Massively&#43;Parallel&#43;GPU&#43;Page&#43;Table&#43;Walks%20https%3A%2F%2Fexample.com%2Fpublications%2Fsigmetrics-2026%2F"
+    href="whatsapp://send?text=cuPTW%3A&#43;Leveraging&#43;Idle&#43;Compute&#43;Units&#43;for&#43;Massively&#43;Parallel&#43;GPU&#43;Page&#43;Table&#43;Walks%20http%3A%2F%2Flocalhost%3A1313%2Fpublications%2Fsigmetrics-2026%2F"
     title="WhatsApp"
     aria-label="WhatsApp"
     id="share-link-whatsapp"
@@ -11277,9 +11279,9 @@ Add the publication's **full text** or **supplementary notes** here. You can use
     
     <img
       class="mr-4 h-24 w-24 rounded-full"
-      srcset="/media/authors/me_hu_49d664e4d1bdedcb.webp 96w, /media/authors/me_hu_4adc5f6a18abab90.webp 192w, /media/authors/me_hu_f6b442c377a5922d.webp 288w, /media/authors/me_hu_c6191ec4ae44ca4d.webp 384w"
+      srcset="/media/authors/me_hu_b81995ec327859f4.webp 96w, /media/authors/me_hu_e1dcfb696ebb0cad.webp 192w, /media/authors/me_hu_4ec812d39b959da5.webp 288w, /media/authors/me_hu_eefdc3e9f6dc3187.webp 384w"
       sizes="96px"
-      src="/media/authors/me_hu_49d664e4d1bdedcb.webp"
+      src="/media/authors/me_hu_b81995ec327859f4.webp"
       width="96"
       height="96"
       alt="Zihang Chen"
@@ -11292,7 +11294,7 @@ Add the publication's **full text** or **supplementary notes** here. You can use
     </div>
     <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
       <span class="inline-block">
-        <a href="https://example.com/" class="no-underline">
+        <a href="http://localhost:1313/" class="no-underline">
         Zihang Chen
         </a>
       </span><span class="text-sm font-normal text-gray-600 dark:text-gray-400 ml-1 inline-block">(he/him)</span></div>
@@ -11570,9 +11572,9 @@ Add the publication's **full text** or **supplementary notes** here. You can use
       
       
       
-      Made with <a class="underline hover:opacity-100" href="https://hugoblox.com?utm_source=site_footer&utm_medium=referral&utm_campaign=poweredby_oss&utm_content=brand_academic-cv" target="_blank" rel="noopener" data-hbx="poweredby_brand">Hugo Blox — Open Source</a>.
+      Made with <a class="underline hover:opacity-100" href="https://hugoblox.com?utm_source=site_footer&utm_medium=referral&utm_campaign=poweredby_oss&utm_content=brand_academic-cv" target="_blank" rel="noopener" data-hbx="poweredby_brand">Hugo Blox Kit</a>.
       <a class="inline-flex items-center rounded px-2 py-0.5 border border-current ms-2 text-xs hover:opacity-100"
-         href="https://hugoblox.com/templates/academic-cv/start?utm_source=site_footer&amp;utm_medium=referral&amp;utm_campaign=poweredby_oss&amp;utm_content=cta_academic-cv" target="_blank" rel="noopener" data-hbx="poweredby_cta">Create your site →</a>
+         href="https://hugoblox.com/templates/academic-cv/start?utm_source=site_footer&amp;utm_medium=referral&amp;utm_campaign=poweredby_oss&amp;utm_content=cta_academic-cv" target="_blank" rel="noopener" data-hbx="poweredby_cta">Build your site →</a>
     </p>  
 
 </footer>

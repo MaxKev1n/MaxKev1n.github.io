@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Slides | </title>
-    <link>https://example.com/slides/</link>
-      <atom:link href="https://example.com/slides/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/slides/</link>
+      <atom:link href="http://localhost:1313/slides/index.xml" rel="self" type="application/rss+xml" />
     <description>Slides</description>
     <generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://example.com/media/icon_hu_da05098ef60dc2e7.png</url>
+      <url>http://localhost:1313/media/icon_hu_1c0e9cb08cfb822a.png</url>
       <title>Slides</title>
-      <link>https://example.com/slides/</link>
+      <link>http://localhost:1313/slides/</link>
     </image>
     
     <item>
       <title>Example Talk: Recent Work</title>
-      <link>https://example.com/slides/example/</link>
+      <link>http://localhost:1313/slides/example/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.com/slides/example/</guid>
+      <guid>http://localhost:1313/slides/example/</guid>
       <description>&lt;!-- no-branding --&gt;
 &lt;h1 id=&#34;example-talk&#34;&gt;Example Talk&lt;/h1&gt;
 &lt;h3 id=&#34;dr-alex-johnson--meta-ai&#34;&gt;Dr. Alex Johnson · Meta AI&lt;/h3&gt;
@@ -160,34 +160,34 @@ Mermaid diagrams are created from simple text. They&amp;rsquo;re version-control
 &lt;hr&gt;
 &lt;h2 id=&#34;research-results&#34;&gt;Research Results&lt;/h2&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Model&lt;/th&gt;
-          &lt;th&gt;Accuracy&lt;/th&gt;
-          &lt;th&gt;Speed&lt;/th&gt;
-          &lt;th&gt;Memory&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Baseline&lt;/td&gt;
-          &lt;td&gt;87.3%&lt;/td&gt;
-          &lt;td&gt;1.0x&lt;/td&gt;
-          &lt;td&gt;2GB&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Ours (v1)&lt;/td&gt;
-          &lt;td&gt;92.1%&lt;/td&gt;
-          &lt;td&gt;1.5x&lt;/td&gt;
-          &lt;td&gt;1.8GB&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Ours (v2)&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;95.8%&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;2.3x&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;1.2GB&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Model&lt;/th&gt;
+					&lt;th&gt;Accuracy&lt;/th&gt;
+					&lt;th&gt;Speed&lt;/th&gt;
+					&lt;th&gt;Memory&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Baseline&lt;/td&gt;
+					&lt;td&gt;87.3%&lt;/td&gt;
+					&lt;td&gt;1.0x&lt;/td&gt;
+					&lt;td&gt;2GB&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Ours (v1)&lt;/td&gt;
+					&lt;td&gt;92.1%&lt;/td&gt;
+					&lt;td&gt;1.5x&lt;/td&gt;
+					&lt;td&gt;1.8GB&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;Ours (v2)&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;95.8%&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;2.3x&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;&lt;strong&gt;1.2GB&lt;/strong&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 
 
@@ -271,8 +271,8 @@ This demonstrates Reveal.js&amp;rsquo;s vertical slide feature. Great for option
 &lt;hr&gt;
 &lt;h2 id=&#34;media-youtube-videos&#34;&gt;Media: YouTube Videos&lt;/h2&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
-    &lt;/div&gt;
+			&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+		&lt;/div&gt;
 
 &lt;p&gt;Note:
 Embed YouTube videos with just the video ID. Perfect for demos, tutorials, or interviews.&lt;/p&gt;
@@ -333,30 +333,30 @@ Thank you for your attention! Feel free to reach out with questions or contribut
 &lt;p&gt;Add your identity to every slide with simple configuration!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;What you can add:&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Element&lt;/th&gt;
-          &lt;th&gt;Position Options&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Logo&lt;/td&gt;
-          &lt;td&gt;top-left, top-right, bottom-left, bottom-right&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Title&lt;/td&gt;
-          &lt;td&gt;Same as above&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Author&lt;/td&gt;
-          &lt;td&gt;Same as above&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Footer Text&lt;/td&gt;
-          &lt;td&gt;Same + bottom-center&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Element&lt;/th&gt;
+					&lt;th&gt;Position Options&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Logo&lt;/td&gt;
+					&lt;td&gt;top-left, top-right, bottom-left, bottom-right&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Title&lt;/td&gt;
+					&lt;td&gt;Same as above&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Author&lt;/td&gt;
+					&lt;td&gt;Same as above&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Footer Text&lt;/td&gt;
+					&lt;td&gt;Same + bottom-center&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Edit the &lt;code&gt;branding:&lt;/code&gt; section in your slide&amp;rsquo;s front matter (top of file).&lt;/p&gt;
 &lt;hr&gt;
@@ -415,26 +415,26 @@ Thank you for your attention! Feel free to reach out with questions or contribut
 &lt;!-- no-footer --&gt;
 &lt;h2 id=&#34;-quick-reference&#34;&gt;✅ Quick Reference&lt;/h2&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Comment&lt;/th&gt;
-          &lt;th&gt;Hides&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;&amp;lt;!-- no-branding --&amp;gt;&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;Everything (logo, title, author, footer)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;&amp;lt;!-- no-header --&amp;gt;&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;Logo + Title overlay&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;&amp;lt;!-- no-footer --&amp;gt;&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;Author + Footer text&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Comment&lt;/th&gt;
+					&lt;th&gt;Hides&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;code&gt;&amp;lt;!-- no-branding --&amp;gt;&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;Everything (logo, title, author, footer)&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;code&gt;&amp;lt;!-- no-header --&amp;gt;&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;Logo + Title overlay&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;code&gt;&amp;lt;!-- no-footer --&amp;gt;&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;Author + Footer text&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;☝️ &lt;strong&gt;This slide uses &lt;code&gt;&amp;lt;!-- no-footer --&amp;gt;&lt;/code&gt;&lt;/strong&gt; — logo still visible above!&lt;/p&gt;
 &lt;hr&gt;
