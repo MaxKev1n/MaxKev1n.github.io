@@ -48,8 +48,8 @@ hugoblox:
 
 # Custom links
 links:
-  # - type: pdf
-  #   url: "3711707.pdf"
+  - type: pdf
+    url: "3805633.pdf"
   # - type: code
   #   url: https://github.com/HugoBlox/kit
   # - type: dataset
