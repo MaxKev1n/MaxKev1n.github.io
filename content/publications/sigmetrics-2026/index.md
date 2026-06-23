@@ -54,8 +54,8 @@ links:
   #   url: https://github.com/HugoBlox/kit
   # - type: dataset
   #   url: https://github.com/HugoBlox/kit
-  # - type: slides
-  #   url: https://www.slideshare.net/
+  - type: slides
+    url: "slides.pdf"
   # - type: source
   #   url: https://github.com/HugoBlox/kit
   # - type: video
