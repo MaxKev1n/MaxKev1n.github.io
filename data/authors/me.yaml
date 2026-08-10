@@ -14,7 +14,7 @@ status:
   icon: "☕️"
 role: PhD student at HKUST(GZ)
 bio: |
-  Zihang Chen is a PhD student of microelectronics in The Hong Kong University of Science and Technology (Guangzhou). He received his bachelor degree of Computer Science and Technology from Nanjing University of Science and Technology in 2019. His research interests include computer architecture, micro-processor design, micro-architecture exploration, cuda programming and machine learning system. He used to be an intern at XiangShan group, Beijing Institute of Open Source Chip to develop high-performance RISC-V processor and implement some novel architectures on the simulators. Now, he is a third-year PhD student in The Hong Kong University of Science and Technology (Guangzhou), supervised by Prof. Jiayi Huang and Prof. Hongyuan Liu. Currently, he is a visiting student in Ghent University, supervised by Prof. Lieven Eeckhout.
+  Zihang Chen is a PhD student of microelectronics in The Hong Kong University of Science and Technology (Guangzhou). He received his bachelor degree of Computer Science and Technology from Nanjing University of Science and Technology in 2019. His research interests include computer architecture, micro-processor design, micro-architecture exploration, cuda programming and machine learning system. He used to be an intern at XiangShan group, Beijing Institute of Open Source Chip to develop high-performance RISC-V processor and implement some novel architectures on the simulators. He also used to be a visiting student in Ghent University, supervised by Prof. Lieven Eeckhout. Now, he is a third-year PhD student in The Hong Kong University of Science and Technology (Guangzhou), supervised by Prof. Jiayi Huang and Prof. Hongyuan Liu.
 
 affiliations:
   - name: The Hong Kong University of Science and Technology (Guangzhou)
@@ -52,7 +52,7 @@ education:
   - area: Visiting Student
     institution: Ghent University
     start: 2025-09-17
-    end: ''
+    end: 2026-07-31
     summary: |
         Supervised by [Prof. Lieven Eeckhout](https://users.elis.ugent.be/~leeckhou/). Research on the GPU Architectures.
 
