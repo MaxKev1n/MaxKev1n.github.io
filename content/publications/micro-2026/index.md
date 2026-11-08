@@ -31,7 +31,7 @@ publication_types: ['paper-conference']
 publication: 
 publication_short: In *MICRO 2026*
 
-abstract: 
+abstract: Modern Graphics Processing Unit (GPU) architectures have transitioned toward multi-partitioned or chiplet-based designs to scale compute throughput and memory capacity. However, this evolution introduces significant internal Non-Uniform Memory Access (NUMA) effects, where cross-partition memory latencies diverge significantly. As address translation requires sequential, multi-level probes, these NUMA-induced latencies are amplified, placing unprecedented pressure on the memory management unit. This paper identifies a critical bottleneck: traditional page table walkers employ a rigid, blocking design, where walker hardware resources are held by in-flight requests until the entire multi-level walk completes. Under NUMA conditions, long-latency remote memory probes monopolize these resources, causing translation requests to queue, which eventually stalls the entire GPU pipeline. To mitigate these translation-induced stalls, we propose NB-WALKER, a high-throughput, non-blocking address translation architecture. NB-WALKER decouples translation issuance from limited page walk buffers by repurposing underutilized L1 cache MSHR entries to buffer walk metadata and track outstanding page table entry fetch requests. This transformation allows the page table walkers to sustain multiple outstanding translation requests concurrently, significantly enhancing memory-level parallelism during the walk process. Furthermore, our design enables opportunistic coalescing of concurrent page table probes, reducing redundant memory traffic to the last-level cache. Experimental results demonstrate that NB-WALKER significantly alleviates translation pressure, achieving an average 5.56× increase in page table walk throughput. This enhanced concurrency translates into an average speedup of 2.78× (up to 5.73×) across translation-intensive workloads with negligible hardware overhead.
 
 # Summary. An optional shortened abstract.
 # summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
@@ -48,17 +48,17 @@ featured: true
 #     doi: 10.1145/3805633
 
 # Custom links
-# links:
-#   - type: pdf
-#     url: "3805633.pdf"
+links:
+  - type: pdf
+    url: "paper.pdf"
   # - type: code
   #   url: https://github.com/HugoBlox/kit
   # - type: dataset
   #   url: https://github.com/HugoBlox/kit
-  # - type: slides
-  #   url: "slides.pdf"
-  # - type: source
-  #   url: https://github.com/HugoBlox/kit
+  - type: slides
+    url: "slides.pdf"
+  - type: source
+    url: https://github.com/redbird-arch/micro2026-nbwalker-artifact
   # - type: video
   #   url: https://youtube.com
 
