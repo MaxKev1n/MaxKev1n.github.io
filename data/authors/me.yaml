@@ -73,6 +73,18 @@ experience:
       - Explore speculative renaming
       - Implement decoupled frontend on GEM5
       - Align the GEM5 and XiangShan high-performance RISC-V core
+  - role: Research Assistant
+    org: The Hong Kong University of Science and Technology (Guangzhou)
+    start: 2023-03-01
+    end: 2023-08-21
+    summary: |
+      Exploring asynchronous GPU programming model.
+  - role: Research Intern
+    org: Huawei
+    start: 2026-10-12
+    end: Present
+    summary: |
+      Optimizing address translation bottlnecks in superPods system.
 
 skills:
   - name: Technical Skills
